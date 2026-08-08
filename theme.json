@@ -448,6 +448,20 @@
             ],
             "writingMode": true
         },
+        "layout": {
+            "contentSize": "1280px",
+            "wideSize": "1440px"
+        },
+        "shadow": {
+            "defaultPresets": false,
+            "presets": [
+                {
+                    "name": "Default Shadow",
+                    "shadow": "0 0 11.5px 0 #38A0FF",
+                    "slug": "btcpa-shadow"
+                }
+            ]
+        },
         "useRootPaddingAwareAlignments": true
     },
     "styles": {
