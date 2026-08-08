@@ -3,12 +3,12 @@
  * Contact Settings — admin page under Appearance menu.
  *
  * Options:
- *   incc_phone_number        – Phone Number
- *   incc_form_shortcode      – Form Shortcode
- *   incc_form_title          – Panel heading
- *   incc_form_description    – Panel description paragraph
+ *   btcpa_phone_number        – Phone Number
+ *   btcpa_form_shortcode      – Form Shortcode
+ *   btcpa_form_title          – Panel heading
+ *   btcpa_form_description    – Panel description paragraph
  *
- * @package Insignia_Capital_Corp
+ * @package Breakthrough_CPAs
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,20 +17,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // ── Enqueue front-end assets ───────────────────────────────────────────────────
 
-add_action( 'wp_enqueue_scripts', 'incc_form_panel_assets' );
+add_action( 'wp_enqueue_scripts', 'btcpa_form_panel_assets' );
 
-function incc_form_panel_assets() {
+function btcpa_form_panel_assets() {
 	$version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style(
-		'incc-form-panel',
+		'btcpa-form-panel',
 		get_theme_file_uri( 'assets/css/form-panel.css' ),
 		array(),
 		$version
 	);
 
 	wp_enqueue_script(
-		'incc-form-panel',
+		'btcpa-form-panel',
 		get_theme_file_uri( 'assets/js/form-panel.js' ),
 		array(),
 		$version,
@@ -40,32 +40,32 @@ function incc_form_panel_assets() {
 
 // ── Inject panel HTML into every page footer ───────────────────────────────────
 
-add_action( 'wp_footer', 'incc_form_panel_html' );
+add_action( 'wp_footer', 'btcpa_form_panel_html' );
 
-function incc_form_panel_html() {
-	$phone       = get_option( 'incc_phone_number', '' );
-	$shortcode   = get_option( 'incc_form_shortcode', '' );
-	$title       = get_option( 'incc_form_title', 'Contact us' );
-	$description = get_option( 'incc_form_description', '' );
+function btcpa_form_panel_html() {
+	$phone       = get_option( 'btcpa_phone_number', '' );
+	$shortcode   = get_option( 'btcpa_form_shortcode', '' );
+	$title       = get_option( 'btcpa_form_title', 'Contact us' );
+	$description = get_option( 'btcpa_form_description', '' );
 
 	// Don't render the panel if neither option is set.
 	if ( ! $phone && ! $shortcode ) {
 		return;
 	}
 	?>
-	<div id="incc-form-overlay" class="incc-form-overlay" aria-hidden="true"></div>
+	<div id="btcpa-form-overlay" class="btcpa-form-overlay" aria-hidden="true"></div>
 
 	<div
-		id="incc-contact"
-		class="incc-form-panel"
+		id="btcpa-contact"
+		class="btcpa-form-panel"
 		role="dialog"
 		aria-modal="true"
-		aria-label="<?php echo esc_attr( $title ? $title : __( 'Contact us', 'insignia-capital-corp' ) ); ?>"
+		aria-label="<?php echo esc_attr( $title ? $title : __( 'Contact us', 'breakthrough-cpas' ) ); ?>"
 		aria-hidden="true"
 	>
-		<div class="incc-form-panel__header">
+		<div class="btcpa-form-panel__header">
 			<?php if ( $phone ) : ?>
-			<a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', $phone ) ); ?>" class="incc-form-panel__phone">
+			<a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', $phone ) ); ?>" class="btcpa-form-panel__phone">
 				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 					<path d="M3.62 7.79C5.06 10.62 7.38 12.93 10.21 14.38L12.41 12.18C12.68 11.91 13.08 11.82 13.43 11.94C14.55 12.31 15.76 12.51 17 12.51C17.55 12.51 18 12.96 18 13.51V17C18 17.55 17.55 18 17 18C7.61 18 0 10.39 0 1C0 0.45 0.45 0 1 0H4.5C5.05 0 5.5 0.45 5.5 1C5.5 2.25 5.7 3.45 6.07 4.57C6.18 4.92 6.1 5.31 5.82 5.59L3.62 7.79Z" fill="currentColor"/>
 				</svg>
@@ -75,20 +75,20 @@ function incc_form_panel_html() {
 			<span></span>
 			<?php endif; ?>
 
-			<button class="incc-form-panel__close" aria-label="<?php esc_attr_e( 'Close form', 'insignia-capital-corp' ); ?>">
+			<button class="btcpa-form-panel__close" aria-label="<?php esc_attr_e( 'Close form', 'breakthrough-cpas' ); ?>">
 				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 					<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 				</svg>
 			</button>
 		</div>
 
-		<div class="incc-form-panel__body">
+		<div class="btcpa-form-panel__body">
 			<?php if ( $title ) : ?>
-				<h2 class="incc-form-panel__title"><?php echo esc_html( $title ); ?></h2>
+				<h2 class="btcpa-form-panel__title"><?php echo esc_html( $title ); ?></h2>
 			<?php endif; ?>
 
 			<?php if ( $description ) : ?>
-				<p class="incc-form-panel__desc"><?php echo esc_html( $description ); ?></p>
+				<p class="btcpa-form-panel__desc"><?php echo esc_html( $description ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $shortcode ) : ?>
@@ -101,59 +101,59 @@ function incc_form_panel_html() {
 
 // ── Register settings ──────────────────────────────────────────────────────────
 
-add_action( 'admin_init', 'incc_form_register_settings' );
+add_action( 'admin_init', 'btcpa_form_register_settings' );
 
-function incc_form_register_settings() {
+function btcpa_form_register_settings() {
 	register_setting(
-		'incc_form_group',
-		'incc_phone_number',
+		'btcpa_form_group',
+		'btcpa_phone_number',
 		array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => '' )
 	);
 
 	register_setting(
-		'incc_form_group',
-		'incc_form_shortcode',
+		'btcpa_form_group',
+		'btcpa_form_shortcode',
 		array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => '' )
 	);
 
 	register_setting(
-		'incc_form_group',
-		'incc_form_title',
+		'btcpa_form_group',
+		'btcpa_form_title',
 		array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'default' => 'Contact us' )
 	);
 
 	register_setting(
-		'incc_form_group',
-		'incc_form_description',
+		'btcpa_form_group',
+		'btcpa_form_description',
 		array( 'type' => 'string', 'sanitize_callback' => 'sanitize_textarea_field', 'default' => '' )
 	);
 }
 
 // ── Add menu page under Appearance ────────────────────────────────────────────
 
-add_action( 'admin_menu', 'incc_form_add_menu' );
+add_action( 'admin_menu', 'btcpa_form_add_menu' );
 
-function incc_form_add_menu() {
+function btcpa_form_add_menu() {
 	add_theme_page(
-		__( 'Form Settings', 'insignia-capital-corp' ),
-		__( 'Form', 'insignia-capital-corp' ),
+		__( 'Form Settings', 'breakthrough-cpas' ),
+		__( 'Form', 'breakthrough-cpas' ),
 		'manage_options',
-		'incc-form',
-		'incc_form_render_page'
+		'btcpa-form',
+		'btcpa_form_render_page'
 	);
 }
 
 // ── Render settings page ───────────────────────────────────────────────────────
 
-function incc_form_render_page() {
+function btcpa_form_render_page() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
 	?>
 	<div class="wrap">
-		<h1><?php esc_html_e( 'Form Settings', 'insignia-capital-corp' ); ?></h1>
+		<h1><?php esc_html_e( 'Form Settings', 'breakthrough-cpas' ); ?></h1>
 
-		<?php settings_errors( 'incc_form_group' ); ?>
+		<?php settings_errors( 'btcpa_form_group' ); ?>
 
 		<?php /* ── Trigger ID hint ── */ ?>
 		<div style="
@@ -165,13 +165,13 @@ function incc_form_render_page() {
 			max-width: 600px;
 		">
 			<p style="margin: 0 0 8px; font-weight: 600; color: #1d2327;">
-				<?php esc_html_e( 'How to open this form panel', 'insignia-capital-corp' ); ?>
+				<?php esc_html_e( 'How to open this form panel', 'breakthrough-cpas' ); ?>
 			</p>
 			<p style="margin: 0 0 10px; color: #3c434a; font-size: 13px;">
-				<?php esc_html_e( 'Add the following ID as the href value on any link or button to open the slide-in form:', 'insignia-capital-corp' ); ?>
+				<?php esc_html_e( 'Add the following ID as the href value on any link or button to open the slide-in form:', 'breakthrough-cpas' ); ?>
 			</p>
 			<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-				<code id="incc-trigger-id" style="
+				<code id="btcpa-trigger-id" style="
 					background: #1d2327;
 					color: #7dd3fc;
 					padding: 6px 14px;
@@ -180,11 +180,11 @@ function incc_form_render_page() {
 					font-family: monospace;
 					letter-spacing: 0.5px;
 					user-select: all;
-				">#incc-contact</code>
+				">#btcpa-contact</code>
 				<button
 					type="button"
 					onclick="
-						navigator.clipboard.writeText('#incc-contact');
+						navigator.clipboard.writeText('#btcpa-contact');
 						this.textContent = '✓ Copied!';
 						setTimeout(() => this.textContent = 'Copy', 2000);
 					"
@@ -197,30 +197,30 @@ function incc_form_render_page() {
 						font-size: 13px;
 						cursor: pointer;
 					"
-				><?php esc_html_e( 'Copy', 'insignia-capital-corp' ); ?></button>
+				><?php esc_html_e( 'Copy', 'breakthrough-cpas' ); ?></button>
 			</div>
 			<p style="margin: 10px 0 0; color: #646970; font-size: 12px;">
-				<?php esc_html_e( 'Example:', 'insignia-capital-corp' ); ?>
-				<code style="background:#eee; padding: 2px 6px; border-radius: 3px;">&lt;a href="#incc-contact"&gt;Get in Touch&lt;/a&gt;</code>
+				<?php esc_html_e( 'Example:', 'breakthrough-cpas' ); ?>
+				<code style="background:#eee; padding: 2px 6px; border-radius: 3px;">&lt;a href="#btcpa-contact"&gt;Get in Touch&lt;/a&gt;</code>
 			</p>
 		</div>
 
 		<form method="post" action="options.php">
-			<?php settings_fields( 'incc_form_group' ); ?>
+			<?php settings_fields( 'btcpa_form_group' ); ?>
 
 			<table class="form-table" role="presentation">
 				<tr>
 					<th scope="row">
-						<label for="incc_phone_number">
-							<?php esc_html_e( 'Phone Number', 'insignia-capital-corp' ); ?>
+						<label for="btcpa_phone_number">
+							<?php esc_html_e( 'Phone Number', 'breakthrough-cpas' ); ?>
 						</label>
 					</th>
 					<td>
 						<input
 							type="text"
-							id="incc_phone_number"
-							name="incc_phone_number"
-							value="<?php echo esc_attr( get_option( 'incc_phone_number' ) ); ?>"
+							id="btcpa_phone_number"
+							name="btcpa_phone_number"
+							value="<?php echo esc_attr( get_option( 'btcpa_phone_number' ) ); ?>"
 							class="regular-text"
 							placeholder="e.g. 818-408-7117"
 						/>
@@ -228,59 +228,59 @@ function incc_form_render_page() {
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="incc_form_title">
-							<?php esc_html_e( 'Form Title', 'insignia-capital-corp' ); ?>
+						<label for="btcpa_form_title">
+							<?php esc_html_e( 'Form Title', 'breakthrough-cpas' ); ?>
 						</label>
 					</th>
 					<td>
 						<input
 							type="text"
-							id="incc_form_title"
-							name="incc_form_title"
-							value="<?php echo esc_attr( get_option( 'incc_form_title', 'Contact us' ) ); ?>"
+							id="btcpa_form_title"
+							name="btcpa_form_title"
+							value="<?php echo esc_attr( get_option( 'btcpa_form_title', 'Contact us' ) ); ?>"
 							class="regular-text"
-							placeholder="<?php esc_attr_e( 'Contact us', 'insignia-capital-corp' ); ?>"
+							placeholder="<?php esc_attr_e( 'Contact us', 'breakthrough-cpas' ); ?>"
 						/>
 						<p class="description">
-							<?php esc_html_e( 'Heading displayed at the top of the slide-in panel.', 'insignia-capital-corp' ); ?>
+							<?php esc_html_e( 'Heading displayed at the top of the slide-in panel.', 'breakthrough-cpas' ); ?>
 						</p>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="incc_form_description">
-							<?php esc_html_e( 'Form Description', 'insignia-capital-corp' ); ?>
+						<label for="btcpa_form_description">
+							<?php esc_html_e( 'Form Description', 'breakthrough-cpas' ); ?>
 						</label>
 					</th>
 					<td>
 						<textarea
-							id="incc_form_description"
-							name="incc_form_description"
+							id="btcpa_form_description"
+							name="btcpa_form_description"
 							class="regular-text"
 							rows="4"
-							placeholder="<?php esc_attr_e( 'We are here to help you...', 'insignia-capital-corp' ); ?>"
-						><?php echo esc_textarea( get_option( 'incc_form_description', '' ) ); ?></textarea>
+							placeholder="<?php esc_attr_e( 'We are here to help you...', 'breakthrough-cpas' ); ?>"
+						><?php echo esc_textarea( get_option( 'btcpa_form_description', '' ) ); ?></textarea>
 						<p class="description">
-							<?php esc_html_e( 'Short paragraph shown below the title inside the panel.', 'insignia-capital-corp' ); ?>
+							<?php esc_html_e( 'Short paragraph shown below the title inside the panel.', 'breakthrough-cpas' ); ?>
 						</p>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="incc_form_shortcode">
-							<?php esc_html_e( 'Form Shortcode', 'insignia-capital-corp' ); ?>
+						<label for="btcpa_form_shortcode">
+							<?php esc_html_e( 'Form Shortcode', 'breakthrough-cpas' ); ?>
 						</label>
 					</th>
 					<td>
 						<input
 							type="text"
-							id="incc_form_shortcode"
-							name="incc_form_shortcode"
-							value="<?php echo esc_attr( get_option( 'incc_form_shortcode' ) ); ?>"
+							id="btcpa_form_shortcode"
+							name="btcpa_form_shortcode"
+							value="<?php echo esc_attr( get_option( 'btcpa_form_shortcode' ) ); ?>"
 							class="regular-text"
 						/>
 						<p class="description">
-							<?php esc_html_e( 'Enter the shortcode, e.g. [gravityform id="1" title="false"]', 'insignia-capital-corp' ); ?>
+							<?php esc_html_e( 'Enter the shortcode, e.g. [gravityform id="1" title="false"]', 'breakthrough-cpas' ); ?>
 						</p>
 					</td>
 				</tr>

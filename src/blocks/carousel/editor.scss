@@ -1,8 +1,8 @@
-.incc-toggle-group-control {
+.btcpa-toggle-group-control {
     width: 100%;
     border: 1px solid #1e1e1e !important;
 
-    &.incc-valign {
+    &.btcpa-valign {
         .dashicons-align-pull-left,
         .dashicons-align-pull-right {
             transform: rotate(90deg);
@@ -10,7 +10,7 @@
     }
 }
 
-.incc-editor-slides {
+.btcpa-editor-slides {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -27,7 +27,7 @@
 
     @for $i from 1 through 6 {
         &.columns-#{$i} {
-            .wp-block-incc-slide {
+            .wp-block-btcpa-slide {
                 width: calc(100% / #{$i});
                 min-width: calc(100% / #{$i});
             }

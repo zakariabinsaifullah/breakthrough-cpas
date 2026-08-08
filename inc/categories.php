@@ -5,10 +5,10 @@
  * Registers custom block categories and block pattern categories
  * used throughout this theme.
  *
- * @package Insignia_Capital_Corp
+ * @package Breakthrough_CPAs
  */
 
-if ( ! function_exists( 'incc_block_categories' ) ) :
+if ( ! function_exists( 'btcpa_block_categories' ) ) :
 	/**
 	 * Adds the "Brilliant Blocks" category to the block inserter.
 	 *
@@ -16,12 +16,12 @@ if ( ! function_exists( 'incc_block_categories' ) ) :
 	 * @param  WP_Block_Editor_Context $block_editor_context Current editor context.
 	 * @return array
 	 */
-	function incc_block_categories( $block_categories, $block_editor_context ) {
+	function btcpa_block_categories( $block_categories, $block_editor_context ) {
 		return array_merge(
 			array(
 				array(
-					'slug'  => 'incc',
-					'title' => __( 'Insignia Capital Corp', 'insignia-capital-corp' ),
+					'slug'  => 'btcpa',
+					'title' => __( 'Breakthrough CPAs', 'breakthrough-cpas' ),
 				),
 			),
 			$block_categories
@@ -29,21 +29,21 @@ if ( ! function_exists( 'incc_block_categories' ) ) :
 		);
 	}
 endif;
-add_filter( 'block_categories_all', 'incc_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'btcpa_block_categories', 10, 2 );
 
 
-if ( ! function_exists( 'incc_pattern_categories' ) ) :
+if ( ! function_exists( 'btcpa_pattern_categories' ) ) :
 	/**
-	 * Registers the "Insignia Capital Corp" block pattern category.
+	 * Registers the "Breakthrough CPAs" block pattern category.
 	 */
-	function incc_pattern_categories() {
+	function btcpa_pattern_categories() {
 		register_block_pattern_category(
-			'incc',
+			'btcpa',
 			array(
-				'label'       => __( 'Insignia Capital Corp', 'insignia-capital-corp' ),
-				'description' => __( 'A collection of Insignia Capital Corp patterns.', 'insignia-capital-corp' ),
+				'label'       => __( 'Breakthrough CPAs', 'breakthrough-cpas' ),
+				'description' => __( 'A collection of Breakthrough CPAs patterns.', 'breakthrough-cpas' ),
 			)
 		);
 	}
 endif;
-add_action( 'init', 'incc_pattern_categories' );
+add_action( 'init', 'btcpa_pattern_categories' );

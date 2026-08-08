@@ -14,7 +14,7 @@ const folderOpen = (
 );
 
 const NativeIconPicker = ({
-    label = __('Icon', 'insignia-capital-corp'),
+    label = __('Icon', 'breakthrough-cpas'),
     onIconSelect,
     onCustomSvgInsert,
     iconName,
@@ -63,37 +63,37 @@ const NativeIconPicker = ({
                 modalState={modalState}
                 setModalState={setModalState}
             />
-            <BaseControl id="incc-icon-settings" label={label} __nextHasNoMarginBottom>
+            <BaseControl id="btcpa-icon-settings" label={label} __nextHasNoMarginBottom>
                 <Dropdown
                     popoverProps={{
                         placement: 'left-start',
                         offset: 36,
                         shift: true
                     }}
-                    className="incc-icon-settings"
+                    className="btcpa-icon-settings"
                     renderToggle={({ isOpen, onToggle, onClose }) => (
-                        <div className="incc-icon-settings__dropdown">
+                        <div className="btcpa-icon-settings__dropdown">
                             <Button
                                 onClick={onToggle}
                                 aria-expanded={isOpen}
-                                className="incc-icon-settings__dropdown-toggle"
+                                className="btcpa-icon-settings__dropdown-toggle"
                                 __next40pxDefaultSize
                                 __nextHasNoMarginBottom
                             >
                                 {!!(iconName || customSvgCode) ? (
-                                    <span className="incc-icon-settings__indicator">
+                                    <span className="btcpa-icon-settings__indicator">
                                         <RenderIcon customSvgCode={customSvgCode} iconName={iconName} size={20} />
                                     </span>
                                 ) : (
-                                    <span className="incc-icon-settings__indicator disabled"></span>
+                                    <span className="btcpa-icon-settings__indicator disabled"></span>
                                 )}
 
-                                <span className="incc-icon-settings__dropdown-label">
-                                    {__(iconName || (customSvgCode ? 'Custom SVG' : 'Select Icon', 'insignia-capital-corp'))}
+                                <span className="btcpa-icon-settings__dropdown-label">
+                                    {__(iconName || (customSvgCode ? 'Custom SVG' : 'Select Icon', 'breakthrough-cpas'))}
                                 </span>
                             </Button>
                             <Button
-                                label={__('Browse library', 'insignia-capital-corp')}
+                                label={__('Browse library', 'breakthrough-cpas')}
                                 onClick={() => {
                                     onClose();
                                     openModal('library');
@@ -101,7 +101,7 @@ const NativeIconPicker = ({
                                 iconSize={18}
                                 size="small"
                                 icon={folderOpen}
-                                className="incc-icon-settings__dropdown-more"
+                                className="btcpa-icon-settings__dropdown-more"
                                 __next40pxDefaultSize
                                 __nextHasNoMarginBottom
                             />

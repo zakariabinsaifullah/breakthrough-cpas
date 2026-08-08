@@ -136,15 +136,15 @@ function ColorControlDropdown({ label, colorValue = {}, onChangeColor, hasHover 
                         tabs={[
                             {
                                 name: 'default',
-                                title: __('Default', 'insignia-capital-corp')
+                                title: __('Default', 'breakthrough-cpas')
                             },
                             {
                                 name: 'hover',
-                                title: __('Hover', 'insignia-capital-corp')
+                                title: __('Hover', 'breakthrough-cpas')
                             },
                             {
                                 name: 'active',
-                                title: __('Active', 'insignia-capital-corp')
+                                title: __('Active', 'breakthrough-cpas')
                             }
                         ]}
                     >

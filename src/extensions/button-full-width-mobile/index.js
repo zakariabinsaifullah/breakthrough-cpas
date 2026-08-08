@@ -18,7 +18,7 @@ const BLOCK_NAME = 'core/button';
 const ATTRIBUTE = 'fullWidthMobile';
 const CLASS_NAME = 'has-full-width-mobile';
 
-addFilter('blocks.registerBlockType', 'incc/button-full-width-mobile-add-attribute', (settings, name) => {
+addFilter('blocks.registerBlockType', 'btcpa/button-full-width-mobile-add-attribute', (settings, name) => {
     if (name !== BLOCK_NAME) {
         return settings;
     }
@@ -37,7 +37,7 @@ addFilter('blocks.registerBlockType', 'incc/button-full-width-mobile-add-attribu
 
 addFilter(
     'editor.BlockEdit',
-    'incc/button-full-width-mobile-add-inspector-controls',
+    'btcpa/button-full-width-mobile-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -52,7 +52,7 @@ addFilter(
                     <InspectorControls>
                         <PanelBody>
                             <NativeToggleControl
-                                label={__('Full Width on mobile', 'insignia-capital-corp')}
+                                label={__('Full Width on mobile', 'breakthrough-cpas')}
                                 checked={!!attributes[ATTRIBUTE]}
                                 onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                             />
@@ -66,7 +66,7 @@ addFilter(
 
 addFilter(
     'editor.BlockListBlock',
-    'incc/button-full-width-mobile-add-styles',
+    'btcpa/button-full-width-mobile-add-styles',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;

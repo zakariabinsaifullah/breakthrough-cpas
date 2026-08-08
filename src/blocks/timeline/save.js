@@ -14,7 +14,7 @@ const Save = props => {
 
     return (
         <div {...blockProps}>
-            <div className="incc-timeline">
+            <div className="btcpa-timeline">
                 <InnerBlocks.Content />
             </div>
         </div>

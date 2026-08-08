@@ -1,6 +1,6 @@
-.wp-block-incc-tabs {
+.wp-block-btcpa-tabs {
     .tab-title {
-        color: #061839;
+        color: #12244C;
         margin: 0;
         font-size: 14px;
         font-weight: 500;
@@ -27,19 +27,19 @@
         border-radius: 12px;
         cursor: pointer;
         transition: all 0.3s;
-        background: var(--incc-tabs-nav-bg, #e7edf7);
+        background: var(--btcpa-tabs-nav-bg, #e8e9ec);
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
 
         .nav-item-number {
-            background: var(--incc-tabs-num-bg, #fff);
-            color: var(--incc-tabs-num-color, #253959);
+            background: var(--btcpa-tabs-num-bg, #fff);
+            color: var(--btcpa-tabs-num-color, #192643);
         }
 
         &.active {
-            background: #253959;
+            background: #192643;
 
             .tab-title {
                 color: #fff;
@@ -81,8 +81,8 @@
         width: 100%;
         opacity: 0;
         transition:
-            opacity var(--incc-tabs-transition, 0.5s) ease,
-            transform var(--incc-tabs-transition, 0.5s) ease;
+            opacity var(--btcpa-tabs-transition, 0.5s) ease,
+            transform var(--btcpa-tabs-transition, 0.5s) ease;
         visibility: hidden;
         z-index: -1;
 
@@ -102,7 +102,7 @@
 
 // Mobile Device
 @media screen and (max-width: 768px) {
-    .wp-block-incc-tabs {
+    .wp-block-btcpa-tabs {
         .tabs-nav {
             flex-wrap: wrap;
             gap: 10px;
@@ -120,7 +120,7 @@
             width: auto;
             height: auto;
             font-size: 15px;
-            color: #253959;
+            color: #192643;
         }
 
         .nav-item.active .nav-item-number {

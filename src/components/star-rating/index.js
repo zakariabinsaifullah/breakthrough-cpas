@@ -18,7 +18,7 @@ const StarRating = ({ total = 5, rating }) => {
     }
 
     return (
-        <div className="incc-rating">
+        <div className="btcpa-rating">
             {filled > 0 && (
                 <>
                     {fillItems &&

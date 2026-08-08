@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sliders = document.querySelectorAll('.wp-block-incc-carousel');
+    const sliders = document.querySelectorAll('.wp-block-btcpa-carousel');
     sliders.forEach(function (slider) {
         const options = JSON.parse(slider.getAttribute('data-options'));
         const { loop, autoplay, columns, gaps } = options;

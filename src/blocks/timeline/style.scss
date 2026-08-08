@@ -1,5 +1,5 @@
-.wp-block-incc-timeline {
-    .incc-timeline {
+.wp-block-btcpa-timeline {
+    .btcpa-timeline {
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -25,7 +25,7 @@
     }
 
     @media (max-width: 767px) {
-        .incc-timeline::before {
+        .btcpa-timeline::before {
             left: 23px;
         }
     }

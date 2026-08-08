@@ -8,9 +8,9 @@ import classNames from 'classnames';
 import Inspector from './inspector';
 
 const TEMPLATE = [
-    ['incc/timeline-item', {}],
-    ['incc/timeline-item', {}],
-    ['incc/timeline-item', {}]
+    ['btcpa/timeline-item', {}],
+    ['btcpa/timeline-item', {}],
+    ['btcpa/timeline-item', {}]
 ];
 
 const Edit = props => {
@@ -28,9 +28,9 @@ const Edit = props => {
     });
 
     const innerBlockProps = useInnerBlocksProps(
-        { className: 'incc-timeline' },
+        { className: 'btcpa-timeline' },
         {
-            allowedBlocks: ['incc/timeline-item'],
+            allowedBlocks: ['btcpa/timeline-item'],
             template: TEMPLATE,
             templateLock: false,
             renderAppender: false
@@ -39,7 +39,7 @@ const Edit = props => {
 
     const addItem = () => {
         const childBlocks = wp.data.select('core/block-editor').getBlocks(clientId);
-        const newBlock = wp.blocks.createBlock('incc/timeline-item', {});
+        const newBlock = wp.blocks.createBlock('btcpa/timeline-item', {});
         wp.data.dispatch('core/block-editor').insertBlocks(newBlock, childBlocks.length, clientId);
     };
 
@@ -48,7 +48,7 @@ const Edit = props => {
             {(isSelected || hasSelectedInnerBlock) && <Inspector {...props} />}
             <BlockControls>
                 <ToolbarGroup>
-                    <ToolbarButton icon={plus} label={__('Add Timeline Item', 'insignia-capital-corp')} onClick={addItem} />
+                    <ToolbarButton icon={plus} label={__('Add Timeline Item', 'breakthrough-cpas')} onClick={addItem} />
                 </ToolbarGroup>
             </BlockControls>
             <div {...blockProps}>

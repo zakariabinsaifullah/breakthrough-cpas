@@ -1,30 +1,30 @@
-.wp-block-incc-carousel {
+.wp-block-btcpa-carousel {
     border: none !important;
     position: relative;
 
     // Swiper slide height control
     &.fixed {
-        .wp-block-incc-slide {
+        .wp-block-btcpa-slide {
             height: var(--mheight);
         }
 
         // tablet view
         @media (max-width: 1024px) and (min-width: 768px) {
-            .wp-block-incc-slide {
+            .wp-block-btcpa-slide {
                 height: var(--theight);
             }
         }
 
         // desktop
         @media (min-width: 1025px) {
-            .wp-block-incc-slide {
+            .wp-block-btcpa-slide {
                 height: var(--dheight);
             }
         }
     }
 
     // Slider container wrapper - flex to position arrows outside
-    .incc-slider-container {
+    .btcpa-slider-container {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -35,7 +35,7 @@
     &.nav-pos-top-right,
     &.nav-pos-bottom-left,
     &.nav-pos-bottom-right {
-        .incc-nav {
+        .btcpa-nav {
             top: auto;
             transform: none;
             left: auto !important;
@@ -73,10 +73,10 @@
         padding-right: 0 !important;
 
         &.nav-pos-top-left, &.nav-pos-top-right {
-            .incc-nav { top: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
+            .btcpa-nav { top: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
         }
         &.nav-pos-bottom-left, &.nav-pos-bottom-right {
-            .incc-nav { bottom: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
+            .btcpa-nav { bottom: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
         }
 
         &.nav-pos-top-left, &.nav-pos-bottom-left {
@@ -90,7 +90,7 @@
     }
 
     // Base Arrow Styles
-    .incc-nav {
+    .btcpa-nav {
         width: var(--nav-size, 36px);
         height: var(--nav-size, 36px);
         display: inline-flex;
@@ -120,7 +120,7 @@
             width: 1em;
             height: 1em;
             font-size: var(--nicon-size, 16px);
-            color: var(--nav-color, var(--wp--preset--color--incc-navy-900, #253959));
+            color: var(--nav-color, var(--wp--preset--color--btcpa-big-stone, #192643));
             fill: currentColor;
 
             path, circle, rect, polygon, polyline, ellipse, line {
@@ -166,7 +166,7 @@
         height: var(--npagination-height, var(--psize, 10px));
         min-width: var(--psize, 10px);
         border-radius: var(--pradius, 50%);
-        background: var(--pagination-color, var(--wp--preset--color--incc-navy-900, #253959));
+        background: var(--pagination-color, var(--wp--preset--color--btcpa-big-stone, #192643));
         opacity: 0.5;
         transition: all 0.3s ease;
         margin: 0 !important;

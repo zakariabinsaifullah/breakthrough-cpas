@@ -1,12 +1,12 @@
-.wp-block-incc-rating {
+.wp-block-btcpa-rating {
     text-align: var(--rating-align);
-    .incc-rating {
+    .btcpa-rating {
         display: inline-flex;
         align-items: center;
         gap: 2px;
 
         svg {
-            fill: var(--rating-color, var(--wp--preset--color--incc-yellow));
+            fill: var(--rating-color, var(--wp--preset--color--btcpa-dodger-blue));
             font-size: var(--rating-size, 16px);
             height: 1em;
             width: 1em;
@@ -37,7 +37,7 @@
             align-items: baseline;
             font-size: var(--value-size, 15px);
             line-height: 1;
-            color: var(--numberic-color, #253959);
+            color: var(--numberic-color, #192643);
 
             .rating-bar {
                 margin: 0 2px;

@@ -132,19 +132,19 @@ button.native-responsive-device-button span::before {
 }
 
 // SVG Icons Modal
-.incc-modal__overlay {
+.btcpa-modal__overlay {
     .components-modal__header-heading-container {
         min-width: fit-content;
     }
 
-    .incc-modal__tabs {
+    .btcpa-modal__tabs {
         display: flex;
         align-items: center;
         gap: 8px;
         margin-left: 20px;
     }
 
-    .incc-modal__tabs-button {
+    .btcpa-modal__tabs-button {
         border: 1px solid #949494;
         height: 36px !important;
         padding: 6px 20px;
@@ -158,13 +158,13 @@ button.native-responsive-device-button span::before {
         }
     }
 
-    .incc-modal__tabs-button.is-selected {
+    .btcpa-modal__tabs-button.is-selected {
         background: #000;
         color: #fff;
         border-color: #000;
     }
 
-    .incc-modal__container {
+    .btcpa-modal__container {
         display: flex;
         gap: 30px;
         margin-top: 30px;
@@ -175,22 +175,22 @@ button.native-responsive-device-button span::before {
         font-size: 18px;
     }
 
-    .incc-modal__sidebar {
+    .btcpa-modal__sidebar {
         min-width: 230px;
         width: 230px;
     }
 
-    .incc-modal__content {
+    .btcpa-modal__content {
         flex-grow: 1;
     }
 
-    .incc-modal__sidebar-buttons {
+    .btcpa-modal__sidebar-buttons {
         display: flex;
         flex-direction: column;
         gap: 8px;
     }
 
-    .incc-modal__sidebar-button.is-selected {
+    .btcpa-modal__sidebar-button.is-selected {
         color: #ffffff;
         background: #145cd1;
     }
@@ -207,14 +207,14 @@ button.native-responsive-device-button span::before {
         height: 40px !important;
     }
 
-    .incc-modal__icons {
+    .btcpa-modal__icons {
         margin-top: 15px;
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         gap: 15px;
     }
 
-    .incc-modal__icons-button {
+    .btcpa-modal__icons-button {
         gap: 8px;
         border: 1px solid #949494;
         padding: 20px;
@@ -225,13 +225,13 @@ button.native-responsive-device-button span::before {
         }
     }
 
-    .incc-modal__icons-button.is-selected {
+    .btcpa-modal__icons-button.is-selected {
         border-color: #145cd1;
         background: #145cd1;
         color: #fff;
     }
 
-    .incc-modal__icons-button:hover {
+    .btcpa-modal__icons-button:hover {
         border-color: #145cd1;
         background: #145cd1;
         color: #fff !important;

@@ -16,22 +16,22 @@ export const ContentIcons = ({ searchTerm, setSearchTerm, filteredIcons, current
                     <SearchControl
                         value={searchTerm}
                         onChange={setSearchTerm}
-                        label={__('Search icons', 'insignia-capital-corp')}
-                        placeholder={__('Search...', 'insignia-capital-corp')}
-                        className="incc-modal__search"
+                        label={__('Search icons', 'breakthrough-cpas')}
+                        placeholder={__('Search...', 'breakthrough-cpas')}
+                        className="btcpa-modal__search"
                         size="compact"
                     />
                 </FlexItem>
             </Flex>
 
             {filteredIcons.length === 0 ? (
-                <p>{__('No icons found!', 'insignia-capital-corp')}</p>
+                <p>{__('No icons found!', 'breakthrough-cpas')}</p>
             ) : (
-                <div className="incc-modal__icons">
+                <div className="btcpa-modal__icons">
                     {filteredIcons.map(iconData => (
                         <Button
                             key={iconData.name}
-                            className={`incc-modal__icons-button ${currentIconName === iconData.name ? 'is-selected' : ''}`}
+                            className={`btcpa-modal__icons-button ${currentIconName === iconData.name ? 'is-selected' : ''}`}
                             onClick={() => handleIconSelect(iconData)}
                         >
                             <Icon icon={iconData.icon} size={32} />

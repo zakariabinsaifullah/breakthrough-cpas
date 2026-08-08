@@ -13,7 +13,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
     }
 
     const blockProps = useBlockProps({
-        className: `incc-marquee-wrapper marquee-${orientation || 'horizontal'}`,
+        className: `btcpa-marquee-wrapper marquee-${orientation || 'horizontal'}`,
         style: blockStyle
     });
 
@@ -21,7 +21,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 
     const innerBlocksProps = useInnerBlocksProps(
         {
-            className: `incc-marquee-items`,
+            className: `btcpa-marquee-items`,
             style: {
                 gap: `${gap}px`
             }

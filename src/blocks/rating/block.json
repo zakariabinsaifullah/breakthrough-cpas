@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "incc/rating",
+    "name": "btcpa/rating",
     "version": "1.0.0",
     "title": "Rating",
-    "category": "incc",
+    "category": "btcpa",
     "icon": "star-filled",
     "description": "SVG-based star rating system with customizable values.",
     "example": {},
@@ -58,7 +58,7 @@
             "default": ""
         }
     },
-    "textdomain": "insignia-capital-corp",
+    "textdomain": "breakthrough-cpas",
     "editorScript": "file:./index.js",
     "style": "file:./style-index.css"
 }

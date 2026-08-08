@@ -1,10 +1,10 @@
 ( function () {
     'use strict';
 
-    const PANEL_ID   = 'incc-contact';
-    const OVERLAY_ID = 'incc-form-overlay';
+    const PANEL_ID   = 'btcpa-contact';
+    const OVERLAY_ID = 'btcpa-form-overlay';
     const OPEN_CLASS = 'is-open';
-    const LOCK_CLASS = 'incc-panel-open';
+    const LOCK_CLASS = 'btcpa-panel-open';
 
     let lastTrigger = null;
 
@@ -20,7 +20,7 @@
         document.body.classList.add( LOCK_CLASS );
         p.setAttribute( 'aria-hidden', 'false' );
 
-        const closeBtn = p.querySelector( '.incc-form-panel__close' );
+        const closeBtn = p.querySelector( '.btcpa-form-panel__close' );
         if ( closeBtn ) closeBtn.focus();
     }
 
@@ -37,7 +37,7 @@
         lastTrigger = null;
     }
 
-    // Trigger: <a href="#incc-contact"> or [data-open="incc-contact"]
+    // Trigger: <a href="#btcpa-contact"> or [data-open="btcpa-contact"]
     document.addEventListener( 'click', function ( e ) {
         const trigger = e.target.closest( 'a[href="#' + PANEL_ID + '"], [data-open="' + PANEL_ID + '"]' );
 
@@ -49,7 +49,7 @@
         }
 
         // Close button inside panel
-        if ( e.target.closest( '.incc-form-panel__close' ) ) {
+        if ( e.target.closest( '.btcpa-form-panel__close' ) ) {
             closePanel();
             return;
         }

@@ -1,9 +1,9 @@
-.wp-block-button.incc-icon-button {
+.wp-block-button.btcpa-icon-button {
     .wp-block-button__link {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: var(--incc-icon-gap, 8px);
+        gap: var(--btcpa-icon-gap, 8px);
 
         &.has-text-align-left {
             justify-content: flex-start !important;
@@ -22,9 +22,9 @@
             display: none;
             flex-shrink: 0;
             pointer-events: none;
-            width: var(--incc-icon-size, 1em);
-            height: var(--incc-icon-size, 1em);
-            mask-image: var(--incc-icon-url);
+            width: var(--btcpa-icon-size, 1em);
+            height: var(--btcpa-icon-size, 1em);
+            mask-image: var(--btcpa-icon-url);
             mask-position: center;
             mask-size: contain;
             mask-repeat: no-repeat;
@@ -32,7 +32,7 @@
         }
     }
 
-    &.incc-icon-before {
+    &.btcpa-icon-before {
         .wp-block-button__link {
             flex-direction: row-reverse;
         }

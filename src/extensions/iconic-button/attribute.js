@@ -13,7 +13,7 @@ import { allowedBlocks } from './allowed-blocks';
  * @return {Object} Modified settings
  */
 
-function inccIconicButtonAttribute( settings, name ) {
+function btcpaIconicButtonAttribute( settings, name ) {
     // Check if the block is in the allowed list
     if ( ! allowedBlocks.includes( name ) ) {
         return settings;
@@ -67,4 +67,4 @@ function inccIconicButtonAttribute( settings, name ) {
     };
 }
 
-addFilter( 'blocks.registerBlockType', 'incc/iconic-button-attribute', inccIconicButtonAttribute );
+addFilter( 'blocks.registerBlockType', 'btcpa/iconic-button-attribute', btcpaIconicButtonAttribute );

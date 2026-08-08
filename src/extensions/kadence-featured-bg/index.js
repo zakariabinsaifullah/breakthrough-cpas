@@ -22,7 +22,7 @@ const ATTRIBUTE = 'useFeaturedImageAsBg';
 /**
  * Add the useFeaturedImageAsBg attribute to kadence/rowlayout.
  */
-addFilter('blocks.registerBlockType', 'incc/kadence-featured-bg-add-attribute', (settings, name) => {
+addFilter('blocks.registerBlockType', 'btcpa/kadence-featured-bg-add-attribute', (settings, name) => {
     if (name !== BLOCK_NAME) {
         return settings;
     }
@@ -44,7 +44,7 @@ addFilter('blocks.registerBlockType', 'incc/kadence-featured-bg-add-attribute', 
  */
 addFilter(
     'editor.BlockEdit',
-    'incc/kadence-featured-bg-add-inspector-controls',
+    'btcpa/kadence-featured-bg-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -66,13 +66,13 @@ addFilter(
                     <BlockEdit {...props} />
                     <InspectorAdvancedControls>
                         <NativeToggleControl
-                            label={__('Use Featured Image as Background', 'insignia-capital-corp')}
+                            label={__('Use Featured Image as Background', 'breakthrough-cpas')}
                             checked={!!attributes[ATTRIBUTE]}
                             onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                         />
                         {!hasFeaturedImage && (
                             <p style={{ color: '#999', fontSize: '12px', marginTop: '4px' }}>
-                                {__('No featured image set for this post.', 'insignia-capital-corp')}
+                                {__('No featured image set for this post.', 'breakthrough-cpas')}
                             </p>
                         )}
                     </InspectorAdvancedControls>
@@ -87,7 +87,7 @@ addFilter(
  */
 addFilter(
     'editor.BlockListBlock',
-    'incc/kadence-featured-bg-add-styles',
+    'btcpa/kadence-featured-bg-add-styles',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;
@@ -113,7 +113,7 @@ addFilter(
                 ...props.wrapperProps,
                 style: {
                     ...props.wrapperProps?.style,
-                    '--incc-featured-bg-image': `url(${featuredImageUrl})`
+                    '--btcpa-featured-bg-image': `url(${featuredImageUrl})`
                 }
             };
 

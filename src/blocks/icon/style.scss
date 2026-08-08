@@ -1,4 +1,4 @@
-.wp-block-incc-icon {
+.wp-block-btcpa-icon {
     display: flex;
 
     &.justify-center {
@@ -22,7 +22,7 @@
     svg {
         width: 1em;
         height: 1em;
-        font-size: var(--msize, var(--tsize, var(--dsize, 32px)));
+        font-size: var(--msize, var(--tsize, var(--dsize, 24px)));
     }
 
     &.is-fill svg {
@@ -34,7 +34,7 @@
     }
 
     /* Icon + text wrapper */
-    .incc-icon-block-wrapper {
+    .btcpa-icon-block-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -52,14 +52,14 @@
     // desktop view
     @media (min-width: 1025px) {
         svg {
-            font-size: var(--dsize, 32px);
+            font-size: var(--dsize, 24px);
         }
     }
 
     // tablet view
     @media (min-width: 768px) and (max-width: 1024px) {
         svg {
-            font-size: var(--tsize, var(--dsize, 32px));
+            font-size: var(--tsize, var(--dsize, 24px));
         }
     }
 }

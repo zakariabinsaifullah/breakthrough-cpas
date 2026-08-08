@@ -90,7 +90,7 @@ export default function save({ attributes, className }) {
     if (customSvgCode) {
         return (
             <Tag {...blockProps} {...(href && { href, target: linkTarget, rel: linkRel })}>
-                <div className="incc-icon-block-wrapper">
+                <div className="btcpa-icon-block-wrapper">
                     <div className={iconClasses} style={iconStyle} dangerouslySetInnerHTML={{ __html: customSvgCode }} />
                     {showTitle && (
                         <div className="icon-content">
@@ -110,7 +110,7 @@ export default function save({ attributes, className }) {
 
     return (
         <Tag {...blockProps} {...(href && { href, target: linkTarget, rel: linkRel })}>
-            <div className="incc-icon-block-wrapper">
+            <div className="btcpa-icon-block-wrapper">
                 <div className={iconClasses} style={iconStyle}>
                     <Icon icon={selectedIcon.icon} size={iconSize} />
                 </div>

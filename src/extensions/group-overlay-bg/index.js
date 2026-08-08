@@ -17,7 +17,7 @@ const BLOCK_NAME = 'core/group';
 /**
  * Add overlay background attributes to core/group.
  */
-addFilter( 'blocks.registerBlockType', 'incc/group-overlay-bg-add-attributes', ( settings, name ) => {
+addFilter( 'blocks.registerBlockType', 'btcpa/group-overlay-bg-add-attributes', ( settings, name ) => {
     if ( name !== BLOCK_NAME ) {
         return settings;
     }
@@ -44,7 +44,7 @@ addFilter( 'blocks.registerBlockType', 'incc/group-overlay-bg-add-attributes', (
  */
 addFilter(
     'editor.BlockEdit',
-    'incc/group-overlay-bg-add-inspector-controls',
+    'btcpa/group-overlay-bg-add-inspector-controls',
     createHigherOrderComponent( BlockEdit => {
         return props => {
             const { name, attributes, setAttributes, clientId } = props;
@@ -66,11 +66,11 @@ addFilter(
 );
 
 /**
- * Apply `incc-overlay-bg` class and `--incc-overlay-bg` CSS variable in the editor preview.
+ * Apply `btcpa-overlay-bg` class and `--btcpa-overlay-bg` CSS variable in the editor preview.
  */
 addFilter(
     'editor.BlockListBlock',
-    'incc/group-overlay-bg-add-styles',
+    'btcpa/group-overlay-bg-add-styles',
     createHigherOrderComponent( BlockListBlock => {
         return props => {
             const { name, attributes } = props;
@@ -97,11 +97,11 @@ addFilter(
                 ...props.wrapperProps,
                 style: {
                     ...props.wrapperProps?.style,
-                    '--incc-overlay-bg': bgValue
+                    '--btcpa-overlay-bg': bgValue
                 }
             };
 
-            const classes = [ props.className, 'incc-overlay-bg' ].filter( Boolean ).join( ' ' );
+            const classes = [ props.className, 'btcpa-overlay-bg' ].filter( Boolean ).join( ' ' );
 
             return <BlockListBlock { ...props } className={ classes } wrapperProps={ wrapperProps } />;
         };

@@ -20,7 +20,7 @@ const ATTRIBUTE = 'globalHoverEffect';
 /**
  * Add the globalHoverEffect attribute to kadence/column.
  */
-addFilter('blocks.registerBlockType', 'incc/kadence-global-hover-add-attribute', (settings, name) => {
+addFilter('blocks.registerBlockType', 'btcpa/kadence-global-hover-add-attribute', (settings, name) => {
     if (name !== BLOCK_NAME) {
         return settings;
     }
@@ -42,7 +42,7 @@ addFilter('blocks.registerBlockType', 'incc/kadence-global-hover-add-attribute',
  */
 addFilter(
     'editor.BlockEdit',
-    'incc/kadence-global-hover-add-inspector-controls',
+    'btcpa/kadence-global-hover-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -56,7 +56,7 @@ addFilter(
                     <BlockEdit {...props} />
                     <InspectorAdvancedControls>
                         <NativeToggleControl
-                            label={__('Global Hover Effect', 'insignia-capital-corp')}
+                            label={__('Global Hover Effect', 'breakthrough-cpas')}
                             checked={!!attributes[ATTRIBUTE]}
                             onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                         />
@@ -72,7 +72,7 @@ addFilter(
  */
 addFilter(
     'editor.BlockListBlock',
-    'incc/kadence-global-hover-add-class',
+    'btcpa/kadence-global-hover-add-class',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;

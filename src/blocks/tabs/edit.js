@@ -31,9 +31,9 @@ const Edit = props => {
      * CSS Custom Properties
      */
     const cssCustomProperties = {
-        ...(navItemBg && { '--incc-tabs-nav-bg': navItemBg }),
-        ...(numberBg && { '--incc-tabs-num-bg': numberBg }),
-        ...(numberColor && { '--incc-tabs-num-color': numberColor })
+        ...(navItemBg && { '--btcpa-tabs-nav-bg': navItemBg }),
+        ...(numberBg && { '--btcpa-tabs-num-bg': numberBg }),
+        ...(numberColor && { '--btcpa-tabs-num-color': numberColor })
     };
 
     useEffect(() => {
@@ -57,7 +57,7 @@ const Edit = props => {
     useEffect(() => {
         if (!Array.isArray(childBlocks)) return;
 
-        const childIds = childBlocks.filter(block => block.name === 'incc/tab').map(block => block.attributes.tabId);
+        const childIds = childBlocks.filter(block => block.name === 'btcpa/tab').map(block => block.attributes.tabId);
 
         // Wait until the initial template has rendered its children.
         if (childIds.length === 0) return;
@@ -68,7 +68,7 @@ const Edit = props => {
 
         const newTitles = childIds.map((id, index) => {
             const existing = tabTitles.find(title => title.id === id);
-            return existing || { id, title: `${__('Tab', 'insignia-capital-corp')} ${index + 1}` };
+            return existing || { id, title: `${__('Tab', 'breakthrough-cpas')} ${index + 1}` };
         });
 
         setAttributes({ tabTitles: newTitles, tabChildCount: childIds.length });
@@ -96,13 +96,13 @@ const Edit = props => {
             templateLock: false,
             renderAppender: false,
             template: times(tabChildCount, n => [
-                'incc/tab',
+                'btcpa/tab',
                 {
                     tabId: `${n + 1}`,
                     parentTabId: uniqueId
                 }
             ]),
-            allowedBlocks: ['incc/tab']
+            allowedBlocks: ['btcpa/tab']
         }
     );
 
@@ -123,12 +123,12 @@ const Edit = props => {
     };
     const appendBtn = () => {
         const currentChildren = select('core/block-editor').getBlocks(clientId);
-        const tabs = currentChildren.filter(block => block.name === 'incc/tab');
+        const tabs = currentChildren.filter(block => block.name === 'btcpa/tab');
 
         // Use the highest existing tabId + 1 so ids stay unique after removals.
         const nextId = String(tabs.reduce((max, block) => Math.max(max, parseInt(block.attributes.tabId, 10) || 0), 0) + 1);
 
-        const newBlock = createBlock('incc/tab', {
+        const newBlock = createBlock('btcpa/tab', {
             tabId: nextId,
             parentTabId: uniqueId
         });
@@ -142,7 +142,7 @@ const Edit = props => {
         <Fragment>
             <BlockControls>
                 <ToolbarGroup>
-                    <ToolbarButton icon="insert" title={__('Add Button', 'insignia-capital-corp')} onClick={appendBtn} />
+                    <ToolbarButton icon="insert" title={__('Add Button', 'breakthrough-cpas')} onClick={appendBtn} />
                 </ToolbarGroup>
             </BlockControls>
             {isSelected && <Inspector {...props} handleTabClick={handleTabClick} uniqueId={uniqueId} />}
@@ -172,7 +172,7 @@ const Edit = props => {
                                                     newTabs[index].title = value;
                                                     setAttributes({ tabTitles: newTabs });
                                                 }}
-                                                placeholder={__('Title', 'insignia-capital-corp')}
+                                                placeholder={__('Title', 'breakthrough-cpas')}
                                             />
                                         </div>
                                     </div>
@@ -182,7 +182,7 @@ const Edit = props => {
                                         <svg width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="m17.957 27.796-1.647-1.634 4.325-4.325H10.5v-2.4h10.135l-4.325-4.32 1.647-1.64 7.16 7.16z"
-                                                fill="#6793c9"
+                                                fill="#77a2ff"
                                             />
                                         </svg>
                                     </span>

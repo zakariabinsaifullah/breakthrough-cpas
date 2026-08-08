@@ -8,7 +8,7 @@ import { allowedBlocks } from './allowed-blocks';
 /**
  * Button Icon HOC - Updated to preserve existing classes
  */
-const inccIconicButtonEditor = createHigherOrderComponent( BlockListBlock => {
+const btcpaIconicButtonEditor = createHigherOrderComponent( BlockListBlock => {
     return props => {
         if ( ! allowedBlocks.includes( props.name ) ) {
             return <BlockListBlock { ...props } />;
@@ -37,9 +37,9 @@ const inccIconicButtonEditor = createHigherOrderComponent( BlockListBlock => {
         }
 
         // unique class
-        const uniqueClass = `incc-icon-button-${ clientId.slice( 0, 8 ) }`;
+        const uniqueClass = `btcpa-icon-button-${ clientId.slice( 0, 8 ) }`;
 
-        const btnIconClass = classnames( 'incc-icon-button', uniqueClass, iconicButtonIconPosition );
+        const btnIconClass = classnames( 'btcpa-icon-button', uniqueClass, iconicButtonIconPosition );
 
         // Combine existing className with animation class
         const combinedClassName = existingClassName ? `${ existingClassName } ${ btnIconClass }` : btnIconClass;
@@ -49,19 +49,19 @@ const inccIconicButtonEditor = createHigherOrderComponent( BlockListBlock => {
         if ( iconSVG ) {
             if ( iconicButtonIconGap ) {
                 maskStyle += `
-                .incc-icon-button.${ uniqueClass } .wp-block-button__link{
-                    --incc-icon-gap: ${ iconicButtonIconGap }!important;
+                .btcpa-icon-button.${ uniqueClass } .wp-block-button__link{
+                    --btcpa-icon-gap: ${ iconicButtonIconGap }!important;
                 }`;
             }
             if ( iconicButtonIconSize ) {
                 maskStyle += `
-                .incc-icon-button.${ uniqueClass } .wp-block-button__link::after{
-                    --incc-icon-size: ${ iconicButtonIconSize }!important;
+                .btcpa-icon-button.${ uniqueClass } .wp-block-button__link::after{
+                    --btcpa-icon-size: ${ iconicButtonIconSize }!important;
                 }`;
             }
             maskStyle += `
-            .incc-icon-button.${ uniqueClass } .wp-block-button__link::after{
-                --incc-icon-url: url("${ svgToBase64DataUrl( iconSVG ) }");
+            .btcpa-icon-button.${ uniqueClass } .wp-block-button__link::after{
+                --btcpa-icon-url: url("${ svgToBase64DataUrl( iconSVG ) }");
                 display: inline-block;
             }`;
         }
@@ -69,7 +69,7 @@ const inccIconicButtonEditor = createHigherOrderComponent( BlockListBlock => {
         // Icon background + padding are intentionally not previewed here: the editor's
         // ::after is a CSS mask (its background-color paints the icon glyph itself), so
         // a background chip would need a second unmasked layer that never looks right
-        // alongside the mask. Frontend rendering (style.scss + incc_render_iconic_button)
+        // alongside the mask. Frontend rendering (style.scss + btcpa_render_iconic_button)
         // uses a real <span> wrapping the SVG, where background/padding work correctly.
 
         return (
@@ -79,6 +79,6 @@ const inccIconicButtonEditor = createHigherOrderComponent( BlockListBlock => {
             </>
         );
     };
-}, 'inccIconicButtonEditor' );
+}, 'btcpaIconicButtonEditor' );
 
-addFilter( 'editor.BlockListBlock', 'incc/iconic-button-editor', inccIconicButtonEditor );
+addFilter( 'editor.BlockListBlock', 'btcpa/iconic-button-editor', btcpaIconicButtonEditor );

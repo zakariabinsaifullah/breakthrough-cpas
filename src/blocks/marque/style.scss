@@ -1,7 +1,7 @@
 /**
  * Front-end styles for the marquee block
  */
-.wp-block-incc-marque {
+.wp-block-btcpa-marque {
     overflow: hidden;
     position: relative;
 
@@ -16,8 +16,8 @@
     .marquee-container {
         will-change: transform;
         display: flex;
-        animation-duration: var(--incc-marquee-duration, 30s);
-        animation-name: var(--incc-marquee-animation, incc-marquee-scroll-left);
+        animation-duration: var(--btcpa-marquee-duration, 30s);
+        animation-name: var(--btcpa-marquee-animation, btcpa-marquee-scroll-left);
         animation-timing-function: linear;
         animation-iteration-count: infinite;
 
@@ -91,7 +91,7 @@
 }
 
 // Horizontal animations
-@keyframes incc-marquee-scroll-left {
+@keyframes btcpa-marquee-scroll-left {
     0% {
         transform: translateX(0);
     }
@@ -100,7 +100,7 @@
     }
 }
 
-@keyframes incc-marquee-scroll-right {
+@keyframes btcpa-marquee-scroll-right {
     0% {
         transform: translateX(-50%);
     }
@@ -110,7 +110,7 @@
 }
 
 // Vertical animations
-@keyframes incc-marquee-scroll-up {
+@keyframes btcpa-marquee-scroll-up {
     0% {
         transform: translateY(0);
     }
@@ -119,7 +119,7 @@
     }
 }
 
-@keyframes incc-marquee-scroll-down {
+@keyframes btcpa-marquee-scroll-down {
     0% {
         transform: translateY(-50%);
     }
@@ -130,7 +130,7 @@
 
 /* Mobile devices (up to 779px) */
 @media (max-width: 779px) {
-    .wp-block-incc-marque {
+    .wp-block-btcpa-marque {
         &:has(.marquee-vertical) {
             height: 400px;
         }

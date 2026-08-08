@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "incc/timeline",
+    "name": "btcpa/timeline",
     "version": "1.0.0",
     "title": "Timeline",
-    "category": "incc",
+    "category": "btcpa",
     "icon": "star-filled",
     "description": "Vertical timeline with customizable items.",
     "example": {},
@@ -29,7 +29,7 @@
             "type": "number"
         }
     },
-    "textdomain": "insignia-capital-corp",
+    "textdomain": "breakthrough-cpas",
     "editorScript": "file:./index.js",
     "style": "file:./style-index.css"
 }

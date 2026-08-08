@@ -114,14 +114,14 @@ const Edit = props => {
     // Inner blocks configuration
     const innerBlocksProps = useInnerBlocksProps(
         {
-            className: classNames('incc-editor-slides', {
+            className: classNames('btcpa-editor-slides', {
                 [`columns-${columns[resMode]}`]: columns[resMode],
                 [`gap-${gaps[resMode]}`]: gaps[resMode]
             })
         },
         {
-            allowedBlocks: ['incc/slide'],
-            template: [['incc/slide'], ['incc/slide']],
+            allowedBlocks: ['btcpa/slide'],
+            template: [['btcpa/slide'], ['btcpa/slide']],
             templateLock: false
         }
     );
@@ -142,10 +142,10 @@ const Edit = props => {
                 <ToolbarGroup>
                     <ToolbarButton
                         icon="insert"
-                        label={__('Add Slide', 'insignia-capital-corp')}
+                        label={__('Add Slide', 'breakthrough-cpas')}
                         onClick={() => {
                             const innerBlocks = wp.data.select('core/block-editor').getBlocks(clientId);
-                            const newBlock = wp.blocks.createBlock('incc/slide');
+                            const newBlock = wp.blocks.createBlock('btcpa/slide');
                             wp.data.dispatch('core/block-editor').insertBlock(newBlock, innerBlocks.length, clientId);
                         }}
                     />
@@ -158,7 +158,7 @@ const Edit = props => {
                 <div {...innerBlocksProps} />
                 {showArrows && (
                     <>
-                        <div className="swiper-custom-prev incc-nav">
+                        <div className="swiper-custom-prev btcpa-nav">
                             <RenderIcon
                                 customSvgCode={prevCustomSvg}
                                 iconName={prevIconName}
@@ -166,7 +166,7 @@ const Edit = props => {
                                 size={navIconSize}
                             />
                         </div>
-                        <div className="swiper-custom-next incc-nav">
+                        <div className="swiper-custom-next btcpa-nav">
                             <RenderIcon
                                 customSvgCode={nextCustomSvg}
                                 iconName={nextIconName}

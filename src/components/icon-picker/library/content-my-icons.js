@@ -56,15 +56,15 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
             setError('');
             await deleteIcon(icon.id);
         } catch (deleteError) {
-            setError(deleteError?.message || __('The icon could not be deleted.', 'insignia-capital-corp'));
+            setError(deleteError?.message || __('The icon could not be deleted.', 'breakthrough-cpas'));
         }
     };
 
     if (!hasLoaded) {
         return (
-            <div className="incc-modal__my-icons-placeholder">
+            <div className="btcpa-modal__my-icons-placeholder">
                 <Spinner />
-                <p>{__('Loading your icons…', 'insignia-capital-corp')}</p>
+                <p>{__('Loading your icons…', 'breakthrough-cpas')}</p>
             </div>
         );
     }
@@ -83,9 +83,9 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
                         <SearchControl
                             value={searchTerm}
                             onChange={setSearchTerm}
-                            label={__('Search your icons', 'insignia-capital-corp')}
-                            placeholder={__('Search...', 'insignia-capital-corp')}
-                            className="incc-modal__search"
+                            label={__('Search your icons', 'breakthrough-cpas')}
+                            placeholder={__('Search...', 'breakthrough-cpas')}
+                            className="btcpa-modal__search"
                             size="compact"
                         />
                     </FlexItem>
@@ -93,48 +93,48 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
             )}
 
             {0 === myIcons.length && (
-                <div className="incc-modal__my-icons-placeholder">
-                    <p>{__('You have not saved any icons yet.', 'insignia-capital-corp')}</p>
-                    <p className="incc-modal__my-icons-placeholder-help">
+                <div className="btcpa-modal__my-icons-placeholder">
+                    <p>{__('You have not saved any icons yet.', 'breakthrough-cpas')}</p>
+                    <p className="btcpa-modal__my-icons-placeholder-help">
                         {__(
                             'Paste an SVG in the Custom SVG tab, give it a name, and choose “Add to My Icons” to make it available across the whole site.',
-                            'insignia-capital-corp'
+                            'breakthrough-cpas'
                         )}
                     </p>
                     <Button variant="primary" onClick={onGoToCustomTab} __next40pxDefaultSize>
-                        {__('Add an icon', 'insignia-capital-corp')}
+                        {__('Add an icon', 'breakthrough-cpas')}
                     </Button>
                 </div>
             )}
 
-            {myIcons.length > 0 && 0 === filteredIcons.length && <p>{__('No icons found!', 'insignia-capital-corp')}</p>}
+            {myIcons.length > 0 && 0 === filteredIcons.length && <p>{__('No icons found!', 'breakthrough-cpas')}</p>}
 
             {filteredIcons.length > 0 && (
-                <div className="incc-modal__icons incc-modal__my-icons">
+                <div className="btcpa-modal__icons btcpa-modal__my-icons">
                     {filteredIcons.map(icon => {
                         const isDeleting = deletingIds.includes(icon.id);
 
                         return (
-                            <div className="incc-modal__my-icons-item" key={icon.id}>
+                            <div className="btcpa-modal__my-icons-item" key={icon.id}>
                                 <Button
-                                    className={`incc-modal__icons-button ${currentCustomSvg === icon.svg ? 'is-selected' : ''}`}
+                                    className={`btcpa-modal__icons-button ${currentCustomSvg === icon.svg ? 'is-selected' : ''}`}
                                     onClick={() => onIconSelect(icon)}
                                     disabled={isDeleting}
                                     label={sprintf(
                                         /* translators: %s: icon name. */
-                                        __('Use %s', 'insignia-capital-corp'),
+                                        __('Use %s', 'breakthrough-cpas'),
                                         icon.label
                                     )}
                                     showTooltip
                                 >
                                     <span
-                                        className="incc-modal__my-icons-preview"
+                                        className="btcpa-modal__my-icons-preview"
                                         dangerouslySetInnerHTML={{ __html: icon.svg }} // eslint-disable-line react/no-danger
                                     />
                                     <span className="icon-title">{icon.label}</span>
                                 </Button>
                                 <Button
-                                    className="incc-modal__my-icons-remove"
+                                    className="btcpa-modal__my-icons-remove"
                                     icon={trash}
                                     iconSize={18}
                                     size="small"
@@ -143,7 +143,7 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
                                     disabled={isDeleting}
                                     label={sprintf(
                                         /* translators: %s: icon name. */
-                                        __('Delete %s', 'insignia-capital-corp'),
+                                        __('Delete %s', 'breakthrough-cpas'),
                                         icon.label
                                     )}
                                     onClick={() => setPendingDelete(icon)}
@@ -158,12 +158,12 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
                 isOpen={!!pendingDelete}
                 onConfirm={confirmDelete}
                 onCancel={() => setPendingDelete(null)}
-                confirmButtonText={__('Delete', 'insignia-capital-corp')}
+                confirmButtonText={__('Delete', 'breakthrough-cpas')}
             >
                 {pendingDelete &&
                     sprintf(
                         /* translators: %s: icon name. */
-                        __('Delete “%s” from your icon library? Blocks already using it keep their icon.', 'insignia-capital-corp'),
+                        __('Delete “%s” from your icon library? Blocks already using it keep their icon.', 'breakthrough-cpas'),
                         pendingDelete.label
                     )}
             </ConfirmDialog>

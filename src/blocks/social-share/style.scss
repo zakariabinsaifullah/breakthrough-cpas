@@ -1,4 +1,4 @@
-.wp-block-incc-social-share {
+.wp-block-btcpa-social-share {
 	--icon-size: 24px;
 	--gap: 12px;
 	--icon-color: currentColor;
@@ -6,26 +6,26 @@
 	--icon-radius: 0px;
 	--icon-padding: 0px;
 
-	&.justify-center .incc-social-share__icons {
+	&.justify-center .btcpa-social-share__icons {
 		justify-content: center;
 	}
 
-	&.justify-right .incc-social-share__icons {
+	&.justify-right .btcpa-social-share__icons {
 		justify-content: flex-end;
 	}
 
-	&.justify-left .incc-social-share__icons {
+	&.justify-left .btcpa-social-share__icons {
 		justify-content: flex-start;
 	}
 
-	.incc-social-share__icons {
+	.btcpa-social-share__icons {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--gap);
 	}
 
-	.incc-social-share__item {
+	.btcpa-social-share__item {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;

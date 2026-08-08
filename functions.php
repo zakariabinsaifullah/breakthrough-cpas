@@ -1,12 +1,12 @@
 <?php
 /**
- * Insignia Capital Corp — Theme Functions
+ * Breakthrough CPAs — Theme Functions
  *
  * This file is intentionally kept as a loader only.
  * All feature logic lives in the files under inc/.
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
- * @package Insignia_Capital_Corp
+ * @package Breakthrough_CPAs
  * @since   1.0
  */
 
@@ -35,4 +35,4 @@ require_once get_theme_file_path( 'inc/form.php' );       // Slide-in form panel
 
 // ── Shortcodes ─────────────────────────────────────────────────────────────────
 require_once get_theme_file_path( 'inc/shortcode.php' );        // Posts grid shortcode
-require_once get_theme_file_path( 'inc/shortcodes-page.php' );  // Appearance → Insignia Capital reference page
+require_once get_theme_file_path( 'inc/shortcodes-page.php' );  // Appearance → Breakthrough CPAs reference page

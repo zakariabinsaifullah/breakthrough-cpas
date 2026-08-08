@@ -14,13 +14,13 @@ const Inspector = props => {
     return (
         <>
             <InspectorControls group="settings">
-                <PanelBody title={__('Tabs', 'insignia-capital-corp')} initialOpen={true}>
+                <PanelBody title={__('Tabs', 'breakthrough-cpas')} initialOpen={true}>
                     {tabTitles &&
                         tabTitles.length > 0 &&
                         tabTitles.map((item, index) => (
                             <NativeTextControl
                                 key={index}
-                                label={__('Title', 'insignia-capital-corp')}
+                                label={__('Title', 'breakthrough-cpas')}
                                 value={item?.title}
                                 onChange={v => {
                                     const newItems = [...tabTitles];
@@ -35,7 +35,7 @@ const Inspector = props => {
             </InspectorControls>
             <InspectorControls group="styles">
                 <ToolsPanel
-                    label={__('Colors', 'insignia-capital-corp')}
+                    label={__('Colors', 'breakthrough-cpas')}
                     resetAll={() =>
                         setAttributes({
                             navItemBg: undefined,
@@ -46,51 +46,51 @@ const Inspector = props => {
                 >
                     <ToolsPanelItem
                         hasValue={() => !!navItemBg}
-                        label={__('Nav Item Background', 'insignia-capital-corp')}
+                        label={__('Nav Item Background', 'breakthrough-cpas')}
                         onDeselect={() => setAttributes({ navItemBg: undefined })}
                         onSelect={() => {}}
                     >
                         <PanelColorControl
-                            label={__('Nav Item Background', 'insignia-capital-corp')}
+                            label={__('Nav Item Background', 'breakthrough-cpas')}
                             colorSettings={[
                                 {
                                     value: navItemBg,
                                     onChange: color => setAttributes({ navItemBg: color }),
-                                    label: __('Background', 'insignia-capital-corp')
+                                    label: __('Background', 'breakthrough-cpas')
                                 }
                             ]}
                         />
                     </ToolsPanelItem>
                     <ToolsPanelItem
                         hasValue={() => !!numberBg}
-                        label={__('Number Background', 'insignia-capital-corp')}
+                        label={__('Number Background', 'breakthrough-cpas')}
                         onDeselect={() => setAttributes({ numberBg: undefined })}
                         onSelect={() => {}}
                     >
                         <PanelColorControl
-                            label={__('Number Background', 'insignia-capital-corp')}
+                            label={__('Number Background', 'breakthrough-cpas')}
                             colorSettings={[
                                 {
                                     value: numberBg,
                                     onChange: color => setAttributes({ numberBg: color }),
-                                    label: __('Background', 'insignia-capital-corp')
+                                    label: __('Background', 'breakthrough-cpas')
                                 }
                             ]}
                         />
                     </ToolsPanelItem>
                     <ToolsPanelItem
                         hasValue={() => !!numberColor}
-                        label={__('Number Text', 'insignia-capital-corp')}
+                        label={__('Number Text', 'breakthrough-cpas')}
                         onDeselect={() => setAttributes({ numberColor: undefined })}
                         onSelect={() => {}}
                     >
                         <PanelColorControl
-                            label={__('Number Text', 'insignia-capital-corp')}
+                            label={__('Number Text', 'breakthrough-cpas')}
                             colorSettings={[
                                 {
                                     value: numberColor,
                                     onChange: color => setAttributes({ numberColor: color }),
-                                    label: __('Text', 'insignia-capital-corp')
+                                    label: __('Text', 'breakthrough-cpas')
                                 }
                             ]}
                         />

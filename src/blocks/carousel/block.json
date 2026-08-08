@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "incc/carousel",
+    "name": "btcpa/carousel",
     "version": "1.0.0",
     "title": "Carousel",
-    "category": "incc",
+    "category": "btcpa",
     "icon": "slides",
     "description": "Create flexible sliders and carousels using any inner blocks",
     "example": {},
@@ -174,9 +174,9 @@
             }
         }
     },
-    "textdomain": "insignia-capital-corp",
+    "textdomain": "breakthrough-cpas",
     "editorScript": ["file:./index.js"],
     "editorStyle": ["file:./index.css"],
-    "style": ["file:./style-index.css", "incc-swiper-style"],
-    "viewScript": ["file:./view.js", "incc-swiper-script"]
+    "style": ["file:./style-index.css", "btcpa-swiper-style"],
+    "viewScript": ["file:./view.js", "btcpa-swiper-script"]
 }

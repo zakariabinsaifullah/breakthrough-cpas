@@ -62,14 +62,14 @@ export const ContentCustom = ({
                 status: 'success',
                 message: sprintf(
                     /* translators: %s: icon name. */
-                    __('“%s” was added to My Icons.', 'insignia-capital-corp'),
+                    __('“%s” was added to My Icons.', 'breakthrough-cpas'),
                     saved.label
                 )
             });
         } catch (error) {
             setNotice({
                 status: 'error',
-                message: error?.message || __('The icon could not be saved.', 'insignia-capital-corp')
+                message: error?.message || __('The icon could not be saved.', 'breakthrough-cpas')
             });
         }
     };
@@ -88,7 +88,7 @@ export const ContentCustom = ({
 
             return (
                 <div
-                    className="incc-custom-svg-container"
+                    className="btcpa-custom-svg-container"
                     dangerouslySetInnerHTML={{ __html: finalSvgCode }}
                     style={{ width: `${size}px`, height: `${size}px` }}
                 />
@@ -104,30 +104,30 @@ export const ContentCustom = ({
     };
 
     return (
-        <div className="incc-modal__custom-svg">
-            <div className="incc-modal__custom-svg-editor">
+        <div className="btcpa-modal__custom-svg">
+            <div className="btcpa-modal__custom-svg-editor">
                 <TextareaControl
-                    label={__('Custom SVG code', 'insignia-capital-corp')}
+                    label={__('Custom SVG code', 'breakthrough-cpas')}
                     value={tempCustomSvgCode}
                     onChange={setTempCustomSvgCode}
-                    help={__('Paste your custom SVG code here. It will override the selected icon.', 'insignia-capital-corp')}
+                    help={__('Paste your custom SVG code here. It will override the selected icon.', 'breakthrough-cpas')}
                     rows={15}
                 />
             </div>
 
-            <div className="incc-modal__custom-svg-preview">
-                <h3>{__('Preview', 'insignia-capital-corp')}</h3>
-                <div className="incc-icon-preview-container">
+            <div className="btcpa-modal__custom-svg-preview">
+                <h3>{__('Preview', 'breakthrough-cpas')}</h3>
+                <div className="btcpa-icon-preview-container">
                     {tempCustomSvgCode ? (
                         renderCurrentIcon(previewIconSize, tempCustomSvgCode, previewStrokeWidth)
                     ) : (
-                        <div className="incc-empty-preview">{__('Enter SVG code to see preview', 'insignia-capital-corp')}</div>
+                        <div className="btcpa-empty-preview">{__('Enter SVG code to see preview', 'breakthrough-cpas')}</div>
                     )}
                 </div>
 
-                <div className="incc-modal__custom-svg-controls">
+                <div className="btcpa-modal__custom-svg-controls">
                     <RangeControl
-                        label={__('Icon Size', 'insignia-capital-corp')}
+                        label={__('Icon Size', 'breakthrough-cpas')}
                         value={previewIconSize}
                         onChange={setPreviewIconSize}
                         min={16}
@@ -137,7 +137,7 @@ export const ContentCustom = ({
 
                     {tempIconType === 'line' && (
                         <RangeControl
-                            label={__('Stroke Width', 'insignia-capital-corp')}
+                            label={__('Stroke Width', 'breakthrough-cpas')}
                             value={previewStrokeWidth}
                             onChange={setPreviewStrokeWidth}
                             min={0.5}
@@ -148,13 +148,13 @@ export const ContentCustom = ({
                     )}
                 </div>
 
-                <div className="incc-modal__custom-svg-save">
+                <div className="btcpa-modal__custom-svg-save">
                     <TextControl
-                        label={__('Icon name', 'insignia-capital-corp')}
+                        label={__('Icon name', 'breakthrough-cpas')}
                         value={iconLabel}
                         onChange={setIconLabel}
-                        placeholder={__('e.g. Arrow Badge', 'insignia-capital-corp')}
-                        help={__('Name this icon to save it to My Icons and reuse it anywhere on the site.', 'insignia-capital-corp')}
+                        placeholder={__('e.g. Arrow Badge', 'breakthrough-cpas')}
+                        help={__('Name this icon to save it to My Icons and reuse it anywhere on the site.', 'breakthrough-cpas')}
                         __next40pxDefaultSize
                         __nextHasNoMarginBottom
                     />
@@ -166,7 +166,7 @@ export const ContentCustom = ({
                     )}
                 </div>
 
-                <div className="incc-modal__custom-svg-buttons">
+                <div className="btcpa-modal__custom-svg-buttons">
                     <Flex>
                         <Button
                             __next40pxDefaultSize
@@ -175,7 +175,7 @@ export const ContentCustom = ({
                             isDestructive
                             style={{ flex: '1', justifyContent: 'center' }}
                         >
-                            {__('Clear', 'insignia-capital-corp')}
+                            {__('Clear', 'breakthrough-cpas')}
                         </Button>
                         <Button
                             __next40pxDefaultSize
@@ -185,7 +185,7 @@ export const ContentCustom = ({
                             disabled={!tempCustomSvgCode || !iconLabel.trim() || isSaving}
                             style={{ flex: '1', justifyContent: 'center' }}
                         >
-                            {__('Add to My Icons', 'insignia-capital-corp')}
+                            {__('Add to My Icons', 'breakthrough-cpas')}
                         </Button>
                     </Flex>
                     <Button
@@ -195,7 +195,7 @@ export const ContentCustom = ({
                         disabled={!tempCustomSvgCode}
                         style={{ width: '100%', justifyContent: 'center', marginTop: '8px' }}
                     >
-                        {__('Insert Custom Icon', 'insignia-capital-corp')}
+                        {__('Insert Custom Icon', 'breakthrough-cpas')}
                     </Button>
                 </div>
             </div>

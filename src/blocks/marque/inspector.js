@@ -11,44 +11,44 @@ const Inspector = props => {
     return (
         <>
             <InspectorControls>
-                <PanelBody title={__('Marquee Settings', 'insignia-capital-corp')}>
+                <PanelBody title={__('Marquee Settings', 'breakthrough-cpas')}>
                     <NativeToggleGroupControl
-                        label={__('Orientation', 'insignia-capital-corp')}
+                        label={__('Orientation', 'breakthrough-cpas')}
                         value={orientation}
                         onChange={value => setAttributes({ orientation: value })}
                         options={[
-                            { value: 'horizontal', label: __('Horizontal', 'insignia-capital-corp') },
-                            { value: 'vertical', label: __('Vertical', 'insignia-capital-corp') }
+                            { value: 'horizontal', label: __('Horizontal', 'breakthrough-cpas') },
+                            { value: 'vertical', label: __('Vertical', 'breakthrough-cpas') }
                         ]}
                     />
 
                     <NativeToggleGroupControl
-                        label={__('Direction', 'insignia-capital-corp')}
+                        label={__('Direction', 'breakthrough-cpas')}
                         value={direction}
                         onChange={value => setAttributes({ direction: value })}
                         options={[
                             {
                                 value: 'left',
-                                label: orientation === 'vertical' ? __('Up', 'insignia-capital-corp') : __('Left', 'insignia-capital-corp')
+                                label: orientation === 'vertical' ? __('Up', 'breakthrough-cpas') : __('Left', 'breakthrough-cpas')
                             },
                             {
                                 value: 'right',
-                                label: orientation === 'vertical' ? __('Down', 'insignia-capital-corp') : __('Right', 'insignia-capital-corp')
+                                label: orientation === 'vertical' ? __('Down', 'breakthrough-cpas') : __('Right', 'breakthrough-cpas')
                             }
                         ]}
                     />
 
                     <NativeRangeControl
-                        label={__('Speed', 'insignia-capital-corp')}
+                        label={__('Speed', 'breakthrough-cpas')}
                         value={speed}
                         onChange={value => setAttributes({ speed: value })}
                         min={1}
                         max={200}
                         step={1}
-                        help={__('Higher values = Slower scrolling', 'insignia-capital-corp')}
+                        help={__('Higher values = Slower scrolling', 'breakthrough-cpas')}
                     />
                     <NativeRangeControl
-                        label={__('Gap between items (px)', 'insignia-capital-corp')}
+                        label={__('Gap between items (px)', 'breakthrough-cpas')}
                         value={gap}
                         onChange={value => setAttributes({ gap: value })}
                         min={1}
@@ -57,16 +57,16 @@ const Inspector = props => {
                     />
                     {orientation === 'vertical' && (
                         <NativeRangeControl
-                            label={__('Vertical Height', 'insignia-capital-corp')}
+                            label={__('Vertical Height', 'breakthrough-cpas')}
                             value={height || 500}
                             onChange={value => setAttributes({ height: value })}
                             min={200}
                             max={1000}
-                            help={__('Set the visible height for vertical scrolling', 'insignia-capital-corp')}
+                            help={__('Set the visible height for vertical scrolling', 'breakthrough-cpas')}
                         />
                     )}
                     <NativeToggleControl
-                        label={__('Pause on Hover', 'insignia-capital-corp')}
+                        label={__('Pause on Hover', 'breakthrough-cpas')}
                         checked={pauseOnHover}
                         onChange={value => setAttributes({ pauseOnHover: value })}
                     />

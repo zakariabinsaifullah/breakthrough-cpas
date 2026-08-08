@@ -1,4 +1,4 @@
-.incc-modal__icons {
+.btcpa-modal__icons {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
@@ -46,17 +46,17 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-.incc-modal__my-icons {
+.btcpa-modal__my-icons {
     &-item {
         position: relative;
         display: flex;
 
-        .incc-modal__icons-button {
+        .btcpa-modal__icons-button {
             flex: 1;
         }
 
-        &:hover .incc-modal__my-icons-remove,
-        .incc-modal__my-icons-remove:focus {
+        &:hover .btcpa-modal__my-icons-remove,
+        .btcpa-modal__my-icons-remove:focus {
             opacity: 1;
         }
     }
@@ -107,7 +107,7 @@
     }
 }
 
-.incc-modal__custom-svg {
+.btcpa-modal__custom-svg {
     display: flex;
     padding: 24px 0;
     gap: 24px;
@@ -136,7 +136,7 @@
         width: 360px;
         display: flex;
         flex-direction: column;
-        .incc-icon-preview-container {
+        .btcpa-icon-preview-container {
             flex: 1;
         }
 

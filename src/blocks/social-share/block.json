@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "incc/social-share",
+    "name": "btcpa/social-share",
     "version": "1.0.0",
     "title": "Social Share",
-    "category": "incc",
+    "category": "btcpa",
     "icon": "share",
     "description": "Add social sharing buttons for the current post.",
     "example": {},
@@ -65,7 +65,7 @@
             "type": "string"
         }
     },
-    "textdomain": "insignia-capital-corp",
+    "textdomain": "breakthrough-cpas",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "style": "file:./style-index.css",

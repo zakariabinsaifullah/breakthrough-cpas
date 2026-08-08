@@ -19,7 +19,7 @@ const GlobalHoverControls = ( { clientId, globalHoverBgColor, setGlobalHoverBgCo
         {
             colorValue: globalHoverBgColor?.color,
             onColorChange: color => setGlobalHoverBgColor( color ),
-            label: __( 'Hover Background', 'insignia-capital-corp' ),
+            label: __( 'Hover Background', 'breakthrough-cpas' ),
             isShownByDefault: true,
             enableAlpha: true,
             clearable: true,
@@ -31,7 +31,7 @@ const GlobalHoverControls = ( { clientId, globalHoverBgColor, setGlobalHoverBgCo
         {
             colorValue: globalHoverColor?.color,
             onColorChange: setGlobalHoverColor,
-            label: __( 'Hover Color', 'insignia-capital-corp' ),
+            label: __( 'Hover Color', 'breakthrough-cpas' ),
             isShownByDefault: true,
             enableAlpha: true,
             clearable: true,

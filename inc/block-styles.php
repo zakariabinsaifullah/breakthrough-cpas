@@ -4,19 +4,19 @@
  *
  * Registers custom style variations for core (and third-party) blocks.
  *
- * @package Insignia_Capital_Corp
+ * @package Breakthrough_CPAs
  */
 
-if ( ! function_exists( 'incc_block_styles' ) ) :
+if ( ! function_exists( 'btcpa_block_styles' ) ) :
 	/**
 	 * Registers all custom block style variations for the theme.
 	 */
-	function incc_block_styles() {
+	function btcpa_block_styles() {
 		register_block_style(
 			'core/post-excerpt',
 			array(
 				'name'  => 'outline-link',
-				'label' => __( 'Outline Link', 'insignia-capital-corp' ),
+				'label' => __( 'Outline Link', 'breakthrough-cpas' ),
 			)
 		);
 
@@ -24,7 +24,7 @@ if ( ! function_exists( 'incc_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'wrap-mobile',
-				'label' => __( 'Wrap Mobile', 'insignia-capital-corp' ),
+				'label' => __( 'Wrap Mobile', 'breakthrough-cpas' ),
 			)
 		);
 
@@ -33,7 +33,7 @@ if ( ! function_exists( 'incc_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'alternative',
-				'label' => __( 'Alternative', 'insignia-capital-corp' ),
+				'label' => __( 'Alternative', 'breakthrough-cpas' ),
 			)
 		);
 
@@ -41,9 +41,9 @@ if ( ! function_exists( 'incc_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'link',
-				'label' => __( 'Link', 'insignia-capital-corp' ),
+				'label' => __( 'Link', 'breakthrough-cpas' ),
 			)
 		);
 	}
 endif;
-add_action( 'init', 'incc_block_styles' );
+add_action( 'init', 'btcpa_block_styles' );

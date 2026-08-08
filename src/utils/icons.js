@@ -265,59 +265,59 @@ import {
 const categories = [
     {
         slug: 'all',
-        name: __('All Icons', 'insignia-capital-corp')
+        name: __('All Icons', 'breakthrough-cpas')
     },
     {
         slug: 'arrows',
-        name: __('Arrows', 'insignia-capital-corp')
+        name: __('Arrows', 'breakthrough-cpas')
     },
     {
         slug: 'editor',
-        name: __('Editor', 'insignia-capital-corp')
+        name: __('Editor', 'breakthrough-cpas')
     },
     {
         slug: 'actions',
-        name: __('Actions', 'insignia-capital-corp')
+        name: __('Actions', 'breakthrough-cpas')
     },
     {
         slug: 'devices',
-        name: __('Devices', 'insignia-capital-corp')
+        name: __('Devices', 'breakthrough-cpas')
     },
     {
         slug: 'interface',
-        name: __('Interface', 'insignia-capital-corp')
+        name: __('Interface', 'breakthrough-cpas')
     },
     {
         slug: 'media',
-        name: __('Media', 'insignia-capital-corp')
+        name: __('Media', 'breakthrough-cpas')
     },
     {
         slug: 'format',
-        name: __('Formatting', 'insignia-capital-corp')
+        name: __('Formatting', 'breakthrough-cpas')
     },
     {
         slug: 'layout',
-        name: __('Layout', 'insignia-capital-corp')
+        name: __('Layout', 'breakthrough-cpas')
     },
     {
         slug: 'tables',
-        name: __('Tables', 'insignia-capital-corp')
+        name: __('Tables', 'breakthrough-cpas')
     },
     {
         slug: 'posts',
-        name: __('Posts & Pages', 'insignia-capital-corp')
+        name: __('Posts & Pages', 'breakthrough-cpas')
     },
     {
         slug: 'comments',
-        name: __('Comments', 'insignia-capital-corp')
+        name: __('Comments', 'breakthrough-cpas')
     },
     {
         slug: 'ecommerce',
-        name: __('E-Commerce', 'insignia-capital-corp')
+        name: __('E-Commerce', 'breakthrough-cpas')
     },
     {
         slug: 'misc',
-        name: __('Miscellaneous', 'insignia-capital-corp')
+        name: __('Miscellaneous', 'breakthrough-cpas')
     }
 ];
 
@@ -328,209 +328,209 @@ const icons = [
     // Original icons
     {
         name: 'wordpress',
-        title: __('WordPress', 'insignia-capital-corp'),
+        title: __('WordPress', 'breakthrough-cpas'),
         icon: wordpress,
         categories: ['misc'],
         isDefault: true
     },
     {
         name: 'paragraph',
-        title: __('Paragraph', 'insignia-capital-corp'),
+        title: __('Paragraph', 'breakthrough-cpas'),
         icon: paragraph,
         categories: ['editor']
     },
     {
         name: 'share',
-        title: __('Share', 'insignia-capital-corp'),
+        title: __('Share', 'breakthrough-cpas'),
         icon: share,
         categories: ['actions']
     },
     {
         name: 'star-filled',
-        title: __('Star Filled', 'insignia-capital-corp'),
+        title: __('Star Filled', 'breakthrough-cpas'),
         icon: starFilled,
         categories: ['interface'],
         isDefault: true
     },
     {
         name: 'star-empty',
-        title: __('Star Empty', 'insignia-capital-corp'),
+        title: __('Star Empty', 'breakthrough-cpas'),
         icon: starEmpty,
         categories: ['interface']
     },
     {
         name: 'check',
-        title: __('Check', 'insignia-capital-corp'),
+        title: __('Check', 'breakthrough-cpas'),
         icon: check,
         categories: ['interface'],
         isDefault: true
     },
     {
         name: 'menu',
-        title: __('Menu', 'insignia-capital-corp'),
+        title: __('Menu', 'breakthrough-cpas'),
         icon: menu,
         categories: ['interface']
     },
     {
         name: 'help',
-        title: __('Help', 'insignia-capital-corp'),
+        title: __('Help', 'breakthrough-cpas'),
         icon: help,
         categories: ['interface']
     },
     {
         name: 'globe',
-        title: __('Globe', 'insignia-capital-corp'),
+        title: __('Globe', 'breakthrough-cpas'),
         icon: globe,
         categories: ['misc']
     },
     {
         name: 'gallery',
-        title: __('Gallery', 'insignia-capital-corp'),
+        title: __('Gallery', 'breakthrough-cpas'),
         icon: gallery,
         categories: ['editor', 'media']
     },
     // {
     //     name: 'edit',
-    //     title: __('Edit', 'insignia-capital-corp'),
+    //     title: __('Edit', 'breakthrough-cpas'),
     //     icon: edit,
     //     categories: ['actions']
     // },
     {
         name: 'cloud',
-        title: __('Cloud', 'insignia-capital-corp'),
+        title: __('Cloud', 'breakthrough-cpas'),
         icon: cloud,
         categories: ['misc']
     },
     {
         name: 'archive',
-        title: __('Archive', 'insignia-capital-corp'),
+        title: __('Archive', 'breakthrough-cpas'),
         icon: archive,
         categories: ['misc']
     },
     {
         name: 'settings',
-        title: __('Settings', 'insignia-capital-corp'),
+        title: __('Settings', 'breakthrough-cpas'),
         icon: settings,
         categories: ['interface']
     },
     {
         name: 'home',
-        title: __('Home', 'insignia-capital-corp'),
+        title: __('Home', 'breakthrough-cpas'),
         icon: home,
         categories: ['misc']
     },
     // {
     //     name: 'warning',
-    //     title: __('Warning', 'insignia-capital-corp'),
+    //     title: __('Warning', 'breakthrough-cpas'),
     //     icon: warning,
     //     categories: ['interface']
     // },
     {
         name: 'info',
-        title: __('Info', 'insignia-capital-corp'),
+        title: __('Info', 'breakthrough-cpas'),
         icon: info,
         categories: ['interface']
     },
     {
         name: 'search',
-        title: __('Search', 'insignia-capital-corp'),
+        title: __('Search', 'breakthrough-cpas'),
         icon: search,
         categories: ['actions']
     },
     {
         name: 'calendar',
-        title: __('Calendar', 'insignia-capital-corp'),
+        title: __('Calendar', 'breakthrough-cpas'),
         icon: calendar,
         categories: ['misc']
     },
     {
         name: 'desktop',
-        title: __('Desktop', 'insignia-capital-corp'),
+        title: __('Desktop', 'breakthrough-cpas'),
         icon: desktop,
         categories: ['devices']
     },
     {
         name: 'mobile',
-        title: __('Mobile', 'insignia-capital-corp'),
+        title: __('Mobile', 'breakthrough-cpas'),
         icon: mobile,
         categories: ['devices']
     },
     {
         name: 'tablet',
-        title: __('Tablet', 'insignia-capital-corp'),
+        title: __('Tablet', 'breakthrough-cpas'),
         icon: tablet,
         categories: ['devices']
     },
     {
         name: 'download',
-        title: __('Download', 'insignia-capital-corp'),
+        title: __('Download', 'breakthrough-cpas'),
         icon: download,
         categories: ['actions'],
         isDefault: true
     },
     {
         name: 'pencil',
-        title: __('Pencil', 'insignia-capital-corp'),
+        title: __('Pencil', 'breakthrough-cpas'),
         icon: pencil,
         categories: ['actions']
     },
     {
         name: 'external',
-        title: __('External', 'insignia-capital-corp'),
+        title: __('External', 'breakthrough-cpas'),
         icon: external,
         categories: ['interface']
     },
     {
         name: 'trash',
-        title: __('Trash', 'insignia-capital-corp'),
+        title: __('Trash', 'breakthrough-cpas'),
         icon: trash,
         categories: ['actions']
     },
     {
         name: 'upload',
-        title: __('Upload', 'insignia-capital-corp'),
+        title: __('Upload', 'breakthrough-cpas'),
         icon: upload,
         categories: ['actions']
     },
     {
         name: 'plus',
-        title: __('Plus', 'insignia-capital-corp'),
+        title: __('Plus', 'breakthrough-cpas'),
         icon: plus,
         categories: ['interface']
     },
     {
         name: 'close',
-        title: __('Close', 'insignia-capital-corp'),
+        title: __('Close', 'breakthrough-cpas'),
         icon: close,
         categories: ['interface']
     },
     {
         name: 'update',
-        title: __('Update', 'insignia-capital-corp'),
+        title: __('Update', 'breakthrough-cpas'),
         icon: update,
         categories: ['actions']
     },
     {
         name: 'arrow-up',
-        title: __('Arrow Up', 'insignia-capital-corp'),
+        title: __('Arrow Up', 'breakthrough-cpas'),
         icon: arrowUp,
         categories: ['arrows']
     },
     {
         name: 'arrow-down',
-        title: __('Arrow Down', 'insignia-capital-corp'),
+        title: __('Arrow Down', 'breakthrough-cpas'),
         icon: arrowDown,
         categories: ['arrows']
     },
     {
         name: 'arrow-left',
-        title: __('Arrow Left', 'insignia-capital-corp'),
+        title: __('Arrow Left', 'breakthrough-cpas'),
         icon: arrowLeft,
         categories: ['arrows']
     },
     {
         name: 'arrow-right',
-        title: __('Arrow Right', 'insignia-capital-corp'),
+        title: __('Arrow Right', 'breakthrough-cpas'),
         icon: arrowRight,
         categories: ['arrows'],
         isDefault: true
@@ -539,50 +539,50 @@ const icons = [
     // Additional icons - Arrows
     {
         name: 'chevron-down',
-        title: __('Chevron Down', 'insignia-capital-corp'),
+        title: __('Chevron Down', 'breakthrough-cpas'),
         icon: chevronDown,
         categories: ['arrows']
     },
     {
         name: 'chevron-up',
-        title: __('Chevron Up', 'insignia-capital-corp'),
+        title: __('Chevron Up', 'breakthrough-cpas'),
         icon: chevronUp,
         categories: ['arrows']
     },
     {
         name: 'chevron-left',
-        title: __('Chevron Left', 'insignia-capital-corp'),
+        title: __('Chevron Left', 'breakthrough-cpas'),
         icon: chevronLeft,
         categories: ['arrows']
     },
     {
         name: 'chevron-right',
-        title: __('Chevron Right', 'insignia-capital-corp'),
+        title: __('Chevron Right', 'breakthrough-cpas'),
         icon: chevronRight,
         categories: ['arrows'],
         isDefault: true
     },
     {
         name: 'chevron-right-small',
-        title: __('Chevron Right Small', 'insignia-capital-corp'),
+        title: __('Chevron Right Small', 'breakthrough-cpas'),
         icon: chevronRightSmall,
         categories: ['arrows']
     },
     {
         name: 'chevron-up-down',
-        title: __('Chevron Up Down', 'insignia-capital-corp'),
+        title: __('Chevron Up Down', 'breakthrough-cpas'),
         icon: chevronUpDown,
         categories: ['arrows']
     },
     {
         name: 'previous',
-        title: __('Previous', 'insignia-capital-corp'),
+        title: __('Previous', 'breakthrough-cpas'),
         icon: previous,
         categories: ['arrows']
     },
     {
         name: 'next',
-        title: __('Next', 'insignia-capital-corp'),
+        title: __('Next', 'breakthrough-cpas'),
         icon: next,
         categories: ['arrows']
     },
@@ -590,109 +590,109 @@ const icons = [
     // Editor
     {
         name: 'heading',
-        title: __('Heading', 'insignia-capital-corp'),
+        title: __('Heading', 'breakthrough-cpas'),
         icon: heading,
         categories: ['editor']
     },
     {
         name: 'quote',
-        title: __('Quote', 'insignia-capital-corp'),
+        title: __('Quote', 'breakthrough-cpas'),
         icon: quote,
         categories: ['editor']
     },
     {
         name: 'list',
-        title: __('List', 'insignia-capital-corp'),
+        title: __('List', 'breakthrough-cpas'),
         icon: list,
         categories: ['editor']
     },
     {
         name: 'list-item',
-        title: __('List Item', 'insignia-capital-corp'),
+        title: __('List Item', 'breakthrough-cpas'),
         icon: listItem,
         categories: ['editor']
     },
     {
         name: 'code',
-        title: __('Code', 'insignia-capital-corp'),
+        title: __('Code', 'breakthrough-cpas'),
         icon: code,
         categories: ['editor']
     },
     {
         name: 'image',
-        title: __('Image', 'insignia-capital-corp'),
+        title: __('Image', 'breakthrough-cpas'),
         icon: image,
         categories: ['editor', 'media']
     },
     {
         name: 'video',
-        title: __('Video', 'insignia-capital-corp'),
+        title: __('Video', 'breakthrough-cpas'),
         icon: video,
         categories: ['editor', 'media']
     },
     {
         name: 'audio',
-        title: __('Audio', 'insignia-capital-corp'),
+        title: __('Audio', 'breakthrough-cpas'),
         icon: audio,
         categories: ['editor', 'media']
     },
     {
         name: 'media',
-        title: __('Media', 'insignia-capital-corp'),
+        title: __('Media', 'breakthrough-cpas'),
         icon: media,
         categories: ['editor', 'media']
     },
     {
         name: 'cover',
-        title: __('Cover', 'insignia-capital-corp'),
+        title: __('Cover', 'breakthrough-cpas'),
         icon: cover,
         categories: ['editor']
     },
     {
         name: 'verse',
-        title: __('Verse', 'insignia-capital-corp'),
+        title: __('Verse', 'breakthrough-cpas'),
         icon: verse,
         categories: ['editor']
     },
     {
         name: 'preformatted',
-        title: __('Preformatted', 'insignia-capital-corp'),
+        title: __('Preformatted', 'breakthrough-cpas'),
         icon: preformatted,
         categories: ['editor']
     },
     {
         name: 'shortcode',
-        title: __('Shortcode', 'insignia-capital-corp'),
+        title: __('Shortcode', 'breakthrough-cpas'),
         icon: shortcode,
         categories: ['editor']
     },
     {
         name: 'html',
-        title: __('HTML', 'insignia-capital-corp'),
+        title: __('HTML', 'breakthrough-cpas'),
         icon: html,
         categories: ['editor']
     },
     {
         name: 'pullquote',
-        title: __('Pullquote', 'insignia-capital-corp'),
+        title: __('Pullquote', 'breakthrough-cpas'),
         icon: pullquote,
         categories: ['editor']
     },
     {
         name: 'button',
-        title: __('Button', 'insignia-capital-corp'),
+        title: __('Button', 'breakthrough-cpas'),
         icon: button,
         categories: ['editor']
     },
     {
         name: 'buttons',
-        title: __('Buttons', 'insignia-capital-corp'),
+        title: __('Buttons', 'breakthrough-cpas'),
         icon: buttons,
         categories: ['editor']
     },
     {
         name: 'media-and-text',
-        title: __('Media & Text', 'insignia-capital-corp'),
+        title: __('Media & Text', 'breakthrough-cpas'),
         icon: mediaAndText,
         categories: ['editor', 'layout']
     },
@@ -700,121 +700,121 @@ const icons = [
     // Format
     {
         name: 'format-bold',
-        title: __('Format Bold', 'insignia-capital-corp'),
+        title: __('Format Bold', 'breakthrough-cpas'),
         icon: formatBold,
         categories: ['format']
     },
     {
         name: 'format-italic',
-        title: __('Format Italic', 'insignia-capital-corp'),
+        title: __('Format Italic', 'breakthrough-cpas'),
         icon: formatItalic,
         categories: ['format']
     },
     {
         name: 'format-strikethrough',
-        title: __('Format Strikethrough', 'insignia-capital-corp'),
+        title: __('Format Strikethrough', 'breakthrough-cpas'),
         icon: formatStrikethrough,
         categories: ['format']
     },
     {
         name: 'format-underline',
-        title: __('Format Underline', 'insignia-capital-corp'),
+        title: __('Format Underline', 'breakthrough-cpas'),
         icon: formatUnderline,
         categories: ['format']
     },
     {
         name: 'format-capitalize',
-        title: __('Format Capitalize', 'insignia-capital-corp'),
+        title: __('Format Capitalize', 'breakthrough-cpas'),
         icon: formatCapitalize,
         categories: ['format']
     },
     {
         name: 'format-uppercase',
-        title: __('Format Uppercase', 'insignia-capital-corp'),
+        title: __('Format Uppercase', 'breakthrough-cpas'),
         icon: formatUppercase,
         categories: ['format']
     },
     {
         name: 'format-lowercase',
-        title: __('Format Lowercase', 'insignia-capital-corp'),
+        title: __('Format Lowercase', 'breakthrough-cpas'),
         icon: formatLowercase,
         categories: ['format']
     },
     {
         name: 'format-ltr',
-        title: __('Format LTR', 'insignia-capital-corp'),
+        title: __('Format LTR', 'breakthrough-cpas'),
         icon: formatLTR,
         categories: ['format']
     },
     // {
     //     name: 'format-rtl',
-    //     title: __('Format RTL', 'insignia-capital-corp'),
+    //     title: __('Format RTL', 'breakthrough-cpas'),
     //     icon: formatRTL,
     //     categories: ['format']
     // },
     {
         name: 'format-indent',
-        title: __('Format Indent', 'insignia-capital-corp'),
+        title: __('Format Indent', 'breakthrough-cpas'),
         icon: formatIndent,
         categories: ['format']
     },
     {
         name: 'format-indent-rtl',
-        title: __('Format Indent RTL', 'insignia-capital-corp'),
+        title: __('Format Indent RTL', 'breakthrough-cpas'),
         icon: formatIndentRTL,
         categories: ['format']
     },
     {
         name: 'format-outdent',
-        title: __('Format Outdent', 'insignia-capital-corp'),
+        title: __('Format Outdent', 'breakthrough-cpas'),
         icon: formatOutdent,
         categories: ['format']
     },
     {
         name: 'format-outdent-rtl',
-        title: __('Format Outdent RTL', 'insignia-capital-corp'),
+        title: __('Format Outdent RTL', 'breakthrough-cpas'),
         icon: formatOutdentRTL,
         categories: ['format']
     },
     {
         name: 'format-list-bullets',
-        title: __('Format List Bullets', 'insignia-capital-corp'),
+        title: __('Format List Bullets', 'breakthrough-cpas'),
         icon: formatListBullets,
         categories: ['format']
     },
     {
         name: 'format-list-bullets-rtl',
-        title: __('Format List Bullets RTL', 'insignia-capital-corp'),
+        title: __('Format List Bullets RTL', 'breakthrough-cpas'),
         icon: formatListBulletsRTL,
         categories: ['format']
     },
     {
         name: 'format-list-numbered',
-        title: __('Format List Numbered', 'insignia-capital-corp'),
+        title: __('Format List Numbered', 'breakthrough-cpas'),
         icon: formatListNumbered,
         categories: ['format']
     },
     {
         name: 'format-list-numbered-rtl',
-        title: __('Format List Numbered RTL', 'insignia-capital-corp'),
+        title: __('Format List Numbered RTL', 'breakthrough-cpas'),
         icon: formatListNumberedRTL,
         categories: ['format']
     },
     {
         name: 'text-color',
-        title: __('Text Color', 'insignia-capital-corp'),
+        title: __('Text Color', 'breakthrough-cpas'),
         icon: textColor,
         categories: ['format']
     },
     {
         name: 'subscript',
-        title: __('Subscript', 'insignia-capital-corp'),
+        title: __('Subscript', 'breakthrough-cpas'),
         icon: subscript,
         categories: ['format']
     },
     {
         name: 'superscript',
-        title: __('Superscript', 'insignia-capital-corp'),
+        title: __('Superscript', 'breakthrough-cpas'),
         icon: superscript,
         categories: ['format']
     },
@@ -822,7 +822,7 @@ const icons = [
     // Layout
     {
         name: 'layouts',
-        title: __('Layouts', 'insignia-capital-corp'),
+        title: __('Layouts', 'breakthrough-cpas'),
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -843,145 +843,145 @@ const icons = [
     },
     {
         name: 'align-left',
-        title: __('Align Left', 'insignia-capital-corp'),
+        title: __('Align Left', 'breakthrough-cpas'),
         icon: alignLeft,
         categories: ['layout']
     },
     {
         name: 'align-center',
-        title: __('Align Center', 'insignia-capital-corp'),
+        title: __('Align Center', 'breakthrough-cpas'),
         icon: alignCenter,
         categories: ['layout']
     },
     {
         name: 'align-right',
-        title: __('Align Right', 'insignia-capital-corp'),
+        title: __('Align Right', 'breakthrough-cpas'),
         icon: alignRight,
         categories: ['layout']
     },
     {
         name: 'align-justify',
-        title: __('Align Justify', 'insignia-capital-corp'),
+        title: __('Align Justify', 'breakthrough-cpas'),
         icon: alignJustify,
         categories: ['layout']
     },
     {
         name: 'align-none',
-        title: __('Align None', 'insignia-capital-corp'),
+        title: __('Align None', 'breakthrough-cpas'),
         icon: alignNone,
         categories: ['layout']
     },
     {
         name: 'columns',
-        title: __('Columns', 'insignia-capital-corp'),
+        title: __('Columns', 'breakthrough-cpas'),
         icon: columns,
         categories: ['layout']
     },
     {
         name: 'column',
-        title: __('Column', 'insignia-capital-corp'),
+        title: __('Column', 'breakthrough-cpas'),
         icon: column,
         categories: ['layout']
     },
     {
         name: 'row',
-        title: __('Row', 'insignia-capital-corp'),
+        title: __('Row', 'breakthrough-cpas'),
         icon: row,
         categories: ['layout']
     },
     {
         name: 'group',
-        title: __('Group', 'insignia-capital-corp'),
+        title: __('Group', 'breakthrough-cpas'),
         icon: group,
         categories: ['layout']
     },
     {
         name: 'ungroup',
-        title: __('Ungroup', 'insignia-capital-corp'),
+        title: __('Ungroup', 'breakthrough-cpas'),
         icon: ungroup,
         categories: ['layout']
     },
     {
         name: 'stretch-wide',
-        title: __('Stretch Wide', 'insignia-capital-corp'),
+        title: __('Stretch Wide', 'breakthrough-cpas'),
         icon: stretchWide,
         categories: ['layout']
     },
     {
         name: 'stretch-full-width',
-        title: __('Stretch Full Width', 'insignia-capital-corp'),
+        title: __('Stretch Full Width', 'breakthrough-cpas'),
         icon: stretchFullWidth,
         categories: ['layout']
     },
     {
         name: 'position-left',
-        title: __('Position Left', 'insignia-capital-corp'),
+        title: __('Position Left', 'breakthrough-cpas'),
         icon: positionLeft,
         categories: ['layout']
     },
     {
         name: 'position-center',
-        title: __('Position Center', 'insignia-capital-corp'),
+        title: __('Position Center', 'breakthrough-cpas'),
         icon: positionCenter,
         categories: ['layout']
     },
     {
         name: 'position-right',
-        title: __('Position Right', 'insignia-capital-corp'),
+        title: __('Position Right', 'breakthrough-cpas'),
         icon: positionRight,
         categories: ['layout']
     },
     {
         name: 'justify-left',
-        title: __('Justify Left', 'insignia-capital-corp'),
+        title: __('Justify Left', 'breakthrough-cpas'),
         icon: justifyLeft,
         categories: ['layout']
     },
     {
         name: 'justify-center',
-        title: __('Justify Center', 'insignia-capital-corp'),
+        title: __('Justify Center', 'breakthrough-cpas'),
         icon: justifyCenter,
         categories: ['layout']
     },
     {
         name: 'justify-right',
-        title: __('Justify Right', 'insignia-capital-corp'),
+        title: __('Justify Right', 'breakthrough-cpas'),
         icon: justifyRight,
         categories: ['layout']
     },
     {
         name: 'justify-space-between',
-        title: __('Justify Space Between', 'insignia-capital-corp'),
+        title: __('Justify Space Between', 'breakthrough-cpas'),
         icon: justifySpaceBetween,
         categories: ['layout']
     },
     {
         name: 'justify-stretch',
-        title: __('Justify Stretch', 'insignia-capital-corp'),
+        title: __('Justify Stretch', 'breakthrough-cpas'),
         icon: justifyStretch,
         categories: ['layout']
     },
     {
         name: 'header',
-        title: __('Header', 'insignia-capital-corp'),
+        title: __('Header', 'breakthrough-cpas'),
         icon: header,
         categories: ['layout']
     },
     {
         name: 'footer',
-        title: __('Footer', 'insignia-capital-corp'),
+        title: __('Footer', 'breakthrough-cpas'),
         icon: footer,
         categories: ['layout']
     },
     {
         name: 'sidebar',
-        title: __('Sidebar', 'insignia-capital-corp'),
+        title: __('Sidebar', 'breakthrough-cpas'),
         icon: sidebar,
         categories: ['layout']
     },
     {
         name: 'layout',
-        title: __('Layout', 'insignia-capital-corp'),
+        title: __('Layout', 'breakthrough-cpas'),
         icon: layout,
         categories: ['layout']
     },
@@ -989,49 +989,49 @@ const icons = [
     // Tables
     {
         name: 'table',
-        title: __('Table', 'insignia-capital-corp'),
+        title: __('Table', 'breakthrough-cpas'),
         icon: table,
         categories: ['tables']
     },
     {
         name: 'block-table',
-        title: __('Block Table', 'insignia-capital-corp'),
+        title: __('Block Table', 'breakthrough-cpas'),
         icon: blockTable,
         categories: ['tables']
     },
     {
         name: 'table-column-after',
-        title: __('Table Column After', 'insignia-capital-corp'),
+        title: __('Table Column After', 'breakthrough-cpas'),
         icon: tableColumnAfter,
         categories: ['tables']
     },
     {
         name: 'table-column-before',
-        title: __('Table Column Before', 'insignia-capital-corp'),
+        title: __('Table Column Before', 'breakthrough-cpas'),
         icon: tableColumnBefore,
         categories: ['tables']
     },
     {
         name: 'table-column-delete',
-        title: __('Table Column Delete', 'insignia-capital-corp'),
+        title: __('Table Column Delete', 'breakthrough-cpas'),
         icon: tableColumnDelete,
         categories: ['tables']
     },
     {
         name: 'table-row-after',
-        title: __('Table Row After', 'insignia-capital-corp'),
+        title: __('Table Row After', 'breakthrough-cpas'),
         icon: tableRowAfter,
         categories: ['tables']
     },
     {
         name: 'table-row-before',
-        title: __('Table Row Before', 'insignia-capital-corp'),
+        title: __('Table Row Before', 'breakthrough-cpas'),
         icon: tableRowBefore,
         categories: ['tables']
     },
     {
         name: 'table-row-delete',
-        title: __('Table Row Delete', 'insignia-capital-corp'),
+        title: __('Table Row Delete', 'breakthrough-cpas'),
         icon: tableRowDelete,
         categories: ['tables']
     },
@@ -1039,98 +1039,98 @@ const icons = [
     // Actions
     {
         name: 'copy',
-        title: __('Copy', 'insignia-capital-corp'),
+        title: __('Copy', 'breakthrough-cpas'),
         icon: copy,
         categories: ['actions']
     },
 
     {
         name: 'redo',
-        title: __('Redo', 'insignia-capital-corp'),
+        title: __('Redo', 'breakthrough-cpas'),
         icon: redo,
         categories: ['actions']
     },
     {
         name: 'undo',
-        title: __('Undo', 'insignia-capital-corp'),
+        title: __('Undo', 'breakthrough-cpas'),
         icon: undo,
         categories: ['actions']
     },
     {
         name: 'create',
-        title: __('Create', 'insignia-capital-corp'),
+        title: __('Create', 'breakthrough-cpas'),
         icon: create,
         categories: ['actions']
     },
     {
         name: 'lock',
-        title: __('Lock', 'insignia-capital-corp'),
+        title: __('Lock', 'breakthrough-cpas'),
         icon: lock,
         categories: ['actions']
     },
     {
         name: 'unlock',
-        title: __('Unlock', 'insignia-capital-corp'),
+        title: __('Unlock', 'breakthrough-cpas'),
         icon: unlock,
         categories: ['actions']
     },
     {
         name: 'lock-outline',
-        title: __('Lock Outline', 'insignia-capital-corp'),
+        title: __('Lock Outline', 'breakthrough-cpas'),
         icon: lockOutline,
         categories: ['actions']
     },
     {
         name: 'lock-small',
-        title: __('Lock Small', 'insignia-capital-corp'),
+        title: __('Lock Small', 'breakthrough-cpas'),
         icon: lockSmall,
         categories: ['actions']
     },
     {
         name: 'login',
-        title: __('Login', 'insignia-capital-corp'),
+        title: __('Login', 'breakthrough-cpas'),
         icon: login,
         categories: ['actions']
     },
     {
         name: 'reset',
-        title: __('Reset', 'insignia-capital-corp'),
+        title: __('Reset', 'breakthrough-cpas'),
         icon: reset,
         categories: ['actions']
     },
     {
         name: 'rotate-left',
-        title: __('Rotate Left', 'insignia-capital-corp'),
+        title: __('Rotate Left', 'breakthrough-cpas'),
         icon: rotateLeft,
         categories: ['actions']
     },
     {
         name: 'rotate-right',
-        title: __('Rotate Right', 'insignia-capital-corp'),
+        title: __('Rotate Right', 'breakthrough-cpas'),
         icon: rotateRight,
         categories: ['actions']
     },
     {
         name: 'flip-horizontal',
-        title: __('Flip Horizontal', 'insignia-capital-corp'),
+        title: __('Flip Horizontal', 'breakthrough-cpas'),
         icon: flipHorizontal,
         categories: ['actions']
     },
     {
         name: 'flip-vertical',
-        title: __('Flip Vertical', 'insignia-capital-corp'),
+        title: __('Flip Vertical', 'breakthrough-cpas'),
         icon: flipVertical,
         categories: ['actions']
     },
     {
         name: 'replace',
-        title: __('Replace', 'insignia-capital-corp'),
+        title: __('Replace', 'breakthrough-cpas'),
         icon: replace,
         categories: ['actions']
     },
     {
         name: 'fullscreen',
-        title: __('Fullscreen', 'insignia-capital-corp'),
+        title: __('Fullscreen', 'breakthrough-cpas'),
         icon: fullscreen,
         categories: ['actions']
     },
@@ -1138,122 +1138,122 @@ const icons = [
     // Interface
     {
         name: 'close-small',
-        title: __('Close Small', 'insignia-capital-corp'),
+        title: __('Close Small', 'breakthrough-cpas'),
         icon: closeSmall,
         categories: ['interface']
     },
     {
         name: 'more',
-        title: __('More', 'insignia-capital-corp'),
+        title: __('More', 'breakthrough-cpas'),
         icon: more,
         categories: ['interface']
     },
     {
         name: 'more-horizontal',
-        title: __('More Horizontal', 'insignia-capital-corp'),
+        title: __('More Horizontal', 'breakthrough-cpas'),
         icon: moreHorizontal,
         categories: ['interface']
     },
     {
         name: 'more-vertical',
-        title: __('More Vertical', 'insignia-capital-corp'),
+        title: __('More Vertical', 'breakthrough-cpas'),
         icon: moreVertical,
         categories: ['interface']
     },
     {
         name: 'star-half',
-        title: __('Star Half', 'insignia-capital-corp'),
+        title: __('Star Half', 'breakthrough-cpas'),
         icon: starHalf,
         categories: ['interface']
     },
     {
         name: 'help-filled',
-        title: __('Help Filled', 'insignia-capital-corp'),
+        title: __('Help Filled', 'breakthrough-cpas'),
         icon: helpFilled,
         categories: ['interface']
     },
     {
         name: 'cog',
-        title: __('Cog', 'insignia-capital-corp'),
+        title: __('Cog', 'breakthrough-cpas'),
         icon: cog,
         categories: ['interface'],
         isDefault: true
     },
     {
         name: 'plus-circle',
-        title: __('Plus Circle', 'insignia-capital-corp'),
+        title: __('Plus Circle', 'breakthrough-cpas'),
         icon: plusCircle,
         categories: ['interface']
     },
     {
         name: 'plus-circle-filled',
-        title: __('Plus Circle Filled', 'insignia-capital-corp'),
+        title: __('Plus Circle Filled', 'breakthrough-cpas'),
         icon: plusCircleFilled,
         categories: ['interface']
     },
     {
         name: 'cancel-circle-filled',
-        title: __('Cancel Circle Filled', 'insignia-capital-corp'),
+        title: __('Cancel Circle Filled', 'breakthrough-cpas'),
         icon: cancelCircleFilled,
         categories: ['interface']
     },
     {
         name: 'plugins',
-        title: __('Plugins', 'insignia-capital-corp'),
+        title: __('Plugins', 'breakthrough-cpas'),
         icon: plugins,
         categories: ['interface']
     },
     {
         name: 'filter',
-        title: __('Filter', 'insignia-capital-corp'),
+        title: __('Filter', 'breakthrough-cpas'),
         icon: filter,
         categories: ['interface']
     },
     {
         name: 'list-view',
-        title: __('List View', 'insignia-capital-corp'),
+        title: __('List View', 'breakthrough-cpas'),
         icon: listView,
         categories: ['interface']
     },
     {
         name: 'drag-handle',
-        title: __('Drag Handle', 'insignia-capital-corp'),
+        title: __('Drag Handle', 'breakthrough-cpas'),
         icon: dragHandle,
         categories: ['interface']
     },
     {
         name: 'handle',
-        title: __('Handle', 'insignia-capital-corp'),
+        title: __('Handle', 'breakthrough-cpas'),
         icon: handle,
         categories: ['interface']
     },
     {
         name: 'seen',
-        title: __('Seen', 'insignia-capital-corp'),
+        title: __('Seen', 'breakthrough-cpas'),
         icon: seen,
         categories: ['interface']
     },
     {
         name: 'unseen',
-        title: __('Unseen', 'insignia-capital-corp'),
+        title: __('Unseen', 'breakthrough-cpas'),
         icon: unseen,
         categories: ['interface']
     },
     {
         name: 'keyboard-close',
-        title: __('Keyboard Close', 'insignia-capital-corp'),
+        title: __('Keyboard Close', 'breakthrough-cpas'),
         icon: keyboardClose,
         categories: ['interface']
     },
     {
         name: 'keyboard-return',
-        title: __('Keyboard Return', 'insignia-capital-corp'),
+        title: __('Keyboard Return', 'breakthrough-cpas'),
         icon: keyboardReturn,
         categories: ['interface']
     },
     {
         name: 'styles',
-        title: __('Styles', 'insignia-capital-corp'),
+        title: __('Styles', 'breakthrough-cpas'),
         icon: styles,
         categories: ['interface']
     },
@@ -1261,103 +1261,103 @@ const icons = [
     // Posts & Pages
     {
         name: 'page',
-        title: __('Page', 'insignia-capital-corp'),
+        title: __('Page', 'breakthrough-cpas'),
         icon: page,
         categories: ['posts']
     },
     {
         name: 'pages',
-        title: __('Pages', 'insignia-capital-corp'),
+        title: __('Pages', 'breakthrough-cpas'),
         icon: pages,
         categories: ['posts']
     },
     {
         name: 'post',
-        title: __('Post', 'insignia-capital-corp'),
+        title: __('Post', 'breakthrough-cpas'),
         icon: post,
         categories: ['posts']
     },
     {
         name: 'post-author',
-        title: __('Post Author', 'insignia-capital-corp'),
+        title: __('Post Author', 'breakthrough-cpas'),
         icon: postAuthor,
         categories: ['posts']
     },
     {
         name: 'post-categories',
-        title: __('Post Categories', 'insignia-capital-corp'),
+        title: __('Post Categories', 'breakthrough-cpas'),
         icon: postCategories,
         categories: ['posts']
     },
     {
         name: 'post-content',
-        title: __('Post Content', 'insignia-capital-corp'),
+        title: __('Post Content', 'breakthrough-cpas'),
         icon: postContent,
         categories: ['posts']
     },
     {
         name: 'post-date',
-        title: __('Post Date', 'insignia-capital-corp'),
+        title: __('Post Date', 'breakthrough-cpas'),
         icon: postDate,
         categories: ['posts']
     },
     {
         name: 'post-excerpt',
-        title: __('Post Excerpt', 'insignia-capital-corp'),
+        title: __('Post Excerpt', 'breakthrough-cpas'),
         icon: postExcerpt,
         categories: ['posts']
     },
     {
         name: 'post-featured-image',
-        title: __('Post Featured Image', 'insignia-capital-corp'),
+        title: __('Post Featured Image', 'breakthrough-cpas'),
         icon: postFeaturedImage,
         categories: ['posts', 'media']
     },
     {
         name: 'post-list',
-        title: __('Post List', 'insignia-capital-corp'),
+        title: __('Post List', 'breakthrough-cpas'),
         icon: postList,
         categories: ['posts']
     },
     {
         name: 'post-terms',
-        title: __('Post Terms', 'insignia-capital-corp'),
+        title: __('Post Terms', 'breakthrough-cpas'),
         icon: postTerms,
         categories: ['posts']
     },
     {
         name: 'page-break',
-        title: __('Page Break', 'insignia-capital-corp'),
+        title: __('Page Break', 'breakthrough-cpas'),
         icon: pageBreak,
         categories: ['posts', 'editor']
     },
     {
         name: 'custom-post-type',
-        title: __('Custom Post Type', 'insignia-capital-corp'),
+        title: __('Custom Post Type', 'breakthrough-cpas'),
         icon: customPostType,
         categories: ['posts']
     },
     {
         name: 'term-description',
-        title: __('Term Description', 'insignia-capital-corp'),
+        title: __('Term Description', 'breakthrough-cpas'),
         icon: termDescription,
         categories: ['posts']
     },
     {
         name: 'category',
-        title: __('Category', 'insignia-capital-corp'),
+        title: __('Category', 'breakthrough-cpas'),
         icon: category,
         categories: ['posts']
     },
     {
         name: 'tag',
-        title: __('Tag', 'insignia-capital-corp'),
+        title: __('Tag', 'breakthrough-cpas'),
         icon: tag,
         categories: ['posts']
     },
     {
         name: 'title',
-        title: __('Title', 'insignia-capital-corp'),
+        title: __('Title', 'breakthrough-cpas'),
         icon: title,
         categories: ['posts', 'editor']
     },
@@ -1365,55 +1365,55 @@ const icons = [
     // Comments
     {
         name: 'comment',
-        title: __('Comment', 'insignia-capital-corp'),
+        title: __('Comment', 'breakthrough-cpas'),
         icon: comment,
         categories: ['comments']
     },
     {
         name: 'post-comments',
-        title: __('Post Comments', 'insignia-capital-corp'),
+        title: __('Post Comments', 'breakthrough-cpas'),
         icon: postComments,
         categories: ['comments', 'posts']
     },
     {
         name: 'post-comments-count',
-        title: __('Post Comments Count', 'insignia-capital-corp'),
+        title: __('Post Comments Count', 'breakthrough-cpas'),
         icon: postCommentsCount,
         categories: ['comments', 'posts']
     },
     {
         name: 'post-comments-form',
-        title: __('Post Comments Form', 'insignia-capital-corp'),
+        title: __('Post Comments Form', 'breakthrough-cpas'),
         icon: postCommentsForm,
         categories: ['comments', 'posts']
     },
     {
         name: 'comment-author-avatar',
-        title: __('Comment Author Avatar', 'insignia-capital-corp'),
+        title: __('Comment Author Avatar', 'breakthrough-cpas'),
         icon: commentAuthorAvatar,
         categories: ['comments']
     },
     {
         name: 'comment-author-name',
-        title: __('Comment Author Name', 'insignia-capital-corp'),
+        title: __('Comment Author Name', 'breakthrough-cpas'),
         icon: commentAuthorName,
         categories: ['comments']
     },
     {
         name: 'comment-content',
-        title: __('Comment Content', 'insignia-capital-corp'),
+        title: __('Comment Content', 'breakthrough-cpas'),
         icon: commentContent,
         categories: ['comments']
     },
     {
         name: 'comment-edit-link',
-        title: __('Comment Edit Link', 'insignia-capital-corp'),
+        title: __('Comment Edit Link', 'breakthrough-cpas'),
         icon: commentEditLink,
         categories: ['comments']
     },
     {
         name: 'comment-reply-link',
-        title: __('Comment Reply Link', 'insignia-capital-corp'),
+        title: __('Comment Reply Link', 'breakthrough-cpas'),
         icon: commentReplyLink,
         categories: ['comments']
     },
@@ -1421,37 +1421,37 @@ const icons = [
     // Media
     {
         name: 'caption',
-        title: __('Caption', 'insignia-capital-corp'),
+        title: __('Caption', 'breakthrough-cpas'),
         icon: caption,
         categories: ['media']
     },
     {
         name: 'capture-photo',
-        title: __('Capture Photo', 'insignia-capital-corp'),
+        title: __('Capture Photo', 'breakthrough-cpas'),
         icon: capturePhoto,
         categories: ['media']
     },
     {
         name: 'capture-video',
-        title: __('Capture Video', 'insignia-capital-corp'),
+        title: __('Capture Video', 'breakthrough-cpas'),
         icon: captureVideo,
         categories: ['media']
     },
     {
         name: 'aspect-ratio',
-        title: __('Aspect Ratio', 'insignia-capital-corp'),
+        title: __('Aspect Ratio', 'breakthrough-cpas'),
         icon: aspectRatio,
         categories: ['media']
     },
     {
         name: 'crop',
-        title: __('Crop', 'insignia-capital-corp'),
+        title: __('Crop', 'breakthrough-cpas'),
         icon: crop,
         categories: ['media', 'actions']
     },
     {
         name: 'file',
-        title: __('File', 'insignia-capital-corp'),
+        title: __('File', 'breakthrough-cpas'),
         icon: file,
         categories: ['media']
     },
@@ -1459,68 +1459,68 @@ const icons = [
     // E-commerce
     {
         name: 'currency-dollar',
-        title: __('Currency Dollar', 'insignia-capital-corp'),
+        title: __('Currency Dollar', 'breakthrough-cpas'),
         icon: currencyDollar,
         categories: ['ecommerce']
     },
     {
         name: 'currency-euro',
-        title: __('Currency Euro', 'insignia-capital-corp'),
+        title: __('Currency Euro', 'breakthrough-cpas'),
         icon: currencyEuro,
         categories: ['ecommerce']
     },
     {
         name: 'currency-pound',
-        title: __('Currency Pound', 'insignia-capital-corp'),
+        title: __('Currency Pound', 'breakthrough-cpas'),
         icon: currencyPound,
         categories: ['ecommerce']
     },
     {
         name: 'payment',
-        title: __('Payment', 'insignia-capital-corp'),
+        title: __('Payment', 'breakthrough-cpas'),
         icon: payment,
         categories: ['ecommerce']
     },
     {
         name: 'percent',
-        title: __('Percent', 'insignia-capital-corp'),
+        title: __('Percent', 'breakthrough-cpas'),
         icon: percent,
         categories: ['ecommerce']
     },
     {
         name: 'receipt',
-        title: __('Receipt', 'insignia-capital-corp'),
+        title: __('Receipt', 'breakthrough-cpas'),
         icon: receipt,
         categories: ['ecommerce']
     },
     {
         name: 'shipping',
-        title: __('Shipping', 'insignia-capital-corp'),
+        title: __('Shipping', 'breakthrough-cpas'),
         icon: shipping,
         categories: ['ecommerce'],
         isDefault: true
     },
     {
         name: 'store',
-        title: __('Store', 'insignia-capital-corp'),
+        title: __('Store', 'breakthrough-cpas'),
         icon: store,
         categories: ['ecommerce']
     },
     {
         name: 'chart-bar',
-        title: __('Chart Bar', 'insignia-capital-corp'),
+        title: __('Chart Bar', 'breakthrough-cpas'),
         icon: chartBar,
         categories: ['ecommerce']
     },
     {
         name: 'trending-down',
-        title: __('Trending Down', 'insignia-capital-corp'),
+        title: __('Trending Down', 'breakthrough-cpas'),
         icon: trendingDown,
         categories: ['ecommerce']
     },
     {
         name: 'trending-up',
-        title: __('Trending Up', 'insignia-capital-corp'),
+        title: __('Trending Up', 'breakthrough-cpas'),
         icon: trendingUp,
         categories: ['ecommerce']
     },
@@ -1528,355 +1528,355 @@ const icons = [
     // Miscellaneous
     {
         name: 'at-symbol',
-        title: __('At Symbol', 'insignia-capital-corp'),
+        title: __('At Symbol', 'breakthrough-cpas'),
         icon: atSymbol,
         categories: ['misc']
     },
     {
         name: 'backup',
-        title: __('Backup', 'insignia-capital-corp'),
+        title: __('Backup', 'breakthrough-cpas'),
         icon: backup,
         categories: ['misc']
     },
     {
         name: 'block-default',
-        title: __('Block Default', 'insignia-capital-corp'),
+        title: __('Block Default', 'breakthrough-cpas'),
         icon: blockDefault,
         categories: ['misc']
     },
     {
         name: 'border',
-        title: __('Border', 'insignia-capital-corp'),
+        title: __('Border', 'breakthrough-cpas'),
         icon: border,
         categories: ['misc']
     },
     {
         name: 'box',
-        title: __('Box', 'insignia-capital-corp'),
+        title: __('Box', 'breakthrough-cpas'),
         icon: box,
         categories: ['misc']
     },
     {
         name: 'brush',
-        title: __('Brush', 'insignia-capital-corp'),
+        title: __('Brush', 'breakthrough-cpas'),
         icon: brush,
         categories: ['misc']
     },
     {
         name: 'bug',
-        title: __('Bug', 'insignia-capital-corp'),
+        title: __('Bug', 'breakthrough-cpas'),
         icon: bug,
         categories: ['misc']
     },
     {
         name: 'remove-bug',
-        title: __('Remove Bug', 'insignia-capital-corp'),
+        title: __('Remove Bug', 'breakthrough-cpas'),
         icon: removeBug,
         categories: ['misc']
     },
     {
         name: 'classic',
-        title: __('Classic', 'insignia-capital-corp'),
+        title: __('Classic', 'breakthrough-cpas'),
         icon: classic,
         categories: ['misc']
     },
     {
         name: 'cloud-upload',
-        title: __('Cloud Upload', 'insignia-capital-corp'),
+        title: __('Cloud Upload', 'breakthrough-cpas'),
         icon: cloudUpload,
         categories: ['misc', 'actions']
     },
     {
         name: 'color',
-        title: __('Color', 'insignia-capital-corp'),
+        title: __('Color', 'breakthrough-cpas'),
         icon: color,
         categories: ['misc']
     },
     {
         name: 'custom-link',
-        title: __('Custom Link', 'insignia-capital-corp'),
+        title: __('Custom Link', 'breakthrough-cpas'),
         icon: customLink,
         categories: ['misc']
     },
     {
         name: 'drawer-left',
-        title: __('Drawer Left', 'insignia-capital-corp'),
+        title: __('Drawer Left', 'breakthrough-cpas'),
         icon: drawerLeft,
         categories: ['misc']
     },
     {
         name: 'drawer-right',
-        title: __('Drawer Right', 'insignia-capital-corp'),
+        title: __('Drawer Right', 'breakthrough-cpas'),
         icon: drawerRight,
         categories: ['misc']
     },
     {
         name: 'grid',
-        title: __('Grid', 'insignia-capital-corp'),
+        title: __('Grid', 'breakthrough-cpas'),
         icon: grid,
         categories: ['misc', 'layout']
     },
     {
         name: 'inbox',
-        title: __('Inbox', 'insignia-capital-corp'),
+        title: __('Inbox', 'breakthrough-cpas'),
         icon: inbox,
         categories: ['misc']
     },
     {
         name: 'institution',
-        title: __('Institution', 'insignia-capital-corp'),
+        title: __('Institution', 'breakthrough-cpas'),
         icon: institution,
         categories: ['misc']
     },
     {
         name: 'insert-after',
-        title: __('Insert After', 'insignia-capital-corp'),
+        title: __('Insert After', 'breakthrough-cpas'),
         icon: insertAfter,
         categories: ['misc', 'actions']
     },
     {
         name: 'insert-before',
-        title: __('Insert Before', 'insignia-capital-corp'),
+        title: __('Insert Before', 'breakthrough-cpas'),
         icon: insertBefore,
         categories: ['misc', 'actions']
     },
     {
         name: 'key',
-        title: __('Key', 'insignia-capital-corp'),
+        title: __('Key', 'breakthrough-cpas'),
         icon: key,
         categories: ['misc']
     },
     {
         name: 'lifesaver',
-        title: __('Lifesaver', 'insignia-capital-corp'),
+        title: __('Lifesaver', 'breakthrough-cpas'),
         icon: lifesaver,
         categories: ['misc']
     },
     {
         name: 'line-dashed',
-        title: __('Line Dashed', 'insignia-capital-corp'),
+        title: __('Line Dashed', 'breakthrough-cpas'),
         icon: lineDashed,
         categories: ['misc']
     },
     {
         name: 'line-dotted',
-        title: __('Line Dotted', 'insignia-capital-corp'),
+        title: __('Line Dotted', 'breakthrough-cpas'),
         icon: lineDotted,
         categories: ['misc']
     },
     {
         name: 'line-solid',
-        title: __('Line Solid', 'insignia-capital-corp'),
+        title: __('Line Solid', 'breakthrough-cpas'),
         icon: lineSolid,
         categories: ['misc']
     },
     {
         name: 'link',
-        title: __('Link', 'insignia-capital-corp'),
+        title: __('Link', 'breakthrough-cpas'),
         icon: link,
         categories: ['misc']
     },
     {
         name: 'link-off',
-        title: __('Link Off', 'insignia-capital-corp'),
+        title: __('Link Off', 'breakthrough-cpas'),
         icon: linkOff,
         categories: ['misc']
     },
     {
         name: 'loop',
-        title: __('Loop', 'insignia-capital-corp'),
+        title: __('Loop', 'breakthrough-cpas'),
         icon: loop,
         categories: ['misc']
     },
     {
         name: 'map-marker',
-        title: __('Map Marker', 'insignia-capital-corp'),
+        title: __('Map Marker', 'breakthrough-cpas'),
         icon: mapMarker,
         categories: ['misc']
     },
     {
         name: 'megaphone',
-        title: __('Megaphone', 'insignia-capital-corp'),
+        title: __('Megaphone', 'breakthrough-cpas'),
         icon: megaphone,
         categories: ['misc']
     },
     {
         name: 'move-to',
-        title: __('Move To', 'insignia-capital-corp'),
+        title: __('Move To', 'breakthrough-cpas'),
         icon: moveTo,
         categories: ['misc', 'actions']
     },
     {
         name: 'navigation',
-        title: __('Navigation', 'insignia-capital-corp'),
+        title: __('Navigation', 'breakthrough-cpas'),
         icon: navigation,
         categories: ['misc']
     },
     {
         name: 'overlay-text',
-        title: __('Overlay Text', 'insignia-capital-corp'),
+        title: __('Overlay Text', 'breakthrough-cpas'),
         icon: overlayText,
         categories: ['misc']
     },
     {
         name: 'people',
-        title: __('People', 'insignia-capital-corp'),
+        title: __('People', 'breakthrough-cpas'),
         icon: people,
         categories: ['misc']
     },
     {
         name: 'pin',
-        title: __('Pin', 'insignia-capital-corp'),
+        title: __('Pin', 'breakthrough-cpas'),
         icon: pin,
         categories: ['misc']
     },
     {
         name: 'pull-left',
-        title: __('Pull Left', 'insignia-capital-corp'),
+        title: __('Pull Left', 'breakthrough-cpas'),
         icon: pullLeft,
         categories: ['misc', 'layout']
     },
     {
         name: 'pull-right',
-        title: __('Pull Right', 'insignia-capital-corp'),
+        title: __('Pull Right', 'breakthrough-cpas'),
         icon: pullRight,
         categories: ['misc', 'layout']
     },
     {
         name: 'query-pagination',
-        title: __('Query Pagination', 'insignia-capital-corp'),
+        title: __('Query Pagination', 'breakthrough-cpas'),
         icon: queryPagination,
         categories: ['misc']
     },
     {
         name: 'query-pagination-next',
-        title: __('Query Pagination Next', 'insignia-capital-corp'),
+        title: __('Query Pagination Next', 'breakthrough-cpas'),
         icon: queryPaginationNext,
         categories: ['misc']
     },
     {
         name: 'query-pagination-numbers',
-        title: __('Query Pagination Numbers', 'insignia-capital-corp'),
+        title: __('Query Pagination Numbers', 'breakthrough-cpas'),
         icon: queryPaginationNumbers,
         categories: ['misc']
     },
     {
         name: 'query-pagination-previous',
-        title: __('Query Pagination Previous', 'insignia-capital-corp'),
+        title: __('Query Pagination Previous', 'breakthrough-cpas'),
         icon: queryPaginationPrevious,
         categories: ['misc']
     },
     {
         name: 'resize-corner-ne',
-        title: __('Resize Corner NE', 'insignia-capital-corp'),
+        title: __('Resize Corner NE', 'breakthrough-cpas'),
         icon: resizeCornerNE,
         categories: ['misc']
     },
     {
         name: 'reusable-block',
-        title: __('Reusable Block', 'insignia-capital-corp'),
+        title: __('Reusable Block', 'breakthrough-cpas'),
         icon: reusableBlock,
         categories: ['misc', 'editor']
     },
     {
         name: 'rss',
-        title: __('RSS', 'insignia-capital-corp'),
+        title: __('RSS', 'breakthrough-cpas'),
         icon: rss,
         categories: ['misc']
     },
     {
         name: 'separator',
-        title: __('Separator', 'insignia-capital-corp'),
+        title: __('Separator', 'breakthrough-cpas'),
         icon: separator,
         categories: ['misc', 'editor']
     },
     {
         name: 'shadow',
-        title: __('Shadow', 'insignia-capital-corp'),
+        title: __('Shadow', 'breakthrough-cpas'),
         icon: shadow,
         categories: ['misc']
     },
     {
         name: 'shield',
-        title: __('Shield', 'insignia-capital-corp'),
+        title: __('Shield', 'breakthrough-cpas'),
         icon: shield,
         categories: ['misc']
     },
     {
         name: 'shuffle',
-        title: __('Shuffle', 'insignia-capital-corp'),
+        title: __('Shuffle', 'breakthrough-cpas'),
         icon: shuffle,
         categories: ['misc']
     },
     {
         name: 'site-logo',
-        title: __('Site Logo', 'insignia-capital-corp'),
+        title: __('Site Logo', 'breakthrough-cpas'),
         icon: siteLogo,
         categories: ['misc']
     },
     {
         name: 'stack',
-        title: __('Stack', 'insignia-capital-corp'),
+        title: __('Stack', 'breakthrough-cpas'),
         icon: stack,
         categories: ['misc']
     },
     {
         name: 'swatch',
-        title: __('Swatch', 'insignia-capital-corp'),
+        title: __('Swatch', 'breakthrough-cpas'),
         icon: swatch,
         categories: ['misc']
     },
     {
         name: 'symbol',
-        title: __('Symbol', 'insignia-capital-corp'),
+        title: __('Symbol', 'breakthrough-cpas'),
         icon: symbol,
         categories: ['misc']
     },
     {
         name: 'symbol-filled',
-        title: __('Symbol Filled', 'insignia-capital-corp'),
+        title: __('Symbol Filled', 'breakthrough-cpas'),
         icon: symbolFilled,
         categories: ['misc']
     },
     {
         name: 'tip',
-        title: __('Tip', 'insignia-capital-corp'),
+        title: __('Tip', 'breakthrough-cpas'),
         icon: tip,
         categories: ['misc']
     },
     {
         name: 'tool',
-        title: __('Tool', 'insignia-capital-corp'),
+        title: __('Tool', 'breakthrough-cpas'),
         icon: tool,
         categories: ['misc']
     },
     {
         name: 'typography',
-        title: __('Typography', 'insignia-capital-corp'),
+        title: __('Typography', 'breakthrough-cpas'),
         icon: typography,
         categories: ['misc', 'format']
     },
     {
         name: 'widget',
-        title: __('Widget', 'insignia-capital-corp'),
+        title: __('Widget', 'breakthrough-cpas'),
         icon: widget,
         categories: ['misc']
     },
     {
         name: 'add-card',
-        title: __('Add Card', 'insignia-capital-corp'),
+        title: __('Add Card', 'breakthrough-cpas'),
         icon: addCard,
         categories: ['actions']
     },
     {
         name: 'add-submenu',
-        title: __('Add Submenu', 'insignia-capital-corp'),
+        title: __('Add Submenu', 'breakthrough-cpas'),
         icon: addSubmenu,
         categories: ['actions']
     },
     {
         name: 'remove-submenu',
-        title: __('Remove Submenu', 'insignia-capital-corp'),
+        title: __('Remove Submenu', 'breakthrough-cpas'),
         icon: removeSubmenu,
         categories: ['actions']
     }

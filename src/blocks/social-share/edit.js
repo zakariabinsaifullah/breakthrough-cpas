@@ -25,7 +25,7 @@ export default function Edit(props) {
                 />
             </BlockControls>
             <div {...blockProps}>
-                <ServerSideRender block="incc/social-share" attributes={props.attributes} />
+                <ServerSideRender block="btcpa/social-share" attributes={props.attributes} />
             </div>
         </>
     );

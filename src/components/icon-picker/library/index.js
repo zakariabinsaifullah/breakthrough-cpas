@@ -127,17 +127,17 @@ export default function Library({
 
     return (
         <Modal
-            overlayClassName="incc-modal__overlay"
-            className={`incc-modal is-${activeTab}`}
-            title={__('Icons Library', 'insignia-capital-corp')}
+            overlayClassName="btcpa-modal__overlay"
+            className={`btcpa-modal is-${activeTab}`}
+            title={__('Icons Library', 'breakthrough-cpas')}
             onRequestClose={onClose}
             isFullScreen={true}
             headerActions={<Header activeTab={activeTab} onTabChange={onTabChange} />}
         >
-            <div className="incc-modal__container">
+            <div className="btcpa-modal__container">
                 <Sidebar categories={categories} category={selectedCategory} setCategory={setSelectedCategory} activeTab={activeTab} />
-                <div className="incc-modal__content">
-                    <Scrollable className="incc-modal__scrollable">
+                <div className="btcpa-modal__content">
+                    <Scrollable className="btcpa-modal__scrollable">
                         {activeTab === 'library' && (
                             <ContentIcons
                                 searchTerm={searchTerm}

@@ -36,7 +36,7 @@ if ( ! empty( $block->inner_blocks ) ) {
 // Wrapper: hand class/style to core so they merge with the block-supports output
 // instead of emitting a second, ignored style attribute.
 $wrapper_args = array(
-	'class' => 'incc-marquee-wrapper marquee-' . $orientation,
+	'class' => 'btcpa-marquee-wrapper marquee-' . $orientation,
 );
 if ( 'vertical' === $orientation ) {
 	$wrapper_args['style'] = 'height:' . $height . 'px;';
@@ -51,16 +51,16 @@ if ( $pause_on_hover ) {
 // Determine animation name based on orientation and direction.
 if ( 'vertical' === $orientation ) {
 	$animation_name = in_array( $direction, array( 'left', 'up' ), true )
-		? 'incc-marquee-scroll-up'
-		: 'incc-marquee-scroll-down';
+		? 'btcpa-marquee-scroll-up'
+		: 'btcpa-marquee-scroll-down';
 } else {
 	$animation_name = in_array( $direction, array( 'right', 'down' ), true )
-		? 'incc-marquee-scroll-right'
-		: 'incc-marquee-scroll-left';
+		? 'btcpa-marquee-scroll-right'
+		: 'btcpa-marquee-scroll-left';
 }
 
 $container_style = sprintf(
-	'--incc-marquee-duration:%1$ds;--incc-marquee-animation:%2$s;--incc-marquee-gap:%3$dpx;',
+	'--btcpa-marquee-duration:%1$ds;--btcpa-marquee-animation:%2$s;--btcpa-marquee-gap:%3$dpx;',
 	$speed,
 	$animation_name,
 	$gap

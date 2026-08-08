@@ -40,11 +40,11 @@
 }
 
 .ipg-filter-btn:hover {
-    color: #253959;
+    color: #192643;
 }
 
 .ipg-filter-btn.active {
-    background: #253959;
+    background: #192643;
     color: #ffffff;
     font-weight: 400;
 }
@@ -77,7 +77,7 @@
 }
 
 .ipg-no-posts {
-    color: #666666;
+    color: #7F7F7F;
     font-size: 15px;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .ipg-card__title a:hover {
-    color: #253959;
+    color: #192643;
 }
 
 .ipg-card__excerpt {
@@ -196,9 +196,9 @@
     height: 40px;
     padding: 0 6px;
     background: #ffffff;
-    border: 1px solid #cccccc;
+    border: 1px solid #d8d8d8;
     border-radius: 8px;
-    color: #222222;
+    color: #191919;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
@@ -206,13 +206,13 @@
 }
 
 .ipg-page-btn:hover:not(:disabled) {
-    border-color: #253959;
-    color: #253959;
+    border-color: #192643;
+    color: #192643;
 }
 
 .ipg-page-btn.active {
-    background: #253959;
-    border-color: #253959;
+    background: #192643;
+    border-color: #192643;
     color: #ffffff;
 }
 
@@ -232,7 +232,7 @@
     justify-content: center;
     min-width: 40px;
     height: 40px;
-    color: #aaaaaa;
+    color: #b2b2b2;
     font-size: 14px;
     user-select: none;
     letter-spacing: 0.05em;

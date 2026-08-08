@@ -50,7 +50,7 @@ export default function save({ attributes }) {
             </div>
             {showArrows && (
                 <>
-                    <div className="swiper-custom-prev incc-nav">
+                    <div className="swiper-custom-prev btcpa-nav">
                         <RenderIcon
                             customSvgCode={prevCustomSvg}
                             iconName={prevIconName}
@@ -58,7 +58,7 @@ export default function save({ attributes }) {
                             size={navIconSize}
                         />
                     </div>
-                    <div className="swiper-custom-next incc-nav">
+                    <div className="swiper-custom-next btcpa-nav">
                         <RenderIcon
                             customSvgCode={nextCustomSvg}
                             iconName={nextIconName}

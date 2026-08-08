@@ -6,15 +6,15 @@
  * Extensions are different from custom blocks — they extend existing blocks
  * rather than registering new block types.
  *
- * @package Insignia_Capital_Corp
+ * @package Breakthrough_CPAs
  */
 
-if ( ! function_exists( 'incc_enqueue_hover_color_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_hover_color_editor_assets' ) ) :
 	/**
 	 * Enqueues the hover-color extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_hover_color_editor_assets() {
+	function btcpa_enqueue_hover_color_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/hover-color/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -24,7 +24,7 @@ if ( ! function_exists( 'incc_enqueue_hover_color_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-hover-color-extension',
+			'btcpa-hover-color-extension',
 			get_theme_file_uri( 'build/extensions/hover-color/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -34,7 +34,7 @@ if ( ! function_exists( 'incc_enqueue_hover_color_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/hover-color/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-hover-color-extension',
+				'btcpa-hover-color-extension',
 				get_theme_file_uri( 'build/extensions/hover-color/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -42,15 +42,15 @@ if ( ! function_exists( 'incc_enqueue_hover_color_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_hover_color_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_hover_color_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_hover_color_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_hover_color_frontend_assets' ) ) :
 	/**
 	 * Enqueues the hover-color extension frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_hover_color_frontend_assets() {
+	function btcpa_enqueue_hover_color_frontend_assets() {
 		$asset_file  = get_theme_file_path( 'build/extensions/hover-color/index.asset.php' );
 		$style_file  = get_theme_file_path( 'build/extensions/hover-color/style-index.css' );
 
@@ -61,17 +61,17 @@ if ( ! function_exists( 'incc_enqueue_hover_color_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-hover-color-extension-style',
+			'btcpa-hover-color-extension-style',
 			get_theme_file_uri( 'build/extensions/hover-color/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_hover_color_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_hover_color_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_hover_color_attributes' ) ) :
+if ( ! function_exists( 'btcpa_render_hover_color_attributes' ) ) :
 	/**
 	 * Injects hover-color CSS classes and custom properties into block HTML on the frontend.
 	 *
@@ -83,7 +83,7 @@ if ( ! function_exists( 'incc_render_hover_color_attributes' ) ) :
 	 * @param array  $block         The block data including attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_hover_color_attributes( $block_content, $block ) {
+	function btcpa_render_hover_color_attributes( $block_content, $block ) {
 		if ( empty( $block_content ) ) {
 			return $block_content;
 		}
@@ -165,19 +165,19 @@ if ( ! function_exists( 'incc_render_hover_color_attributes' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_hover_color_attributes', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_hover_color_attributes', 10, 2 );
 
 
 // =============================================================================
 // Group – Force Full Height Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_group_full_height_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_group_full_height_editor_assets' ) ) :
 	/**
 	 * Enqueues the group-full-height extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_group_full_height_editor_assets() {
+	function btcpa_enqueue_group_full_height_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-full-height/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -187,7 +187,7 @@ if ( ! function_exists( 'incc_enqueue_group_full_height_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-group-full-height-extension',
+			'btcpa-group-full-height-extension',
 			get_theme_file_uri( 'build/extensions/group-full-height/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -197,7 +197,7 @@ if ( ! function_exists( 'incc_enqueue_group_full_height_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/group-full-height/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-group-full-height-extension',
+				'btcpa-group-full-height-extension',
 				get_theme_file_uri( 'build/extensions/group-full-height/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -205,15 +205,15 @@ if ( ! function_exists( 'incc_enqueue_group_full_height_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_group_full_height_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_group_full_height_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_group_full_height_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_group_full_height_frontend_assets' ) ) :
 	/**
 	 * Enqueues the group-full-height frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_group_full_height_frontend_assets() {
+	function btcpa_enqueue_group_full_height_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-full-height/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/group-full-height/style-index.css' );
 
@@ -224,17 +224,17 @@ if ( ! function_exists( 'incc_enqueue_group_full_height_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-group-full-height-extension-style',
+			'btcpa-group-full-height-extension-style',
 			get_theme_file_uri( 'build/extensions/group-full-height/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_group_full_height_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_group_full_height_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_group_full_height' ) ) :
+if ( ! function_exists( 'btcpa_render_group_full_height' ) ) :
 	/**
 	 * Injects the `has-force-full-height` class into core/group blocks on the frontend
 	 * when the `forceFullHeight` attribute is enabled.
@@ -243,7 +243,7 @@ if ( ! function_exists( 'incc_render_group_full_height' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_group_full_height( $block_content, $block ) {
+	function btcpa_render_group_full_height( $block_content, $block ) {
 		if ( 'core/group' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -265,18 +265,18 @@ if ( ! function_exists( 'incc_render_group_full_height' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_group_full_height', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_group_full_height', 10, 2 );
 
 // =============================================================================
 // Group – Overlay Background Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_group_overlay_bg_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_group_overlay_bg_editor_assets' ) ) :
 	/**
 	 * Enqueues the group-overlay-bg extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_group_overlay_bg_editor_assets() {
+	function btcpa_enqueue_group_overlay_bg_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-overlay-bg/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -286,7 +286,7 @@ if ( ! function_exists( 'incc_enqueue_group_overlay_bg_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-group-overlay-bg-extension',
+			'btcpa-group-overlay-bg-extension',
 			get_theme_file_uri( 'build/extensions/group-overlay-bg/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -296,7 +296,7 @@ if ( ! function_exists( 'incc_enqueue_group_overlay_bg_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/group-overlay-bg/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-group-overlay-bg-extension',
+				'btcpa-group-overlay-bg-extension',
 				get_theme_file_uri( 'build/extensions/group-overlay-bg/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -304,15 +304,15 @@ if ( ! function_exists( 'incc_enqueue_group_overlay_bg_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_group_overlay_bg_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_group_overlay_bg_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_group_overlay_bg_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_group_overlay_bg_frontend_assets' ) ) :
 	/**
 	 * Enqueues the group-overlay-bg frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_group_overlay_bg_frontend_assets() {
+	function btcpa_enqueue_group_overlay_bg_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-overlay-bg/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/group-overlay-bg/style-index.css' );
 
@@ -323,26 +323,26 @@ if ( ! function_exists( 'incc_enqueue_group_overlay_bg_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-group-overlay-bg-extension-style',
+			'btcpa-group-overlay-bg-extension-style',
 			get_theme_file_uri( 'build/extensions/group-overlay-bg/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_group_overlay_bg_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_group_overlay_bg_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_group_overlay_bg' ) ) :
+if ( ! function_exists( 'btcpa_render_group_overlay_bg' ) ) :
 	/**
-	 * Injects the `incc-overlay-bg` class and `--incc-overlay-bg` CSS custom property
+	 * Injects the `btcpa-overlay-bg` class and `--btcpa-overlay-bg` CSS custom property
 	 * into core/group blocks on the frontend when an overlay background is set.
 	 *
 	 * @param string $block_content The rendered block HTML.
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_group_overlay_bg( $block_content, $block ) {
+	function btcpa_render_group_overlay_bg( $block_content, $block ) {
 		if ( 'core/group' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -371,14 +371,14 @@ if ( ! function_exists( 'incc_render_group_overlay_bg' ) ) :
 
 		$processor = new WP_HTML_Tag_Processor( $block_content );
 		if ( $processor->next_tag() ) {
-			$processor->add_class( 'incc-overlay-bg' );
+			$processor->add_class( 'btcpa-overlay-bg' );
 
 			$existing_style = $processor->get_attribute( 'style' ) ?? '';
 			$new_style      = rtrim( $existing_style, '; ' );
 			if ( $new_style ) {
 				$new_style .= ';';
 			}
-			$new_style .= '--incc-overlay-bg:' . $bg_value;
+			$new_style .= '--btcpa-overlay-bg:' . $bg_value;
 			$processor->set_attribute( 'style', $new_style );
 
 			return $processor->get_updated_html();
@@ -387,19 +387,19 @@ if ( ! function_exists( 'incc_render_group_overlay_bg' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_group_overlay_bg', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_group_overlay_bg', 10, 2 );
 
 
 // =============================================================================
 // Group – Global Hover Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_group_global_hover_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_group_global_hover_editor_assets' ) ) :
 	/**
 	 * Enqueues the group-global-hover extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_group_global_hover_editor_assets() {
+	function btcpa_enqueue_group_global_hover_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-global-hover/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -409,7 +409,7 @@ if ( ! function_exists( 'incc_enqueue_group_global_hover_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-group-global-hover-extension',
+			'btcpa-group-global-hover-extension',
 			get_theme_file_uri( 'build/extensions/group-global-hover/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -419,7 +419,7 @@ if ( ! function_exists( 'incc_enqueue_group_global_hover_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/group-global-hover/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-group-global-hover-extension',
+				'btcpa-group-global-hover-extension',
 				get_theme_file_uri( 'build/extensions/group-global-hover/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -427,15 +427,15 @@ if ( ! function_exists( 'incc_enqueue_group_global_hover_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_group_global_hover_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_group_global_hover_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_group_global_hover_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_group_global_hover_frontend_assets' ) ) :
 	/**
 	 * Enqueues the group-global-hover frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_group_global_hover_frontend_assets() {
+	function btcpa_enqueue_group_global_hover_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-global-hover/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/group-global-hover/style-index.css' );
 
@@ -446,26 +446,26 @@ if ( ! function_exists( 'incc_enqueue_group_global_hover_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-group-global-hover-extension-style',
+			'btcpa-group-global-hover-extension-style',
 			get_theme_file_uri( 'build/extensions/group-global-hover/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_group_global_hover_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_group_global_hover_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_group_global_hover' ) ) :
+if ( ! function_exists( 'btcpa_render_group_global_hover' ) ) :
 	/**
-	 * Injects `incc-global-hover` class + CSS variables into core/group blocks on the
+	 * Injects `btcpa-global-hover` class + CSS variables into core/group blocks on the
 	 * frontend when the global hover feature is enabled.
 	 *
 	 * @param string $block_content The rendered block HTML.
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_group_global_hover( $block_content, $block ) {
+	function btcpa_render_group_global_hover( $block_content, $block ) {
 		if ( 'core/group' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -496,16 +496,16 @@ if ( ! function_exists( 'incc_render_group_global_hover' ) ) :
 		$css_vars = array();
 
 		if ( $has_bg ) {
-			$css_vars[] = '--incc-ghover-bg:' . ( $bg_color ? 'var(--wp--preset--color--' . $bg_color . ')' : $custom_bg_color );
+			$css_vars[] = '--btcpa-ghover-bg:' . ( $bg_color ? 'var(--wp--preset--color--' . $bg_color . ')' : $custom_bg_color );
 		}
 
 		if ( $has_color ) {
-			$css_vars[] = '--incc-ghover-color:' . ( $color ? 'var(--wp--preset--color--' . $color . ')' : $custom_color );
+			$css_vars[] = '--btcpa-ghover-color:' . ( $color ? 'var(--wp--preset--color--' . $color . ')' : $custom_color );
 		}
 
 		$processor = new WP_HTML_Tag_Processor( $block_content );
 		if ( $processor->next_tag() ) {
-			$processor->add_class( 'incc-global-hover' );
+			$processor->add_class( 'btcpa-global-hover' );
 
 			$existing_style = $processor->get_attribute( 'style' ) ?? '';
 			$new_style      = rtrim( $existing_style, '; ' );
@@ -521,18 +521,18 @@ if ( ! function_exists( 'incc_render_group_global_hover' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_group_global_hover', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_group_global_hover', 10, 2 );
 
 // =============================================================================
 // Heading & Paragraph – Max Width Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_text_max_width_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_text_max_width_editor_assets' ) ) :
 	/**
 	 * Enqueues the text-max-width extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_text_max_width_editor_assets() {
+	function btcpa_enqueue_text_max_width_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/text-max-width/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -542,7 +542,7 @@ if ( ! function_exists( 'incc_enqueue_text_max_width_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-text-max-width-extension',
+			'btcpa-text-max-width-extension',
 			get_theme_file_uri( 'build/extensions/text-max-width/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -552,7 +552,7 @@ if ( ! function_exists( 'incc_enqueue_text_max_width_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/text-max-width/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-text-max-width-extension',
+				'btcpa-text-max-width-extension',
 				get_theme_file_uri( 'build/extensions/text-max-width/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -560,15 +560,15 @@ if ( ! function_exists( 'incc_enqueue_text_max_width_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_text_max_width_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_text_max_width_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_text_max_width_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_text_max_width_frontend_assets' ) ) :
 	/**
 	 * Enqueues the text-max-width frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_text_max_width_frontend_assets() {
+	function btcpa_enqueue_text_max_width_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/text-max-width/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/text-max-width/style-index.css' );
 
@@ -579,17 +579,17 @@ if ( ! function_exists( 'incc_enqueue_text_max_width_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-text-max-width-extension-style',
+			'btcpa-text-max-width-extension-style',
 			get_theme_file_uri( 'build/extensions/text-max-width/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_text_max_width_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_text_max_width_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_text_max_width' ) ) :
+if ( ! function_exists( 'btcpa_render_text_max_width' ) ) :
 	/**
 	 * Injects the `has-max-width` class and `--max-width` CSS custom property
 	 * into supported blocks on the frontend when the maxWidth attribute is set.
@@ -598,7 +598,7 @@ if ( ! function_exists( 'incc_render_text_max_width' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_text_max_width( $block_content, $block ) {
+	function btcpa_render_text_max_width( $block_content, $block ) {
 		$supported = array( 'core/heading', 'core/paragraph' );
 
 		if ( ! in_array( $block['blockName'], $supported, true ) ) {
@@ -633,19 +633,19 @@ if ( ! function_exists( 'incc_render_text_max_width' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_text_max_width', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_text_max_width', 10, 2 );
 
 
 // =============================================================================
 // Button – Full Width Mobile Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_button_full_width_mobile_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_button_full_width_mobile_editor_assets' ) ) :
 	/**
 	 * Enqueues the button-full-width-mobile extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_button_full_width_mobile_editor_assets() {
+	function btcpa_enqueue_button_full_width_mobile_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/button-full-width-mobile/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -655,7 +655,7 @@ if ( ! function_exists( 'incc_enqueue_button_full_width_mobile_editor_assets' ) 
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-button-full-width-mobile-extension',
+			'btcpa-button-full-width-mobile-extension',
 			get_theme_file_uri( 'build/extensions/button-full-width-mobile/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -665,7 +665,7 @@ if ( ! function_exists( 'incc_enqueue_button_full_width_mobile_editor_assets' ) 
 		$editor_css = get_theme_file_path( 'build/extensions/button-full-width-mobile/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-button-full-width-mobile-extension',
+				'btcpa-button-full-width-mobile-extension',
 				get_theme_file_uri( 'build/extensions/button-full-width-mobile/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -673,15 +673,15 @@ if ( ! function_exists( 'incc_enqueue_button_full_width_mobile_editor_assets' ) 
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_button_full_width_mobile_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_button_full_width_mobile_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_button_full_width_mobile_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_button_full_width_mobile_frontend_assets' ) ) :
 	/**
 	 * Enqueues the button-full-width-mobile frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_button_full_width_mobile_frontend_assets() {
+	function btcpa_enqueue_button_full_width_mobile_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/button-full-width-mobile/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/button-full-width-mobile/style-index.css' );
 
@@ -692,17 +692,17 @@ if ( ! function_exists( 'incc_enqueue_button_full_width_mobile_frontend_assets' 
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-button-full-width-mobile-extension-style',
+			'btcpa-button-full-width-mobile-extension-style',
 			get_theme_file_uri( 'build/extensions/button-full-width-mobile/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_button_full_width_mobile_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_button_full_width_mobile_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_button_full_width_mobile' ) ) :
+if ( ! function_exists( 'btcpa_render_button_full_width_mobile' ) ) :
 	/**
 	 * Injects the `has-full-width-mobile` class into core/button blocks on the frontend
 	 * when the `fullWidthMobile` attribute is enabled.
@@ -711,7 +711,7 @@ if ( ! function_exists( 'incc_render_button_full_width_mobile' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_button_full_width_mobile( $block_content, $block ) {
+	function btcpa_render_button_full_width_mobile( $block_content, $block ) {
 		if ( 'core/button' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -733,18 +733,18 @@ if ( ! function_exists( 'incc_render_button_full_width_mobile' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_button_full_width_mobile', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_button_full_width_mobile', 10, 2 );
 
 // =============================================================================
 // Button – Iconic Button Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_iconic_button_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_iconic_button_editor_assets' ) ) :
 	/**
 	 * Enqueues the iconic-button extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function incc_enqueue_iconic_button_editor_assets() {
+	function btcpa_enqueue_iconic_button_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/iconic-button/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -754,7 +754,7 @@ if ( ! function_exists( 'incc_enqueue_iconic_button_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-iconic-button-extension',
+			'btcpa-iconic-button-extension',
 			get_theme_file_uri( 'build/extensions/iconic-button/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -764,7 +764,7 @@ if ( ! function_exists( 'incc_enqueue_iconic_button_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/iconic-button/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-iconic-button-extension',
+				'btcpa-iconic-button-extension',
 				get_theme_file_uri( 'build/extensions/iconic-button/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -772,15 +772,15 @@ if ( ! function_exists( 'incc_enqueue_iconic_button_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_iconic_button_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_iconic_button_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_iconic_button_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_iconic_button_frontend_assets' ) ) :
 	/**
 	 * Enqueues the iconic-button extension frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function incc_enqueue_iconic_button_frontend_assets() {
+	function btcpa_enqueue_iconic_button_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/iconic-button/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/iconic-button/style-index.css' );
 
@@ -791,23 +791,23 @@ if ( ! function_exists( 'incc_enqueue_iconic_button_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-iconic-button-extension-style',
+			'btcpa-iconic-button-extension-style',
 			get_theme_file_uri( 'build/extensions/iconic-button/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_iconic_button_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_iconic_button_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_iconic_button_svg_kses_args' ) ) :
+if ( ! function_exists( 'btcpa_iconic_button_svg_kses_args' ) ) :
 	/**
 	 * Allowed SVG tags/attributes for icons rendered inside the iconic-button markup.
 	 *
 	 * @return array Kses args for wp_kses().
 	 */
-	function incc_iconic_button_svg_kses_args() {
+	function btcpa_iconic_button_svg_kses_args() {
 		// Presentation attributes shared by most SVG shape elements — stroke-based
 		// icon sets (Feather, Lucide, Heroicons outline, Tabler, etc.) rely on these
 		// alongside fill, so omitting any of them renders the icon invisible.
@@ -916,7 +916,7 @@ if ( ! function_exists( 'incc_iconic_button_svg_kses_args' ) ) :
 endif;
 
 
-if ( ! function_exists( 'incc_render_iconic_button' ) ) :
+if ( ! function_exists( 'btcpa_render_iconic_button' ) ) :
 	/**
 	 * Injects the icon SVG markup and size/gap/padding/background CSS custom
 	 * properties into core/button blocks on the frontend when the iconic button
@@ -926,7 +926,7 @@ if ( ! function_exists( 'incc_render_iconic_button' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_iconic_button( $block_content, $block ) {
+	function btcpa_render_iconic_button( $block_content, $block ) {
 		if ( 'core/button' !== ( $block['blockName'] ?? '' ) ) {
 			return $block_content;
 		}
@@ -950,16 +950,16 @@ if ( ! function_exists( 'incc_render_iconic_button' ) ) :
 		// Merge icon size/gap/padding/background CSS custom properties into the outer wrapper's style attribute.
 		$css_vars = array();
 		if ( ! empty( $attrs['iconicButtonIconSize'] ) ) {
-			$css_vars[] = '--incc-icon-size:' . esc_attr( $attrs['iconicButtonIconSize'] );
+			$css_vars[] = '--btcpa-icon-size:' . esc_attr( $attrs['iconicButtonIconSize'] );
 		}
 		if ( ! empty( $attrs['iconicButtonIconGap'] ) ) {
-			$css_vars[] = '--incc-icon-gap:' . esc_attr( $attrs['iconicButtonIconGap'] );
+			$css_vars[] = '--btcpa-icon-gap:' . esc_attr( $attrs['iconicButtonIconGap'] );
 		}
 		if ( ! empty( $attrs['iconicButtonIconPadding'] ) ) {
-			$css_vars[] = '--incc-icon-padding:' . esc_attr( $attrs['iconicButtonIconPadding'] );
+			$css_vars[] = '--btcpa-icon-padding:' . esc_attr( $attrs['iconicButtonIconPadding'] );
 		}
 		if ( ! empty( $attrs['iconicButtonIconBgColor'] ) ) {
-			$css_vars[] = '--incc-icon-bg-color:' . esc_attr( $attrs['iconicButtonIconBgColor'] );
+			$css_vars[] = '--btcpa-icon-bg-color:' . esc_attr( $attrs['iconicButtonIconBgColor'] );
 		}
 
 		if ( ! empty( $css_vars ) ) {
@@ -978,8 +978,8 @@ if ( ! function_exists( 'incc_render_iconic_button' ) ) :
 
 		// Build the icon markup and inject it after the link's inner content.
 		// Before/after visual ordering is handled entirely by CSS (flex-direction: row-reverse
-		// on the .incc-icon-before class), so the DOM position is always icon-after-text.
-		$icon_html = '<span class="incc-icon-button-svg">' . wp_kses( $icon_svg, incc_iconic_button_svg_kses_args() ) . '</span>';
+		// on the .btcpa-icon-before class), so the DOM position is always icon-after-text.
+		$icon_html = '<span class="btcpa-icon-button-svg">' . wp_kses( $icon_svg, btcpa_iconic_button_svg_kses_args() ) . '</span>';
 
 		$block_content = preg_replace_callback(
 			'/(<a[^>]*class="[^"]*wp-block-button__link[^"]*"[^>]*>)(.*?)(<\/a>)/s',
@@ -993,17 +993,17 @@ if ( ! function_exists( 'incc_render_iconic_button' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_iconic_button', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_iconic_button', 10, 2 );
 
 // =============================================================================
 // Kadence RowLayout — Featured Image as Background Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_kadence_featured_bg_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_kadence_featured_bg_editor_assets' ) ) :
 	/**
 	 * Enqueues the kadence-featured-bg extension script and editor stylesheet.
 	 */
-	function incc_enqueue_kadence_featured_bg_editor_assets() {
+	function btcpa_enqueue_kadence_featured_bg_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/kadence-featured-bg/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1013,7 +1013,7 @@ if ( ! function_exists( 'incc_enqueue_kadence_featured_bg_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-kadence-featured-bg-extension',
+			'btcpa-kadence-featured-bg-extension',
 			get_theme_file_uri( 'build/extensions/kadence-featured-bg/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1023,7 +1023,7 @@ if ( ! function_exists( 'incc_enqueue_kadence_featured_bg_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/kadence-featured-bg/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-kadence-featured-bg-extension',
+				'btcpa-kadence-featured-bg-extension',
 				get_theme_file_uri( 'build/extensions/kadence-featured-bg/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -1031,14 +1031,14 @@ if ( ! function_exists( 'incc_enqueue_kadence_featured_bg_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_kadence_featured_bg_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_kadence_featured_bg_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_kadence_featured_bg_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_kadence_featured_bg_frontend_assets' ) ) :
 	/**
 	 * Enqueues the kadence-featured-bg frontend stylesheet.
 	 */
-	function incc_enqueue_kadence_featured_bg_frontend_assets() {
+	function btcpa_enqueue_kadence_featured_bg_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/kadence-featured-bg/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/kadence-featured-bg/style-index.css' );
 
@@ -1049,17 +1049,17 @@ if ( ! function_exists( 'incc_enqueue_kadence_featured_bg_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-kadence-featured-bg-extension-style',
+			'btcpa-kadence-featured-bg-extension-style',
 			get_theme_file_uri( 'build/extensions/kadence-featured-bg/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_kadence_featured_bg_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_kadence_featured_bg_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_kadence_featured_bg' ) ) :
+if ( ! function_exists( 'btcpa_render_kadence_featured_bg' ) ) :
 	/**
 	 * Injects the featured image as background on kadence/rowlayout blocks
 	 * on the frontend when the useFeaturedImageAsBg attribute is enabled.
@@ -1068,7 +1068,7 @@ if ( ! function_exists( 'incc_render_kadence_featured_bg' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_kadence_featured_bg( $block_content, $block ) {
+	function btcpa_render_kadence_featured_bg( $block_content, $block ) {
 		if ( 'kadence/rowlayout' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -1108,7 +1108,7 @@ if ( ! function_exists( 'incc_render_kadence_featured_bg' ) ) :
 			if ( $new_style ) {
 				$new_style .= ';';
 			}
-			$new_style .= '--incc-featured-bg-image:url(' . esc_url( $image_url ) . ')';
+			$new_style .= '--btcpa-featured-bg-image:url(' . esc_url( $image_url ) . ')';
 			$processor->set_attribute( 'style', $new_style );
 
 			return $processor->get_updated_html();
@@ -1117,17 +1117,17 @@ if ( ! function_exists( 'incc_render_kadence_featured_bg' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_kadence_featured_bg', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_kadence_featured_bg', 10, 2 );
 
 // =============================================================================
 // Kadence Column — Global Hover Effect Extension
 // =============================================================================
 
-if ( ! function_exists( 'incc_enqueue_kadence_global_hover_editor_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_kadence_global_hover_editor_assets' ) ) :
 	/**
 	 * Enqueues the kadence-global-hover extension script and editor stylesheet.
 	 */
-	function incc_enqueue_kadence_global_hover_editor_assets() {
+	function btcpa_enqueue_kadence_global_hover_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/kadence-global-hover/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1137,7 +1137,7 @@ if ( ! function_exists( 'incc_enqueue_kadence_global_hover_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'incc-kadence-global-hover-extension',
+			'btcpa-kadence-global-hover-extension',
 			get_theme_file_uri( 'build/extensions/kadence-global-hover/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1147,7 +1147,7 @@ if ( ! function_exists( 'incc_enqueue_kadence_global_hover_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/kadence-global-hover/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'incc-kadence-global-hover-extension',
+				'btcpa-kadence-global-hover-extension',
 				get_theme_file_uri( 'build/extensions/kadence-global-hover/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -1155,14 +1155,14 @@ if ( ! function_exists( 'incc_enqueue_kadence_global_hover_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'incc_enqueue_kadence_global_hover_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_kadence_global_hover_editor_assets' );
 
 
-if ( ! function_exists( 'incc_enqueue_kadence_global_hover_frontend_assets' ) ) :
+if ( ! function_exists( 'btcpa_enqueue_kadence_global_hover_frontend_assets' ) ) :
 	/**
 	 * Enqueues the kadence-global-hover frontend stylesheet.
 	 */
-	function incc_enqueue_kadence_global_hover_frontend_assets() {
+	function btcpa_enqueue_kadence_global_hover_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/kadence-global-hover/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/kadence-global-hover/style-index.css' );
 
@@ -1173,17 +1173,17 @@ if ( ! function_exists( 'incc_enqueue_kadence_global_hover_frontend_assets' ) ) 
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'incc-kadence-global-hover-extension-style',
+			'btcpa-kadence-global-hover-extension-style',
 			get_theme_file_uri( 'build/extensions/kadence-global-hover/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'incc_enqueue_kadence_global_hover_frontend_assets' );
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_kadence_global_hover_frontend_assets' );
 
 
-if ( ! function_exists( 'incc_render_kadence_global_hover' ) ) :
+if ( ! function_exists( 'btcpa_render_kadence_global_hover' ) ) :
 	/**
 	 * Injects the `global-hover` class into kadence/column blocks on the frontend
 	 * when the globalHoverEffect attribute is enabled.
@@ -1192,7 +1192,7 @@ if ( ! function_exists( 'incc_render_kadence_global_hover' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function incc_render_kadence_global_hover( $block_content, $block ) {
+	function btcpa_render_kadence_global_hover( $block_content, $block ) {
 		if ( 'kadence/column' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -1214,4 +1214,68 @@ if ( ! function_exists( 'incc_render_kadence_global_hover' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'incc_render_kadence_global_hover', 10, 2 );
+add_filter( 'render_block', 'btcpa_render_kadence_global_hover', 10, 2 );
+
+
+// =============================================================================
+// Heading & Paragraph – Highlight Format
+// =============================================================================
+
+if ( ! function_exists( 'btcpa_enqueue_highlight_editor_assets' ) ) :
+	/**
+	 * Enqueues the highlight format script and editor stylesheet.
+	 * Runs on `enqueue_block_editor_assets` (editor only).
+	 */
+	function btcpa_enqueue_highlight_editor_assets() {
+		$asset_file = get_theme_file_path( 'build/extensions/highlight/index.asset.php' );
+
+		if ( ! file_exists( $asset_file ) ) {
+			return;
+		}
+
+		$assets = require $asset_file;
+
+		wp_enqueue_script(
+			'btcpa-highlight-extension',
+			get_theme_file_uri( 'build/extensions/highlight/index.js' ),
+			$assets['dependencies'],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		$editor_css = get_theme_file_path( 'build/extensions/highlight/index.css' );
+		if ( file_exists( $editor_css ) ) {
+			wp_enqueue_style(
+				'btcpa-highlight-extension',
+				get_theme_file_uri( 'build/extensions/highlight/index.css' ),
+				array(),
+				wp_get_theme()->get( 'Version' )
+			);
+		}
+	}
+endif;
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_highlight_editor_assets' );
+
+
+if ( ! function_exists( 'btcpa_enqueue_highlight_frontend_assets' ) ) :
+	/**
+	 * Enqueues the highlight format stylesheet.
+	 * Runs on `enqueue_block_assets` (editor + front end).
+	 */
+	function btcpa_enqueue_highlight_frontend_assets() {
+		$asset_file = get_theme_file_path( 'build/extensions/highlight/index.asset.php' );
+		$style_file = get_theme_file_path( 'build/extensions/highlight/style-index.css' );
+
+		if ( ! file_exists( $asset_file ) || ! file_exists( $style_file ) ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'btcpa-highlight-extension-style',
+			get_theme_file_uri( 'build/extensions/highlight/style-index.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
+endif;
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_highlight_frontend_assets' );

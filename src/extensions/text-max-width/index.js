@@ -18,7 +18,7 @@ const SUPPORTED_BLOCKS = ['core/heading', 'core/paragraph'];
 const ATTRIBUTE = 'maxWidth';
 const CLASS_NAME = 'has-max-width';
 
-addFilter('blocks.registerBlockType', 'incc/text-max-width-add-attribute', (settings, name) => {
+addFilter('blocks.registerBlockType', 'btcpa/text-max-width-add-attribute', (settings, name) => {
     if (!SUPPORTED_BLOCKS.includes(name)) {
         return settings;
     }
@@ -37,7 +37,7 @@ addFilter('blocks.registerBlockType', 'incc/text-max-width-add-attribute', (sett
 
 addFilter(
     'editor.BlockEdit',
-    'incc/text-max-width-add-inspector-controls',
+    'btcpa/text-max-width-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -50,9 +50,9 @@ addFilter(
                 <>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('Max Width', 'insignia-capital-corp')}>
+                        <PanelBody title={__('Max Width', 'breakthrough-cpas')}>
                             <NativeRangeControl
-                                label={__('Maximum width (px)', 'insignia-capital-corp')}
+                                label={__('Maximum width (px)', 'breakthrough-cpas')}
                                 value={attributes[ATTRIBUTE]}
                                 onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                                 min={200}
@@ -70,7 +70,7 @@ addFilter(
 
 addFilter(
     'editor.BlockListBlock',
-    'incc/text-max-width-add-styles',
+    'btcpa/text-max-width-add-styles',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;

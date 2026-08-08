@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "incc/marque",
+    "name": "btcpa/marque",
     "version": "1.0.0",
     "title": "Marquee",
-    "category": "incc",
+    "category": "btcpa",
     "icon": "controls-repeat",
     "description": "Create scrolling marquee or ticker with custom inner blocks.",
     "supports": {
@@ -51,7 +51,7 @@
             "type": "number"
         }
     },
-    "textdomain": "insignia-capital-corp",
+    "textdomain": "breakthrough-cpas",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "style": "file:./style-index.css",

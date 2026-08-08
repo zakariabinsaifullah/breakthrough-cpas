@@ -17,7 +17,7 @@ const Edit = (props) => {
     return (
         <>
             <InspectorControls>
-                <PanelBody title={__('Icon Settings', 'insignia-capital-corp')}>
+                <PanelBody title={__('Icon Settings', 'breakthrough-cpas')}>
                     <NativeIconPicker
                         onIconSelect={(name, type) => {
                             setAttributes({ iconName: name, iconType: type, customSvgCode: undefined });

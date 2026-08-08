@@ -35,7 +35,7 @@ const OverlayBgControl = ( { clientId, attributes, setAttributes, overlayBgColor
                 customOverlayBgColor: undefined
             } );
         },
-        label: __( 'Overlay Background', 'insignia-capital-corp' ),
+        label: __( 'Overlay Background', 'breakthrough-cpas' ),
         isShownByDefault: true,
         enableAlpha: true,
         clearable: true,

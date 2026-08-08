@@ -89,11 +89,11 @@ export default function Edit(props) {
     }, []);
 
     const fontFamilyOptions = [
-        { label: __('Default', 'insignia-capital-corp'), value: '' },
+        { label: __('Default', 'breakthrough-cpas'), value: '' },
         ...fontFamilies.map(f => {
             const value = f.fontFamily || (f.slug ? `var(--wp--preset--font-family--${f.slug})` : f.slug);
             return {
-                label: f.name || f.slug || __('Unknown', 'insignia-capital-corp'),
+                label: f.name || f.slug || __('Unknown', 'breakthrough-cpas'),
                 value: value
             };
         })
@@ -163,7 +163,7 @@ export default function Edit(props) {
                     ref={setPopoverAnchor}
                     name="link"
                     icon={link}
-                    title={__('Link', 'insignia-capital-corp')}
+                    title={__('Link', 'breakthrough-cpas')}
                     onClick={() => setIsEditingURL(true)}
                     isActive={!!href || isEditingURL}
                 />
@@ -174,7 +174,7 @@ export default function Edit(props) {
                         placement="bottom"
                         focusOnMount={true}
                         offset={12}
-                        className="incc-icon__link-popover"
+                        className="btcpa-icon__link-popover"
                         variant="alternate"
                     >
                         <LinkControl
@@ -203,9 +203,9 @@ export default function Edit(props) {
                 )}
             </BlockControls>
             <InspectorControls>
-                <PanelBody title={__('Settings', 'insignia-capital-corp')}>
+                <PanelBody title={__('Settings', 'breakthrough-cpas')}>
                     <NativeToggleControl
-                        label={__('Add List Title', 'insignia-capital-corp')}
+                        label={__('Add List Title', 'breakthrough-cpas')}
                         checked={showTitle}
                         onChange={value => setAttributes({ showTitle: value })}
                     />
@@ -221,7 +221,7 @@ export default function Edit(props) {
                         iconSize={iconSize}
                         strokeWidth={strokeWidth}
                     />
-                    <NativeResponsiveControl label={__('Icon Size (px)', 'insignia-capital-corp')} props={props}>
+                    <NativeResponsiveControl label={__('Icon Size (px)', 'breakthrough-cpas')} props={props}>
                         <RangeControl
                             value={resolvedSizes[resMode]}
                             onChange={value => setAttributes({ sizes: { ...sizes, [resMode]: value } })}
@@ -232,7 +232,7 @@ export default function Edit(props) {
                                 'Desktop' !== resMode && isInheritedSize
                                     ? __(
                                           'Inherited from the larger screen size. Change it to set a size just for this device.',
-                                          'insignia-capital-corp'
+                                          'breakthrough-cpas'
                                       )
                                     : undefined
                             }
@@ -241,34 +241,34 @@ export default function Edit(props) {
                     </NativeResponsiveControl>
                 </PanelBody>
                 {showTitle && (
-                    <PanelBody title={__('List Title', 'insignia-capital-corp')} initialOpen={false}>
+                    <PanelBody title={__('List Title', 'breakthrough-cpas')} initialOpen={false}>
                         <NativeUnitControl
-                            label={__('Gap ', 'insignia-capital-corp')}
+                            label={__('Gap ', 'breakthrough-cpas')}
                             value={listGap}
                             onChange={value => setAttributes({ listGap: value })}
                         />
                         {showTitle && (
                             <>
                                 <NativeSelectControl
-                                    label={__('Select Tag', 'insignia-capital-corp')}
+                                    label={__('Select Tag', 'breakthrough-cpas')}
                                     value={headingTag}
                                     onChange={value => setAttributes({ headingTag: value })}
                                     options={[
-                                        { label: __('H1', 'insignia-capital-corp'), value: 'h1' },
-                                        { label: __('H2', 'insignia-capital-corp'), value: 'h2' },
-                                        { label: __('H3', 'insignia-capital-corp'), value: 'h3' },
-                                        { label: __('H4', 'insignia-capital-corp'), value: 'h4' },
-                                        { label: __('H5', 'insignia-capital-corp'), value: 'h5' },
-                                        { label: __('H6', 'insignia-capital-corp'), value: 'h6' },
-                                        { label: __('Paragraph', 'insignia-capital-corp'), value: 'p' },
-                                        { label: __('Div', 'insignia-capital-corp'), value: 'div' }
+                                        { label: __('H1', 'breakthrough-cpas'), value: 'h1' },
+                                        { label: __('H2', 'breakthrough-cpas'), value: 'h2' },
+                                        { label: __('H3', 'breakthrough-cpas'), value: 'h3' },
+                                        { label: __('H4', 'breakthrough-cpas'), value: 'h4' },
+                                        { label: __('H5', 'breakthrough-cpas'), value: 'h5' },
+                                        { label: __('H6', 'breakthrough-cpas'), value: 'h6' },
+                                        { label: __('Paragraph', 'breakthrough-cpas'), value: 'p' },
+                                        { label: __('Div', 'breakthrough-cpas'), value: 'div' }
                                     ]}
                                 />
                                 <NativeTextControl
-                                    label={__('Title Text', 'insignia-capital-corp')}
+                                    label={__('Title Text', 'breakthrough-cpas')}
                                     value={heading}
                                     onChange={value => setAttributes({ heading: value })}
-                                    placeholder={__('List title...', 'insignia-capital-corp')}
+                                    placeholder={__('List title...', 'breakthrough-cpas')}
                                 />
                             </>
                         )}
@@ -278,7 +278,7 @@ export default function Edit(props) {
             <InspectorControls group="styles">
                 {showTitle && (
                     <ToolsPanel
-                        label={__('Title', 'insignia-capital-corp')}
+                        label={__('Title', 'breakthrough-cpas')}
                         resetAll={() =>
                             setAttributes({
                                 titleSize: undefined,
@@ -288,7 +288,7 @@ export default function Edit(props) {
                     >
                         <ToolsPanelItem
                             hasValue={() => !!titleSize}
-                            label={__('Size', 'insignia-capital-corp')}
+                            label={__('Size', 'breakthrough-cpas')}
                             onDeselect={() => {
                                 setAttributes({
                                     titleSize: undefined
@@ -297,7 +297,7 @@ export default function Edit(props) {
                             onSelect={() => {}}
                         >
                             <NativeUnitControl
-                                label={__('Font Size', 'insignia-capital-corp')}
+                                label={__('Font Size', 'breakthrough-cpas')}
                                 value={titleSize}
                                 onChange={value => setAttributes({ titleSize: value })}
                             />
@@ -305,7 +305,7 @@ export default function Edit(props) {
 
                         <ToolsPanelItem
                             hasValue={() => !!titleColor}
-                            label={__('Color', 'insignia-capital-corp')}
+                            label={__('Color', 'breakthrough-cpas')}
                             onDeselect={() => {
                                 setAttributes({
                                     titleColor: undefined
@@ -314,12 +314,12 @@ export default function Edit(props) {
                             onSelect={() => {}}
                         >
                             <PanelColorControl
-                                label={__('Color', 'insignia-capital-corp')}
+                                label={__('Color', 'breakthrough-cpas')}
                                 colorSettings={[
                                     {
                                         value: titleColor,
                                         onChange: color => setAttributes({ titleColor: color }),
-                                        label: __('Color', 'insignia-capital-corp')
+                                        label: __('Color', 'breakthrough-cpas')
                                     }
                                 ]}
                             />
@@ -327,7 +327,7 @@ export default function Edit(props) {
 
                         <ToolsPanelItem
                             hasValue={() => !!titleFontFamily}
-                            label={__('Font', 'insignia-capital-corp')}
+                            label={__('Font', 'breakthrough-cpas')}
                             onDeselect={() => {
                                 setAttributes({
                                     titleFontFamily: undefined
@@ -336,7 +336,7 @@ export default function Edit(props) {
                             onSelect={() => {}}
                         >
                             <NativeSelectControl
-                                label={__('Font', 'insignia-capital-corp')}
+                                label={__('Font', 'breakthrough-cpas')}
                                 value={titleFontFamily}
                                 onChange={value => setAttributes({ titleFontFamily: value })}
                                 options={fontFamilyOptions}
@@ -346,7 +346,7 @@ export default function Edit(props) {
                 )}
             </InspectorControls>
             <div {...blockProps}>
-                <div className="incc-icon-block-wrapper">
+                <div className="btcpa-icon-block-wrapper">
                     <div
                         className={classNames('icon-container', colorProps.className, borderProps.className)}
                         style={{
@@ -365,7 +365,7 @@ export default function Edit(props) {
                                 tagName={headingTag}
                                 value={heading}
                                 onChange={value => setAttributes({ heading: value })}
-                                placeholder={__('List title...', 'insignia-capital-corp')}
+                                placeholder={__('List title...', 'breakthrough-cpas')}
                                 className="icon-heading"
                             />
                         </div>

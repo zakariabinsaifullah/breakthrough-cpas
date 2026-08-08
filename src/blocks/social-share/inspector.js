@@ -32,41 +32,41 @@ export default function Inspector(props) {
     return (
         <>
             <InspectorControls>
-                <PanelBody title={__('Platforms', 'insignia-capital-corp')}>
+                <PanelBody title={__('Platforms', 'breakthrough-cpas')}>
                     <NativeToggleControl
-                        label={__('Copy Link', 'insignia-capital-corp')}
+                        label={__('Copy Link', 'breakthrough-cpas')}
                         checked={showCopyLink}
                         onChange={value => setAttributes({ showCopyLink: value })}
                     />
                     <NativeToggleControl
-                        label={__('LinkedIn', 'insignia-capital-corp')}
+                        label={__('LinkedIn', 'breakthrough-cpas')}
                         checked={showLinkedIn}
                         onChange={value => setAttributes({ showLinkedIn: value })}
                     />
                     <NativeToggleControl
-                        label={__('X (Twitter)', 'insignia-capital-corp')}
+                        label={__('X (Twitter)', 'breakthrough-cpas')}
                         checked={showTwitter}
                         onChange={value => setAttributes({ showTwitter: value })}
                     />
                     <NativeToggleControl
-                        label={__('Facebook', 'insignia-capital-corp')}
+                        label={__('Facebook', 'breakthrough-cpas')}
                         checked={showFacebook}
                         onChange={value => setAttributes({ showFacebook: value })}
                     />
                 </PanelBody>
-                <PanelBody title={__('Layout', 'insignia-capital-corp')} initialOpen={false}>
+                <PanelBody title={__('Layout', 'breakthrough-cpas')} initialOpen={false}>
                     <NativeUnitControl
-                        label={__('Icon Size', 'insignia-capital-corp')}
+                        label={__('Icon Size', 'breakthrough-cpas')}
                         value={iconSize}
                         onChange={value => setAttributes({ iconSize: value })}
                         mb={16}
                     />
-                    <NativeUnitControl label={__('Gap', 'insignia-capital-corp')} value={gap} onChange={value => setAttributes({ gap: value })} />
+                    <NativeUnitControl label={__('Gap', 'breakthrough-cpas')} value={gap} onChange={value => setAttributes({ gap: value })} />
                 </PanelBody>
             </InspectorControls>
             <InspectorControls group="styles">
                 <ToolsPanel
-                    label={__('Icon Style', 'insignia-capital-corp')}
+                    label={__('Icon Style', 'breakthrough-cpas')}
                     resetAll={() =>
                         setAttributes({
                             iconColor: undefined,
@@ -78,22 +78,22 @@ export default function Inspector(props) {
                 >
                     <ToolsPanelItem
                         hasValue={() => !!iconBgColor || !!iconColor}
-                        label={__('Colors', 'insignia-capital-corp')}
+                        label={__('Colors', 'breakthrough-cpas')}
                         onDeselect={() => setAttributes({ iconBgColor: undefined })}
                         onSelect={() => {}}
                     >
                         <PanelColorControl
-                            label={__('Colors', 'insignia-capital-corp')}
+                            label={__('Colors', 'breakthrough-cpas')}
                             colorSettings={[
                                 {
                                     value: iconColor,
                                     onChange: color => setAttributes({ iconColor: color }),
-                                    label: __('Color', 'insignia-capital-corp')
+                                    label: __('Color', 'breakthrough-cpas')
                                 },
                                 {
                                     value: iconBgColor,
                                     onChange: color => setAttributes({ iconBgColor: color }),
-                                    label: __('Background', 'insignia-capital-corp')
+                                    label: __('Background', 'breakthrough-cpas')
                                 }
                             ]}
                         />
@@ -101,12 +101,12 @@ export default function Inspector(props) {
 
                     <ToolsPanelItem
                         hasValue={() => !!iconRadius}
-                        label={__('Radius', 'insignia-capital-corp')}
+                        label={__('Radius', 'breakthrough-cpas')}
                         onDeselect={() => setAttributes({ iconRadius: undefined })}
                         onSelect={() => {}}
                     >
                         <NativeUnitControl
-                            label={__('Radius', 'insignia-capital-corp')}
+                            label={__('Radius', 'breakthrough-cpas')}
                             value={iconRadius}
                             onChange={value => setAttributes({ iconRadius: value })}
                         />
@@ -114,12 +114,12 @@ export default function Inspector(props) {
 
                     <ToolsPanelItem
                         hasValue={() => !!iconPadding}
-                        label={__('Padding', 'insignia-capital-corp')}
+                        label={__('Padding', 'breakthrough-cpas')}
                         onDeselect={() => setAttributes({ iconPadding: undefined })}
                         onSelect={() => {}}
                     >
                         <NativeUnitControl
-                            label={__('Padding', 'insignia-capital-corp')}
+                            label={__('Padding', 'breakthrough-cpas')}
                             value={iconPadding}
                             onChange={value => setAttributes({ iconPadding: value })}
                         />

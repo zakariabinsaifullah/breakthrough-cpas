@@ -11,14 +11,14 @@
 }
 
 .is-style-post-typo.wp-block-post-content h2 {
-    font-size: var(--wp--preset--font-size--incc-heading-three);
+    font-size: var(--wp--preset--font-size--btcpa-heading-three);
 }
 
 .is-style-outline-link .wp-block-post-excerpt__more-link {
     border: 1px solid currentColor;
     border-radius: 100px;
     padding: 10px 24px;
-    color: var(--wp--preset--color--incc-white);
+    color: var(--wp--preset--color--btcpa-white);
 }
 
 a.wp-block-post-excerpt__more-link:hover {
@@ -61,7 +61,7 @@ header.wp-block-kadence-rowlayout::before {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.175) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0) 60%);
 }
 
-.incc-icon-pos .kt-svg-icon-link {
+.btcpa-icon-pos .kt-svg-icon-link {
     flex-direction: row-reverse !important;
     gap: 12px;
 }
@@ -77,14 +77,14 @@ header.wp-block-kadence-rowlayout::before {
     display: inline-block;
     width: 16px;
     height: 12px;
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.041 6.681H.851A.826.826 0 0 1 0 5.83a.826.826 0 0 1 .852-.852h12.19L9.508 1.439a.76.76 0 0 1-.243-.593.87.87 0 0 1 .268-.6.8.8 0 0 1 .59-.246.84.84 0 0 1 .597.252l4.981 4.975a.82.82 0 0 1 .26.603.82.82 0 0 1-.26.602l-4.956 4.95a.84.84 0 0 1-.597.252.8.8 0 0 1-.59-.252.82.82 0 0 1-.255-.606q0-.357.255-.612z' fill='%23dbae10'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.041 6.681H.851A.826.826 0 0 1 0 5.83a.826.826 0 0 1 .852-.852h12.19L9.508 1.439a.76.76 0 0 1-.243-.593.87.87 0 0 1 .268-.6.8.8 0 0 1 .59-.246.84.84 0 0 1 .597.252l4.981 4.975a.82.82 0 0 1 .26.603.82.82 0 0 1-.26.602l-4.956 4.95a.84.84 0 0 1-.597.252.8.8 0 0 1-.59-.252.82.82 0 0 1-.255-.606q0-.357.255-.612z' fill='%233d7bff'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: contain;
     flex-shrink: 0;
 }
 
 .has-featured-image-bg:before {
-    background: linear-gradient(172.74deg, rgba(34, 34, 34, 0) -35.15%, #222222 81.33%);
+    background: linear-gradient(172.74deg, rgba(34, 34, 34, 0) -35.15%, #191919 81.33%);
     content: '';
     position: absolute;
     top: 0;
@@ -102,19 +102,19 @@ header.wp-block-kadence-rowlayout::before {
 
 /* Kadence Codes */
 .wp-block-kadence-listitem + .wp-block-kadence-listitem {
-    border-top: 1px solid #e7edf7;
+    border-top: 1px solid #e8e9ec;
     padding-top: 16px !important;
     margin-top: 16px !important;
 }
 
 .kb-table-container {
-    border: 1px solid #cccccc;
+    border: 1px solid #d8d8d8;
     border-radius: 20px;
     overflow: hidden;
 }
 
 .kb-table th {
-    background: #061839 !important;
+    background: #12244C !important;
 }
 
 .kb-table p {
@@ -125,39 +125,69 @@ header.wp-block-kadence-rowlayout::before {
     color: #fff !important;
 }
 
-.incc-special-table tbody tr:last-child td:last-child {
-    background: #6793c9;
+.btcpa-special-table tbody tr:last-child td:last-child {
+    background: #77a2ff;
     color: #fff !important;
 }
 
 /*
- * Button hover states
+ * Button styles
  *
- * theme.json emits these as `:root :where(.wp-element-button:hover, ...)`,
- * which has almost no specificity (0,1,0) and loses inside the editor canvas.
- * core/button also declares `selectors.root` as
- * `.wp-block-button .wp-block-button__link` (0,2,0), so we match that here to
- * re-assert hover in the editor. Loaded in both the editor and the front end
- * via `enqueue_block_assets`, so the two stay identical.
+ * Loaded in both the editor and the front end via `enqueue_block_assets`, so
+ * the two stay identical. Block style variation CSS (`is-style-alternative`,
+ * `is-style-link`) is not emitted from theme.json at all, so those variations
+ * are defined here rather than there.
  *
- * Block style variation CSS (`is-style-alternative`) is not delivered to the
- * editor payload at all, so its hover is defined here rather than in theme.json.
+ * Buttons have no hover state by design — do not add one here without also
+ * checking theme.json, or the two will disagree.
  */
-.wp-block-button .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--incc-yellow);
-    border-color: var(--wp--preset--color--incc-yellow);
-    color: var(--wp--preset--color--incc-white);
+
+/*
+ * Default button — 1px gradient border.
+ *
+ * A border cannot take a gradient directly, so the button paints two background
+ * layers: an opaque white layer clipped to the padding box (the fill), and the
+ * gradient clipped to the border box (showing only through the 1px transparent
+ * border). theme.json sets `border-color: transparent` and `border-width: 1px`
+ * so the gradient has a gap to show through.
+ *
+ * Excludes the Link and Alternative variations, which define their own borders.
+ */
+.wp-block-button:not(.is-style-link):not(.is-style-alternative) .wp-block-button__link {
+    background-image: linear-gradient(
+            var(--wp--preset--color--btcpa-white),
+            var(--wp--preset--color--btcpa-white)
+        ),
+        var(--wp--preset--gradient--btcpa-gradient-two);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 11.5px 0 #38a0ff;
 }
 
-.wp-block-button.is-style-alternative .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--incc-navy-600);
-    border-color: var(--wp--preset--color--incc-navy-600);
-    color: var(--wp--preset--color--incc-white);
-}
-
-/* The Link style is a plain text link — it must not pick up either fill. */
-.wp-block-button.is-style-link .wp-block-button__link:hover {
+/*
+ * Alternative — solid outline, no gradient.
+ *
+ * theme.json declares this variation's border under
+ * `styles.blocks.core/button.variations.alternative`, but block style variation
+ * CSS is not emitted from theme.json (verified against WP 7.0), so it is
+ * restated here. Without it the variation would inherit the default button's
+ * `border-color: transparent` and render with no visible outline.
+ */
+.wp-block-button.is-style-alternative .wp-block-button__link {
     background-color: transparent;
-    border-color: transparent;
-    color: var(--wp--preset--color--incc-neutral-darkest);
+    background-image: none;
+    border-color: var(--wp--preset--color--btcpa-dodger-blue-darker);
+    border-width: 2px;
+    border-style: solid;
+    color: var(--wp--preset--color--btcpa-neutral-darkest);
+}
+
+/*
+ * Link — must not pick up the default button's white fill. Same reason as
+ * Alternative above: the variation's `background: transparent` in theme.json
+ * is not emitted, so it is restated here.
+ */
+.wp-block-button.is-style-link .wp-block-button__link {
+    background-color: transparent;
+    background-image: none;
 }

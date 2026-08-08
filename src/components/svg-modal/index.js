@@ -10,7 +10,7 @@ const CustomiconModal = ({ customiconPanel, setCustomiconPanel, onInsert, value 
 
     const handleInsert = () => {
         if (code.trim() === '') {
-            wp.data.dispatch('core/notices').createNotice('error', __('Please enter SVG code', 'insignia-capital-corp'), {
+            wp.data.dispatch('core/notices').createNotice('error', __('Please enter SVG code', 'breakthrough-cpas'), {
                 isDismissible: true
             });
             return;
@@ -19,18 +19,18 @@ const CustomiconModal = ({ customiconPanel, setCustomiconPanel, onInsert, value 
     };
 
     return (
-        <Modal className="svgib__modal custom-svg" title={__('Custom SVG', 'insignia-capital-corp')} onRequestClose={() => setCustomiconPanel(false)}>
+        <Modal className="svgib__modal custom-svg" title={__('Custom SVG', 'breakthrough-cpas')} onRequestClose={() => setCustomiconPanel(false)}>
             <div className="svg-controls">
-                <RangeControl label={__('SVG Preview Size', 'insignia-capital-corp')} value={size} onChange={v => setSize(v)} min={20} max={150} />
+                <RangeControl label={__('SVG Preview Size', 'breakthrough-cpas')} value={size} onChange={v => setSize(v)} min={20} max={150} />
             </div>
             <div className="svgib-modal__wrapper">
                 <div className="svg-code">
                     <TextareaControl
-                        label={__('SVG Code', 'insignia-capital-corp')}
-                        help={__('Paste your SVG code here.', 'insignia-capital-corp')}
+                        label={__('SVG Code', 'breakthrough-cpas')}
+                        help={__('Paste your SVG code here.', 'breakthrough-cpas')}
                         value={code}
                         onChange={v => setCode(v)}
-                        placeholder={__('<svg>...</svg>', 'insignia-capital-corp')}
+                        placeholder={__('<svg>...</svg>', 'breakthrough-cpas')}
                         rows={10}
                     />
                 </div>
@@ -38,13 +38,13 @@ const CustomiconModal = ({ customiconPanel, setCustomiconPanel, onInsert, value 
                     {code ? (
                         <div dangerouslySetInnerHTML={{ __html: code }} />
                     ) : (
-                        <div className="preview-text">{__('SVG Preview', 'insignia-capital-corp')}</div>
+                        <div className="preview-text">{__('SVG Preview', 'breakthrough-cpas')}</div>
                     )}
                 </div>
             </div>
             <div className="insert-svg">
                 <Button variant="primary" onClick={handleInsert}>
-                    {__('Insert SVG', 'insignia-capital-corp')}
+                    {__('Insert SVG', 'breakthrough-cpas')}
                 </Button>
             </div>
         </Modal>

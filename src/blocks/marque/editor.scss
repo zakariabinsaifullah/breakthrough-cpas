@@ -2,7 +2,7 @@
  * Editor styles for the marquee block
  */
 
-.wp-block-incc-marque {
+.wp-block-btcpa-marque {
     overflow: hidden;
     display: flex;
 
@@ -18,7 +18,7 @@
     &.marquee-horizontal {
         flex-direction: row;
 
-        .incc-marquee-items {
+        .btcpa-marquee-items {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -47,7 +47,7 @@
         flex-direction: column;
         min-height: 400px;
         height: auto;
-        .incc-marquee-items {
+        .btcpa-marquee-items {
             display: flex;
             flex-direction: column;
             height: 100%;

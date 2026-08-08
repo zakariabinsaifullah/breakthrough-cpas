@@ -16,7 +16,7 @@
 				wrapper.classList.add( 'is-loading' );
 
 				var body = new URLSearchParams( {
-					action:     'incc_posts_grid',
+					action:     'btcpa_posts_grid',
 					nonce:      config.nonce,
 					cat:        activeCat,
 					page:       activePage,

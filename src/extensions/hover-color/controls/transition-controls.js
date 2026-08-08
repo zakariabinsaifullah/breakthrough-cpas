@@ -29,17 +29,17 @@ const HoverTransitionControls = ( { attributes, setAttributes } ) => {
     }
 
     const timingOptions = [
-        { label: __( 'Standard', 'insignia-capital-corp' ), value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
-        { label: __( 'Ease', 'insignia-capital-corp' ), value: 'ease' },
-        { label: __( 'Linear', 'insignia-capital-corp' ), value: 'linear' },
-        { label: __( 'Ease In', 'insignia-capital-corp' ), value: 'ease-in' },
-        { label: __( 'Ease Out', 'insignia-capital-corp' ), value: 'ease-out' },
-        { label: __( 'Ease In Out', 'insignia-capital-corp' ), value: 'ease-in-out' }
+        { label: __( 'Standard', 'breakthrough-cpas' ), value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+        { label: __( 'Ease', 'breakthrough-cpas' ), value: 'ease' },
+        { label: __( 'Linear', 'breakthrough-cpas' ), value: 'linear' },
+        { label: __( 'Ease In', 'breakthrough-cpas' ), value: 'ease-in' },
+        { label: __( 'Ease Out', 'breakthrough-cpas' ), value: 'ease-out' },
+        { label: __( 'Ease In Out', 'breakthrough-cpas' ), value: 'ease-in-out' }
     ];
 
     return (
         <div
-            className="incc-hover-color__transition-controls"
+            className="btcpa-hover-color__transition-controls"
             style={ {
                 gridTemplateColumns: 'repeat(2, minmax(0px, 1fr))',
                 gap: 'calc(16px)',
@@ -47,17 +47,17 @@ const HoverTransitionControls = ( { attributes, setAttributes } ) => {
             } }
         >
             <NativeRangeControl
-                label={ __( 'Transition Duration', 'insignia-capital-corp' ) }
+                label={ __( 'Transition Duration', 'breakthrough-cpas' ) }
                 value={ hoverTransitionDuration }
                 onChange={ value => setAttributes( { hoverTransitionDuration: value } ) }
                 min={ 0 }
                 max={ 2000 }
                 step={ 50 }
                 resetFallbackValue={ 200 }
-                help={ __( 'Duration in milliseconds', 'insignia-capital-corp' ) }
+                help={ __( 'Duration in milliseconds', 'breakthrough-cpas' ) }
             />
             <NativeSelectControl
-                label={ __( 'Timing Function', 'insignia-capital-corp' ) }
+                label={ __( 'Timing Function', 'breakthrough-cpas' ) }
                 value={ hoverTransitionTiming }
                 options={ timingOptions }
                 onChange={ value => setAttributes( { hoverTransitionTiming: value } ) }

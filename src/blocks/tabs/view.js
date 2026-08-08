@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const nxTabs = document.querySelectorAll('.wp-block-incc-tabs');
+    const nxTabs = document.querySelectorAll('.wp-block-btcpa-tabs');
 
     nxTabs.forEach(nxTab => {
         const navItems = nxTab.querySelectorAll('.tabs-nav .nav-item');

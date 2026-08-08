@@ -1,11 +1,11 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "incc/timeline-item",
+    "name": "btcpa/timeline-item",
     "version": "1.0.0",
     "title": "Timeline Item",
-    "category": "incc",
-    "parent": ["incc/timeline"],
+    "category": "btcpa",
+    "parent": ["btcpa/timeline"],
     "icon": "star-filled",
     "description": "Individual item for the timeline block.",
     "example": {},
@@ -33,7 +33,7 @@
             "default": "solid"
         }
     },
-    "textdomain": "insignia-capital-corp",
+    "textdomain": "breakthrough-cpas",
     "editorScript": "file:./index.js",
     "style": "file:./style-index.css"
 }
