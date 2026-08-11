@@ -110,30 +110,6 @@ p {
     padding-right: 40px !important;
 }
 
-.kt-accodion-icon-style-xclose .kt-blocks-accordion-icon-trigger:after,
-.kt-accodion-icon-style-xclose .kt-blocks-accordion-icon-trigger:before,
-.kt-accodion-icon-style-xclosecircle .kt-blocks-accordion-icon-trigger:after,
-.kt-accodion-icon-style-xclosecircle .kt-blocks-accordion-icon-trigger:before {
-    height: 2px !important;
-    width: 14px !important;
-    left: 11.5px !important;
-    top: 17px !important;
-}
-
-.kt-blocks-accordion-icon-trigger {
-    background: #f2f2f2;
-    padding: 6px;
-    border-radius: 50%;
-}
-
-.kt-accordion-panel-active span.kt-blocks-accordion-icon-trigger {
-    background: #192643;
-}
-
-.kt-accordion-panel-active {
-    border-radius: 8px 8px 0 0 !important;
-}
-
 .wp-block-kadence-navigation-link {
     position: relative;
 }
