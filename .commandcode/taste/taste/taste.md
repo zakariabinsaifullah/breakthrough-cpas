@@ -6,3 +6,4 @@
 - Wants the agent to ask for clarification when it encounters issues during a task, rather than guessing or silently deciding ("If you find any issues, ASK me"). Confidence: 0.9
 - Communicates in terse, numbered task lists with direct imperatives. Confidence: 0.6
 - References code locations by @-mentioning file/directory paths (e.g., "@src/blocks/timeline/") rather than describing them in prose. Confidence: 0.5
+- Prefers per-item spacing (e.g., `padding-bottom` on each item) over `flex gap` on the parent container when each item carries its own connector/`::before` styling, and expects the last item to drop the connector. Confidence: 0.5

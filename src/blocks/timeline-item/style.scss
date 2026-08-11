@@ -13,12 +13,34 @@
      */
     gap: var(--micon-gap, var(--ticon-gap, var(--dicon-gap, 30px)));
 
+    /**
+     * Item gap is now the item's bottom padding, cascading down from the
+     * largest breakpoint that has its own value.
+     */
+    padding-bottom: var(--mitem-gap, var(--titem-gap, var(--ditem-gap, 50px)));
+
     &::before {
-        display: none;
+        content: '';
+        position: absolute;
+        top: 40px;
+        bottom: 0;
+        left: 23px;
+        width: 2px;
+        background: linear-gradient(to bottom, #2fe3ff, #3b8fff, #b056ba, #ff3d8a);
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 40%);
+        -webkit-mask-size: 100% 12px;
+        mask-image: linear-gradient(to bottom, black 60%, transparent 40%);
+        mask-size: 100% 12px;
+        z-index: -1;
+        transform: translateX(-50%);
     }
 
     &:last-child {
         padding-bottom: 0;
+
+        &::before {
+            display: none;
+        }
     }
 
     .timeline-icon-row {
@@ -87,6 +109,7 @@
     @media (min-width: 1025px) {
         & {
             gap: var(--dicon-gap, 30px);
+            padding-bottom: var(--ditem-gap, 50px);
         }
     }
 
@@ -94,6 +117,7 @@
     @media (min-width: 768px) and (max-width: 1024px) {
         & {
             gap: var(--ticon-gap, var(--dicon-gap, 30px));
+            padding-bottom: var(--titem-gap, var(--ditem-gap, 50px));
         }
     }
 
