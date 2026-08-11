@@ -47,3 +47,54 @@ if ( ! function_exists( 'btcpa_pattern_categories' ) ) :
 	}
 endif;
 add_action( 'init', 'btcpa_pattern_categories' );
+
+
+// ── ID column on the Categories admin screen ──────────────────────────────────
+
+if ( ! function_exists( 'btcpa_category_columns' ) ) :
+	/**
+	 * Adds an "ID" column to the Categories list table.
+	 *
+	 * @param  array $columns Existing column definitions.
+	 * @return array
+	 */
+	function btcpa_category_columns( $columns ) {
+		$columns['btcpa_id'] = __( 'ID', 'breakthrough-cpas' );
+		return $columns;
+	}
+endif;
+add_filter( 'manage_edit-category_columns', 'btcpa_category_columns' );
+
+/**
+ * Caps the ID column width on the Categories list table.
+ */
+function btcpa_category_column_width() {
+	?>
+	<style>
+		.wp-list-table .column-btcpa_id {
+			width: 100px;
+			max-width: 100px;
+		}
+	</style>
+	<?php
+}
+add_action( 'admin_head-edit-tags.php', 'btcpa_category_column_width' );
+
+
+if ( ! function_exists( 'btcpa_category_column_content' ) ) :
+	/**
+	 * Outputs the term ID for the custom column.
+	 *
+	 * @param  string $content      Column content.
+	 * @param  string $column_name  Column key.
+	 * @param  int    $term_id      Term ID.
+	 * @return string
+	 */
+	function btcpa_category_column_content( $content, $column_name, $term_id ) {
+		if ( 'btcpa_id' === $column_name ) {
+			return (string) $term_id;
+		}
+		return $content;
+	}
+endif;
+add_filter( 'manage_category_custom_column', 'btcpa_category_column_content', 10, 3 );

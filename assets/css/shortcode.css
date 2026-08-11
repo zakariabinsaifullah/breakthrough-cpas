@@ -27,29 +27,30 @@
 
 .ipg-filter-btn {
     cursor: pointer;
-    border: none;
-    background: #fff;
+    background: transparent;
+    border: 1px solid #f47149;
     font-size: 18px;
     font-weight: 400;
     color: #000000;
-    padding: 10px 20px;
+    padding: 10px 24px;
     border-radius: 100px;
     transition: all 0.25s ease;
     line-height: 1.2;
-    border: 1px solid #ebebeb;
 }
 
 .ipg-filter-btn:hover {
-    color: #192643;
+    background: #f47149;
+    color: #ffffff;
 }
 
 .ipg-filter-btn.active {
-    background: #192643;
+    background: #f47149;
     color: #ffffff;
     font-weight: 400;
 }
 
 .ipg-filter-btn.active:hover {
+    background: #f47149;
     color: #ffffff !important;
 }
 
@@ -60,8 +61,8 @@
 .ipg-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 50px;
+    column-gap: 24px;
+    row-gap: 24px;
 }
 
 @media (max-width: 900px) {
@@ -88,6 +89,30 @@
 .ipg-card {
     display: flex;
     flex-direction: column;
+    border: 1px solid #dde2f0;
+    border-radius: 20px;
+    padding: 16px;
+    position: relative;
+    transition: border-color 0.2s ease;
+}
+
+/* Gradient-one border ring on hover (masked ::before, same as kadence section). */
+.ipg-card:hover::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    padding: 2px;
+    border-radius: inherit;
+    background: var(--wp--preset--gradient--btcpa-gradient-one);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .ipg-card__image {
@@ -116,9 +141,43 @@
     flex: 1;
 }
 
+/* Meta row: category · date + reading time */
+.ipg-card__meta-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ipg-card__category {
+    font-size: 14px;
+    font-weight: 500;
+    color: #f47149;
+    line-height: 1.4;
+}
+
+.ipg-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ipg-card__date,
+.ipg-card__read-time {
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+.ipg-card__sep {
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
 .ipg-card__title {
     margin: 0 0 16px;
     font-size: 20px;
+    color: #080046;
 }
 
 .ipg-card__title a {
@@ -128,22 +187,43 @@
 }
 
 .ipg-card__title a:hover {
-    color: #192643;
+    color: #f47149;
 }
 
 .ipg-card__excerpt {
-    margin: 0;
+    margin: 0 0 16px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.ipg-card__meta {
-    display: flex;
+/* Read more button */
+.ipg-card__read-more {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     margin-top: auto;
+    font-size: 14px;
+    font-weight: 500;
+    color: #f47149;
+    text-decoration: none;
+    transition: color 0.2s ease, gap 0.2s ease;
+    align-self: flex-start;
+}
+
+.ipg-card__read-more svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.ipg-card__read-more:hover {
+    color: #f47149;
+    gap: 12px;
+}
+
+.ipg-card__read-more:hover svg {
+    transform: translateX(2px);
 }
 
 .ipg-card__avatar {
@@ -157,18 +237,6 @@
     border-radius: 50%;
     object-fit: cover;
     display: block;
-}
-
-.ipg-card__author {
-    font-size: 14px;
-}
-
-.ipg-card__sep {
-    font-size: 14px;
-}
-
-.ipg-card__date {
-    font-size: 14px;
 }
 
 /* =============================================================================
@@ -206,13 +274,13 @@
 }
 
 .ipg-page-btn:hover:not(:disabled) {
-    border-color: #192643;
-    color: #192643;
+    border-color: #f47149;
+    color: #f47149;
 }
 
 .ipg-page-btn.active {
-    background: #192643;
-    border-color: #192643;
+    background: #f47149;
+    border-color: #f47149;
     color: #ffffff;
 }
 

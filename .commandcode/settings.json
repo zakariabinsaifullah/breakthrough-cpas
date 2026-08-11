@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "Shell(npm:*)",
-      "Shell(python3 -c \"import json; json.load(open('theme.json')); print('valid JSON')\")"
+      "Shell(python3 -c \"import json; json.load(open('theme.json')); print('valid JSON')\")",
+      "Shell(git add assets/css/blocks.css style.css .commandcode/taste/taste/taste.md && git commit -F - <<'EOF' add hover gradient flip and transitions to buttons Default and alternative button styles now flip their border gradient to 270deg on hover with a 0.2s transition. Also removes Kadence accordion icon overrides from style.css. Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(git:*)",
+      "Shell(node -e \"const s = require('fs').readFileSync('build/extensions/kadence-global-hover/index.js','utf8'); console.log('label present:', s.includes('Enable Hover Gradient Border')); console.log('old label gone:', !s.includes('Global Hover Effect'));\")",
+      "Shell(php -l inc/form.php)",
+      "Shell(node --check assets/js/form-settings.js)",
+      "Shell(php -l inc/shortcodes-page.php)",
+      "Shell(node --check assets/js/shortcodes-copy.js)",
+      "Shell(php -l inc/categories.php)",
+      "Shell(rm:*)",
+      "Shell(php -l inc/shortcode.php)",
+      "Shell(node --check assets/js/shortcode.js)",
+      "Shell(git check-ignore ref/ 2>/dev/null; echo \"---\"; git diff .commandcode/settings.json | head -25)",
+      "Shell(git check-ignore -v ref/ 2>&1; echo \"---\"; git status --porcelain | wc -l)",
+      "Shell(git status --porcelain --ignored 2>/dev/null | grep ref/ | head -3; echo \"---\"; ls -la ../.gitignore 2>/dev/null; cat ../.gitignore 2>/dev/null | grep -i ref; echo \"---done\")"
     ],
     "deny": [],
     "defaultMode": "default"

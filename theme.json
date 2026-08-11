@@ -32,6 +32,11 @@
                     "gradient": "linear-gradient(90deg, #FFA521 0%, #FF3D8A 65%)",
                     "name": "Gradient Five",
                     "slug": "btcpa-gradient-five"
+                },
+                {
+                    "gradient": "linear-gradient(270deg, #FFA521 0%, #FF3D8A 64.97%)",
+                    "name": "Button Gradient",
+                    "slug": "btcpa-button-gradient"
                 }
             ],
             "palette": [

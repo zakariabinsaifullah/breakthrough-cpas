@@ -1,9 +1,9 @@
 /**
  * Kadence Column — Global Hover Effect
  *
- * Adds a "Global Hover Effect" toggle to the advanced inspector controls of
- * kadence/column blocks. When enabled, a `global-hover` class is added to the
- * block's container so it can be targeted for hover styling.
+ * Adds an "Enable Hover Gradient Border" toggle to the advanced inspector
+ * controls of kadence/column blocks. When enabled, a `global-hover` class is
+ * added to the block's container so it can be targeted for hover styling.
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
@@ -38,7 +38,7 @@ addFilter('blocks.registerBlockType', 'btcpa/kadence-global-hover-add-attribute'
 });
 
 /**
- * Add "Global Hover Effect" toggle to the kadence/column advanced inspector.
+ * Add "Enable Hover Gradient Border" toggle to the kadence/column advanced inspector.
  */
 addFilter(
     'editor.BlockEdit',
@@ -56,7 +56,7 @@ addFilter(
                     <BlockEdit {...props} />
                     <InspectorAdvancedControls>
                         <NativeToggleControl
-                            label={__('Global Hover Effect', 'breakthrough-cpas')}
+                            label={__('Enable Hover Gradient Border', 'breakthrough-cpas')}
                             checked={!!attributes[ATTRIBUTE]}
                             onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                         />

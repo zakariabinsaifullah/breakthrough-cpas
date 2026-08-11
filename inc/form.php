@@ -143,6 +143,24 @@ function btcpa_form_add_menu() {
 	);
 }
 
+// ── Enqueue admin assets on the Form Settings page ────────────────────────────
+
+add_action( 'admin_enqueue_scripts', 'btcpa_form_admin_assets' );
+
+function btcpa_form_admin_assets( $hook ) {
+	if ( 'appearance_page_btcpa-form' !== $hook ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'btcpa-form-settings',
+		get_theme_file_uri( 'assets/js/form-settings.js' ),
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+}
+
 // ── Render settings page ───────────────────────────────────────────────────────
 
 function btcpa_form_render_page() {
@@ -183,11 +201,10 @@ function btcpa_form_render_page() {
 				">#btcpa-contact</code>
 				<button
 					type="button"
-					onclick="
-						navigator.clipboard.writeText('#btcpa-contact');
-						this.textContent = '✓ Copied!';
-						setTimeout(() => this.textContent = 'Copy', 2000);
-					"
+					class="btcpa-copy-button"
+					data-copy="#btcpa-contact"
+					data-label="<?php esc_attr_e( 'Copy', 'breakthrough-cpas' ); ?>"
+					data-copied="<?php esc_attr_e( '✓ Copied!', 'breakthrough-cpas' ); ?>"
 					style="
 						background: #2271b1;
 						color: #fff;

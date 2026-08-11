@@ -39,9 +39,12 @@ endif;
 
 if ( ! function_exists( 'btcpa_posts_grid_render_post_item' ) ) :
 	/**
-	 * Renders a single post card: image, title, excerpt, author avatar + name + date.
+	 * Renders a single post card: image → meta (category, date + reading time) → title → excerpt → read more.
+	 *
+	 * @param int    $post_id  Post ID.
+	 * @param string $taxonomy Taxonomy used for the category label.
 	 */
-	function btcpa_posts_grid_render_post_item( $post_id ) {
+	function btcpa_posts_grid_render_post_item( $post_id, $taxonomy = 'category' ) {
 		$post = get_post( $post_id );
 		if ( ! $post ) {
 			return '';
@@ -58,6 +61,14 @@ if ( ! function_exists( 'btcpa_posts_grid_render_post_item' ) ) :
 			? get_the_post_thumbnail( $post_id, 'medium_large', array( 'loading' => 'lazy' ) )
 			: '';
 
+		// Category (first term of the resolved taxonomy).
+		$terms    = get_the_terms( $post_id, $taxonomy );
+		$cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : '';
+
+		// Reading time: word count / 200 wpm, rounded up to at least 1 minute.
+		$word_count   = str_word_count( wp_strip_all_tags( $post->post_content ) );
+		$reading_time = max( 1, (int) ceil( $word_count / 200 ) );
+
 		$html  = '<div class="ipg-card">';
 
 		if ( $thumbnail ) {
@@ -67,18 +78,32 @@ if ( ! function_exists( 'btcpa_posts_grid_render_post_item' ) ) :
 		}
 
 		$html .= '<div class="ipg-card__body">';
+
+		// Meta row: category | date + reading time.
+		$html .= '<div class="ipg-card__meta-row">';
+		if ( $cat_name ) {
+			$html .= '<span class="ipg-card__category">' . esc_html( $cat_name ) . '</span>';
+		}
+		$html .= '<span class="ipg-card__meta">';
+		$html .= '<span class="ipg-card__date">' . esc_html( $date ) . '</span>';
+		$html .= '<span class="ipg-card__sep" aria-hidden="true">&middot;</span>';
+		/* translators: %d: reading time in minutes. */
+		$html .= '<span class="ipg-card__read-time">' . sprintf( esc_html__( '%d min read', 'breakthrough-cpas' ), $reading_time ) . '</span>';
+		$html .= '</span>';
+		$html .= '</div>';
+
 		$html .= '<h2 class="ipg-card__title"><a href="' . esc_url( $permalink ) . '">' . esc_html( $title ) . '</a></h2>';
 
 		if ( $excerpt ) {
 			$html .= '<p class="ipg-card__excerpt">' . esc_html( $excerpt ) . '</p>';
 		}
 
-		// $html .= '<div class="ipg-card__meta">';
-		// $html .= '<span class="ipg-card__avatar">' . $avatar . '</span>';
-		// $html .= '<span class="ipg-card__author">' . esc_html( $author_name ) . '</span>';
-		// $html .= '<span class="ipg-card__sep" aria-hidden="true">&middot;</span>';
-		// $html .= '<span class="ipg-card__date">' . esc_html( $date ) . '</span>';
-		// $html .= '</div>';
+		// Read more button.
+		$arrow_svg = '<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M.75 5.417h9.333m-4.666 4.666 4.666-4.666L5.417.75" stroke="url(#btcpa-arrow-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="btcpa-arrow-grad" x1="12.12" y1=".71" x2="-.53" y2="1.894" gradientUnits="userSpaceOnUse"><stop offset=".184" stop-color="#fb8561"/><stop offset=".918" stop-color="#f47149"/></linearGradient></defs></svg>';
+		$html    .= '<a class="ipg-card__read-more" href="' . esc_url( $permalink ) . '">';
+		$html    .= '<span>' . esc_html__( 'Read More', 'breakthrough-cpas' ) . '</span>';
+		$html    .= $arrow_svg;
+		$html    .= '</a>';
 
 		$html .= '</div>';
 		$html .= '</div>';
@@ -91,8 +116,11 @@ endif;
 if ( ! function_exists( 'btcpa_posts_grid_render_posts' ) ) :
 	/**
 	 * Renders the full grid of post cards for a given WP_Query.
+	 *
+	 * @param WP_Query $query    The query to render.
+	 * @param string   $taxonomy Taxonomy used for the category label.
 	 */
-	function btcpa_posts_grid_render_posts( $query ) {
+	function btcpa_posts_grid_render_posts( $query, $taxonomy = 'category' ) {
 		if ( ! $query->have_posts() ) {
 			return '<p class="ipg-no-posts">' . esc_html__( 'No posts found.', 'breakthrough-cpas' ) . '</p>';
 		}
@@ -101,7 +129,7 @@ if ( ! function_exists( 'btcpa_posts_grid_render_posts' ) ) :
 
 		while ( $query->have_posts() ) {
 			$query->the_post();
-			$html .= btcpa_posts_grid_render_post_item( get_the_ID() );
+			$html .= btcpa_posts_grid_render_post_item( get_the_ID(), $taxonomy );
 		}
 
 		$html .= '</div>';
@@ -274,7 +302,7 @@ if ( ! function_exists( 'btcpa_posts_grid_ajax' ) ) :
 		$query = new WP_Query( $args );
 
 		wp_send_json_success( array(
-			'html'         => btcpa_posts_grid_render_posts( $query ),
+			'html'         => btcpa_posts_grid_render_posts( $query, $taxonomy ),
 			'pagination'   => btcpa_posts_grid_render_pagination( (int) $query->max_num_pages, $page ),
 			'total_pages'  => (int) $query->max_num_pages,
 			'current_page' => $page,
@@ -289,13 +317,69 @@ add_action( 'wp_ajax_nopriv_btcpa_posts_grid', 'btcpa_posts_grid_ajax' );
 // Shortcode
 // =============================================================================
 
+if ( ! function_exists( 'btcpa_posts_grid_resolve_taxonomy' ) ) :
+	/**
+	 * Returns the primary hierarchical taxonomy for a post type.
+	 */
+	function btcpa_posts_grid_resolve_taxonomy( $post_type ) {
+		foreach ( get_object_taxonomies( $post_type, 'objects' ) as $tax ) {
+			if ( $tax->public && $tax->hierarchical ) {
+				return $tax->name;
+			}
+		}
+		return 'category';
+	}
+endif;
+
+
+if ( ! function_exists( 'btcpa_posts_grid_resolve_allowed_cats' ) ) :
+	/**
+	 * Resolves allowed category IDs, falling back to all non-empty terms.
+	 */
+	function btcpa_posts_grid_resolve_allowed_cats( $categories_raw, $taxonomy ) {
+		$ids = btcpa_posts_grid_resolve_category_ids( $categories_raw, $taxonomy );
+
+		if ( empty( $ids ) ) {
+			$all = get_terms( array( 'taxonomy' => $taxonomy, 'hide_empty' => true, 'fields' => 'ids' ) );
+			$ids = is_wp_error( $all ) ? array() : array_map( 'intval', $all );
+		}
+
+		return $ids;
+	}
+endif;
+
+
+if ( ! function_exists( 'btcpa_posts_grid_render_tabs' ) ) :
+	/**
+	 * Renders the filter tab buttons for a given set of terms.
+	 *
+	 * @param array $terms Array of WP_Term objects.
+	 */
+	function btcpa_posts_grid_render_tabs( $terms ) {
+		if ( empty( $terms ) ) {
+			return '';
+		}
+
+		$html  = '<div class="ipg-nav">';
+		$html .= '<button class="ipg-filter-btn active" data-cat="0">' . esc_html__( 'All', 'breakthrough-cpas' ) . '</button>';
+		foreach ( $terms as $term ) {
+			$html .= '<button class="ipg-filter-btn" data-cat="' . esc_attr( $term->term_id ) . '">' . esc_html( $term->name ) . '</button>';
+		}
+		$html .= '</div>';
+
+		return $html;
+	}
+endif;
+
+
 if ( ! function_exists( 'btcpa_posts_grid_shortcode' ) ) :
 	/**
-	 * [btcpa_posts_grid per_page="6" post_type="post" categories="4,9"]
+	 * [btcpa_posts_grid per_page="6" post_type="post" categories="4,9" id=""]
 	 *
-	 * `categories` accepts a comma-separated list of term IDs and/or slugs.
-	 * When set, only posts in those categories are shown/filterable; when
-	 * empty (default), all categories are loaded as before.
+	 * `per_page`   — posts per page (default 6).
+	 * `categories` — comma-separated term IDs or slugs; omit for all categories.
+	 * `id`         — when set, tabs are omitted and the grid listens for a remote
+	 *                btcpa:filter event fired by [btcpa_posts_tabs for="<id>"].
 	 */
 	function btcpa_posts_grid_shortcode( $atts ) {
 		$atts = shortcode_atts(
@@ -303,6 +387,7 @@ if ( ! function_exists( 'btcpa_posts_grid_shortcode' ) ) :
 				'per_page'   => 6,
 				'post_type'  => 'post',
 				'categories' => '',
+				'id'         => '',
 			),
 			$atts,
 			'btcpa_posts_grid'
@@ -310,52 +395,33 @@ if ( ! function_exists( 'btcpa_posts_grid_shortcode' ) ) :
 
 		$per_page  = min( 50, max( 1, (int) $atts['per_page'] ) );
 		$post_type = sanitize_key( $atts['post_type'] );
+		$grid_id   = sanitize_html_class( $atts['id'] );
 
 		if ( ! post_type_exists( $post_type ) ) {
 			$post_type = 'post';
 		}
 
-		// Resolve primary hierarchical taxonomy for filter buttons.
-		$taxonomy = 'category';
-		foreach ( get_object_taxonomies( $post_type, 'objects' ) as $tax ) {
-			if ( $tax->public && $tax->hierarchical ) {
-				$taxonomy = $tax->name;
-				break;
-			}
+		$taxonomy        = btcpa_posts_grid_resolve_taxonomy( $post_type );
+		$allowed_cat_ids = btcpa_posts_grid_resolve_allowed_cats( $atts['categories'], $taxonomy );
+
+		if ( empty( $allowed_cat_ids ) ) {
+			return '<p class="ipg-no-posts">' . esc_html__( 'No categories found.', 'breakthrough-cpas' ) . '</p>';
 		}
 
-		$allowed_cat_ids = btcpa_posts_grid_resolve_category_ids( $atts['categories'], $taxonomy );
-
-		$terms_args = array( 'taxonomy' => $taxonomy, 'hide_empty' => true );
-		if ( ! empty( $allowed_cat_ids ) ) {
-			$terms_args['include'] = $allowed_cat_ids;
-			$terms_args['orderby'] = 'include';
-		}
-
-		$terms = get_terms( $terms_args );
-		if ( is_wp_error( $terms ) ) {
-			$terms = array();
-		}
-
-		// Initial query (page 1, no filter).
-		$query_args = array(
+		// Initial query (page 1, no category filter).
+		$query = new WP_Query( array(
 			'post_type'      => $post_type,
 			'posts_per_page' => $per_page,
 			'paged'          => 1,
 			'post_status'    => 'publish',
-		);
-
-		if ( ! empty( $allowed_cat_ids ) ) {
-			$query_args['tax_query'] = array(
+			'tax_query'      => array(
 				array(
 					'taxonomy' => $taxonomy,
 					'field'    => 'term_id',
 					'terms'    => $allowed_cat_ids,
 				),
-			);
-		}
-
-		$query = new WP_Query( $query_args );
+			),
+		) );
 
 		btcpa_posts_grid_enqueue_assets();
 
@@ -368,19 +434,21 @@ if ( ! function_exists( 'btcpa_posts_grid_shortcode' ) ) :
 			'categories' => implode( ',', $allowed_cat_ids ),
 		) );
 
-		$html = '<div class="ipg-wrapper" data-config="' . esc_attr( $config ) . '">';
+		$grid_id_attr = $grid_id ? ' data-grid-id="' . esc_attr( $grid_id ) . '"' : '';
+		$html = '<div class="ipg-wrapper" data-config="' . esc_attr( $config ) . '"' . $grid_id_attr . '>';
 
-		// Filter nav.
-		if ( ! empty( $terms ) ) {
-			$html .= '<div class="ipg-nav">';
-			$html .= '<button class="ipg-filter-btn active" data-cat="0">' . esc_html__( 'View All', 'breakthrough-cpas' ) . '</button>';
-			foreach ( $terms as $term ) {
-				$html .= '<button class="ipg-filter-btn" data-cat="' . esc_attr( $term->term_id ) . '">' . esc_html( $term->name ) . '</button>';
-			}
-			$html .= '</div>';
+		// Embed tabs only in self-contained mode (no id attribute).
+		if ( ! $grid_id ) {
+			$terms = get_terms( array(
+				'taxonomy'   => $taxonomy,
+				'include'    => $allowed_cat_ids,
+				'orderby'    => 'include',
+				'hide_empty' => true,
+			) );
+			$html .= btcpa_posts_grid_render_tabs( is_wp_error( $terms ) ? array() : $terms );
 		}
 
-		$html .= '<div class="ipg-posts">' . btcpa_posts_grid_render_posts( $query ) . '</div>';
+		$html .= '<div class="ipg-posts">' . btcpa_posts_grid_render_posts( $query, $taxonomy ) . '</div>';
 		$html .= '<div class="ipg-pagination-wrap">' . btcpa_posts_grid_render_pagination( (int) $query->max_num_pages, 1 ) . '</div>';
 
 		$html .= '</div>';
@@ -393,3 +461,64 @@ endif;
 add_shortcode( 'btcpa_posts_grid', 'btcpa_posts_grid_shortcode' );
 // Backwards-compatible alias: some content used the callback name as the tag.
 add_shortcode( 'btcpa_posts_grid_shortcode', 'btcpa_posts_grid_shortcode' );
+
+
+if ( ! function_exists( 'btcpa_posts_tabs_shortcode' ) ) :
+	/**
+	 * [btcpa_posts_tabs for="blog" post_type="post" categories="4,9"]
+	 *
+	 * Renders standalone filter tabs that control a remote [btcpa_posts_grid id="blog"].
+	 * `for`        — must match the `id` of the target [btcpa_posts_grid].
+	 * `categories` — must match the `categories` passed to the target grid.
+	 * `post_type`  — must match the `post_type` of the target grid.
+	 */
+	function btcpa_posts_tabs_shortcode( $atts ) {
+		$atts = shortcode_atts(
+			array(
+				'for'        => '',
+				'post_type'  => 'post',
+				'categories' => '',
+			),
+			$atts,
+			'btcpa_posts_tabs'
+		);
+
+		$grid_id   = sanitize_html_class( $atts['for'] );
+		$post_type = sanitize_key( $atts['post_type'] );
+
+		if ( ! $grid_id ) {
+			return '';
+		}
+
+		if ( ! post_type_exists( $post_type ) ) {
+			$post_type = 'post';
+		}
+
+		$taxonomy        = btcpa_posts_grid_resolve_taxonomy( $post_type );
+		$allowed_cat_ids = btcpa_posts_grid_resolve_allowed_cats( $atts['categories'], $taxonomy );
+
+		if ( empty( $allowed_cat_ids ) ) {
+			return '';
+		}
+
+		$terms = get_terms( array(
+			'taxonomy'   => $taxonomy,
+			'include'    => $allowed_cat_ids,
+			'orderby'    => 'include',
+			'hide_empty' => true,
+		) );
+
+		if ( is_wp_error( $terms ) || empty( $terms ) ) {
+			return '';
+		}
+
+		btcpa_posts_grid_enqueue_assets();
+
+		$html  = '<div class="ipg-tabs-remote" data-for="' . esc_attr( $grid_id ) . '">';
+		$html .= btcpa_posts_grid_render_tabs( $terms );
+		$html .= '</div>';
+
+		return $html;
+	}
+endif;
+add_shortcode( 'btcpa_posts_tabs', 'btcpa_posts_tabs_shortcode' );

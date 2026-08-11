@@ -46,7 +46,7 @@
 /* ── Header ──────────────────────────────────────────────────────────────────── */
 
 .btcpa-form-panel__header {
-    background: #12244C;
+    background: var(--wp--preset--gradient--btcpa-gradient-one);
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -227,19 +227,19 @@ body.btcpa-panel-open {
 }
 
 .gform_button.button {
-    background: #3d7bff !important;
-    color: #192643 !important;
+    background: linear-gradient(270deg, #FFA521 0%, #FF3D8A 64.97%) !important;
+    color: #ffffff !important;
     padding: 12px 24px !important;
     border: none !important;
-    border-radius: 6px !important;
+    border-radius: 100px !important;
     font-size: 16px !important;
     font-weight: 400 !important;
-    width: 100% !important;
+    width: auto !important;
 }
 
 .gform_button.button:hover {
-    background: #192643 !important;
-    color: #3d7bff !important;
+    background: linear-gradient(270deg, #FFA521 0%, #FF3D8A 64.97%) !important;
+    color: #ffffff !important;
 }
 
 label.gfield_label.gform-field-label {
