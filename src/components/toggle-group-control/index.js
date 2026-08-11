@@ -3,13 +3,14 @@ import {
     __experimentalToggleGroupControlOption as ToggleGroupControlOption
 } from '@wordpress/components';
 
-const NativeToggleGroupControl = ({ label, value, onChange, options = [] }) => {
+const NativeToggleGroupControl = ({ label, value, onChange, options = [], help }) => {
     return (
         <div className="native-control-wrapper">
             <ToggleGroupControl
                 label={label}
                 value={value}
                 onChange={v => onChange(v)}
+                help={help}
                 isBlock
                 __nextHasNoMarginBottom
                 __next40pxDefaultSize

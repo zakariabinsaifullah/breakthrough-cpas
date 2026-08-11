@@ -2,8 +2,8 @@
     .wp-block-button__link {
         display: flex !important;
         align-items: center;
-        justify-content: space-between;
-        gap: var(--btcpa-icon-gap, 12px) !important;
+        justify-content: center;
+        gap: var(--btcpa-icon-gap, 8px) !important;
 
         &.has-text-align-left {
             justify-content: flex-start !important;

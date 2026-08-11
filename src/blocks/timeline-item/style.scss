@@ -5,8 +5,13 @@
     align-items: stretch;
     text-align: left;
     position: relative;
-    padding-bottom: 50px;
     cursor: pointer; /* To indicate it's hoverable */
+
+    /**
+     * Icon gap is set once on the parent timeline and inherited here. It cascades
+     * down: a breakpoint without its own gap falls back to the next larger one.
+     */
+    gap: var(--micon-gap, var(--ticon-gap, var(--dicon-gap, 30px)));
 
     &::before {
         display: none;
@@ -22,7 +27,6 @@
         display: flex;
         justify-content: center;
         position: relative;
-        margin-right: 30px; /* 30px gap to content */
         z-index: 1;
     }
 
@@ -63,14 +67,13 @@
 
     /* Hover State */
     &:hover .timeline-icon {
-        background: linear-gradient(to right, #3d7bff, #2ee6ff);
+        background: linear-gradient(245deg, #3d7bff, #2ee6ff);
         box-shadow: none;
         color: #ffffff;
     }
 
     .timeline-content {
         flex: 1;
-        padding-top: 10px;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -80,9 +83,21 @@
         }
     }
 
-    @media (max-width: 767px) {
-        padding-bottom: 40px;
+    // desktop view
+    @media (min-width: 1025px) {
+        & {
+            gap: var(--dicon-gap, 30px);
+        }
+    }
 
+    // tablet view
+    @media (min-width: 768px) and (max-width: 1024px) {
+        & {
+            gap: var(--ticon-gap, var(--dicon-gap, 30px));
+        }
+    }
+
+    @media (max-width: 767px) {
         .timeline-icon-row {
             margin-right: 16px;
             width: 60px;

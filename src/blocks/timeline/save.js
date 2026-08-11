@@ -1,15 +1,14 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import classNames from 'classnames';
+import { timelineGapProperties } from './gaps';
 
 const Save = props => {
     const { attributes } = props;
-    const { uniqueId, contentGap } = attributes;
+    const { uniqueId, itemGaps, iconGaps } = attributes;
 
     const blockProps = useBlockProps.save({
         className: classNames(uniqueId),
-        style: {
-            ...(contentGap && { '--item-gap': `${contentGap}px` })
-        }
+        style: timelineGapProperties(itemGaps, iconGaps)
     });
 
     return (

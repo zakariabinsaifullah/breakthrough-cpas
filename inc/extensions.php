@@ -637,6 +637,128 @@ add_filter( 'render_block', 'btcpa_render_text_max_width', 10, 2 );
 
 
 // =============================================================================
+// Heading & Paragraph – Responsive Alignment Extension
+// =============================================================================
+
+if ( ! function_exists( 'btcpa_enqueue_text_responsive_align_editor_assets' ) ) :
+	/**
+	 * Enqueues the text-responsive-align extension script and editor stylesheet.
+	 * Runs on `enqueue_block_editor_assets` (editor only).
+	 */
+	function btcpa_enqueue_text_responsive_align_editor_assets() {
+		$asset_file = get_theme_file_path( 'build/extensions/text-responsive-align/index.asset.php' );
+
+		if ( ! file_exists( $asset_file ) ) {
+			return;
+		}
+
+		$assets = require $asset_file;
+
+		wp_enqueue_script(
+			'btcpa-text-responsive-align-extension',
+			get_theme_file_uri( 'build/extensions/text-responsive-align/index.js' ),
+			$assets['dependencies'],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		$editor_css = get_theme_file_path( 'build/extensions/text-responsive-align/index.css' );
+		if ( file_exists( $editor_css ) ) {
+			wp_enqueue_style(
+				'btcpa-text-responsive-align-extension',
+				get_theme_file_uri( 'build/extensions/text-responsive-align/index.css' ),
+				array(),
+				wp_get_theme()->get( 'Version' )
+			);
+		}
+	}
+endif;
+add_action( 'enqueue_block_editor_assets', 'btcpa_enqueue_text_responsive_align_editor_assets' );
+
+
+if ( ! function_exists( 'btcpa_enqueue_text_responsive_align_frontend_assets' ) ) :
+	/**
+	 * Enqueues the text-responsive-align frontend stylesheet.
+	 * Runs on `enqueue_block_assets` (editor + front end).
+	 */
+	function btcpa_enqueue_text_responsive_align_frontend_assets() {
+		$asset_file = get_theme_file_path( 'build/extensions/text-responsive-align/index.asset.php' );
+		$style_file = get_theme_file_path( 'build/extensions/text-responsive-align/style-index.css' );
+
+		if ( ! file_exists( $asset_file ) || ! file_exists( $style_file ) ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'btcpa-text-responsive-align-extension-style',
+			get_theme_file_uri( 'build/extensions/text-responsive-align/style-index.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
+endif;
+add_action( 'enqueue_block_assets', 'btcpa_enqueue_text_responsive_align_frontend_assets' );
+
+
+if ( ! function_exists( 'btcpa_render_text_responsive_align' ) ) :
+	/**
+	 * Injects the tablet/mobile alignment classes into supported blocks on the frontend.
+	 *
+	 * Desktop alignment is left to core's own `has-text-align-*` class; only the
+	 * breakpoints that were given their own alignment get a class here, so an unset
+	 * breakpoint keeps whatever the larger one resolved to.
+	 *
+	 * @param string $block_content The rendered block HTML.
+	 * @param array  $block         The block data including name and attributes.
+	 * @return string Modified block HTML.
+	 */
+	function btcpa_render_text_responsive_align( $block_content, $block ) {
+		$supported = array( 'core/heading', 'core/paragraph' );
+
+		if ( ! in_array( $block['blockName'], $supported, true ) ) {
+			return $block_content;
+		}
+
+		$aligns = $block['attrs']['responsiveTextAlign'] ?? array();
+
+		if ( empty( $aligns ) || empty( $block_content ) ) {
+			return $block_content;
+		}
+
+		$prefixes  = array(
+			'Tablet' => 'has-text-align-tablet-',
+			'Mobile' => 'has-text-align-mobile-',
+		);
+		$allowed   = array( 'left', 'center', 'right' );
+		$new_classes = array();
+
+		foreach ( $prefixes as $device => $prefix ) {
+			$align = $aligns[ $device ] ?? '';
+			if ( in_array( $align, $allowed, true ) ) {
+				$new_classes[] = $prefix . $align;
+			}
+		}
+
+		if ( empty( $new_classes ) ) {
+			return $block_content;
+		}
+
+		$processor = new WP_HTML_Tag_Processor( $block_content );
+		if ( $processor->next_tag() ) {
+			foreach ( $new_classes as $class ) {
+				$processor->add_class( $class );
+			}
+
+			return $processor->get_updated_html();
+		}
+
+		return $block_content;
+	}
+endif;
+add_filter( 'render_block', 'btcpa_render_text_responsive_align', 10, 2 );
+
+
+// =============================================================================
 // Button – Full Width Mobile Extension
 // =============================================================================
 

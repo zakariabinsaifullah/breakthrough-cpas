@@ -22,8 +22,8 @@ const Edit = (props) => {
                         onIconSelect={(name, type) => {
                             setAttributes({ iconName: name, iconType: type, customSvgCode: undefined });
                         }}
-                        onCustomSvgInsert={({ code, type }) => {
-                            setAttributes({ customSvgCode: code, iconType: type });
+                        onCustomSvgInsert={({ customSvgCode, iconType }) => {
+                            setAttributes({ customSvgCode, iconType, iconName: undefined });
                         }}
                         iconName={iconName}
                         customSvgCode={customSvgCode}

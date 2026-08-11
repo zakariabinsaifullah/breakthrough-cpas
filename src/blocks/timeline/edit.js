@@ -6,6 +6,7 @@ import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { plus } from '@wordpress/icons';
 import classNames from 'classnames';
 import Inspector from './inspector';
+import { timelineGapProperties } from './gaps';
 
 const TEMPLATE = [
     ['btcpa/timeline-item', {}],
@@ -16,11 +17,10 @@ const TEMPLATE = [
 const Edit = props => {
     const { attributes, clientId, isSelected } = props;
     const hasSelectedInnerBlock = useSelect(select => select('core/block-editor').hasSelectedInnerBlock(clientId, true));
-    const { uniqueId, contentGap } = attributes;
+    const { uniqueId, itemGaps, iconGaps } = attributes;
 
-    const cssCustomProperties = {
-        ...(contentGap && { '--item-gap': `${contentGap}px` })
-    };
+    // Item and icon gaps cascade down from desktop; the items read them via inheritance.
+    const cssCustomProperties = timelineGapProperties(itemGaps, iconGaps);
 
     const blockProps = useBlockProps({
         className: classNames(uniqueId),

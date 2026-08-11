@@ -25,8 +25,17 @@
         "uniqueId": {
             "type": "string"
         },
-        "contentGap": {
-            "type": "number"
+        "resMode": {
+            "type": "string",
+            "default": "Desktop"
+        },
+        "itemGaps": {
+            "type": "object",
+            "default": {}
+        },
+        "iconGaps": {
+            "type": "object",
+            "default": {}
         }
     },
     "textdomain": "breakthrough-cpas",
