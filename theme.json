@@ -492,11 +492,14 @@
                                 "right": "0",
                                 "top": "0"
                             }
+                        },
+                        "typography": {
+                            "textDecoration": "underline"
                         }
                     },
                     "alternative": {
                         "border": {
-                            "color": "var(--wp--preset--color--btcpa-dodger-blue-darker)",
+                            "color": "transparent",
                             "radius": "100px",
                             "style": "solid",
                             "width": "2px"

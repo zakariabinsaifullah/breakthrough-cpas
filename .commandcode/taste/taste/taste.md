@@ -4,6 +4,9 @@
 - Likes responsive/breakpoint-aware settings for spacing and gap attributes in blocks (e.g., responsive item-gap and icon-gap controls). Confidence: 0.6
 - When rebranding or renaming across a project, expects the change applied consistently everywhere in the theme, not partially. Confidence: 0.7
 - Wants the agent to ask for clarification when it encounters issues during a task, rather than guessing or silently deciding ("If you find any issues, ASK me"). Confidence: 0.9
-- Communicates in terse, numbered task lists with direct imperatives. Confidence: 0.6
+- Communicates in terse, numbered task lists with direct imperatives. Confidence: 0.8
+- Specifies exact visual parameters when requesting design changes (e.g., "a bottom 2px underline text decoration with 5px offset") rather than describing intent vaguely. Confidence: 0.6
 - References code locations by @-mentioning file/directory paths (e.g., "@src/blocks/timeline/") rather than describing them in prose. Confidence: 0.5
 - Prefers per-item spacing (e.g., `padding-bottom` on each item) over `flex gap` on the parent container when each item carries its own connector/`::before` styling, and expects the last item to drop the connector. Confidence: 0.5
+- Keeps design style variants visually consistent with the base/default style — e.g., the Alternative button should reuse the default button's gradient for its border, changing only the specified attribute (transparent background) rather than introducing new colors. Confidence: 0.7
+- Gradient-border effects on transparent elements must render the gradient only as the border ring, never as the whole element background; if a background layer is required for the technique, it must be transparent (opacity 0) so the fill stays see-through. Confidence: 0.8
