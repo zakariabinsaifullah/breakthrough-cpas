@@ -25,7 +25,8 @@
       "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' fix mangled patterns in distignore EOF echo \"---committed---\" && git push origin main)",
       "Shell(ls ref/ 2>/dev/null; echo \"---\"; ls ref/assets/css 2>/dev/null; echo \"---\"; ls ref/inc 2>/dev/null)",
       "Shell(php -l inc/block-styles.php)",
-      "Shell(git add -A && git commit -F - <<'EOF' style post excerpt more link as gradient button, tweak grid nav - Style the excerpt read-more link with the theme button gradient and arrow icon; flip gradient angle on hover - Remove the outline-link post-excerpt block style (default styling) - Mobile category tabs full-width, 50px nav margin Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)"
+      "Shell(git add -A && git commit -F - <<'EOF' style post excerpt more link as gradient button, tweak grid nav - Style the excerpt read-more link with the theme button gradient and arrow icon; flip gradient angle on hover - Remove the outline-link post-excerpt block style (default styling) - Mobile category tabs full-width, 50px nav margin Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(node -e \"const s = require('fs').readFileSync('build/blocks/icon/style-index.css','utf8'); console.log('valign present:', s.includes('icon-valign')); console.log('top:', s.includes('icon-valign-top'));\")"
     ],
     "deny": [],
     "defaultMode": "default"

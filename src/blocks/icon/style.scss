@@ -39,6 +39,18 @@
         align-items: center;
         justify-content: center;
         gap: var(--list-gap);
+
+        &.icon-valign-top {
+            align-items: flex-start;
+        }
+
+        &.icon-valign-center {
+            align-items: center;
+        }
+
+        &.icon-valign-bottom {
+            align-items: flex-end;
+        }
     }
 
     /* Heading */

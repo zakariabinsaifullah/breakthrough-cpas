@@ -65,7 +65,8 @@ export default function Edit(props) {
         listGap,
         titleColor,
         titleSize,
-        titleFontFamily
+        titleFontFamily,
+        iconVerticalAlign
     } = attributes;
 
     const fontFamilies = useSelect(select => {
@@ -247,6 +248,16 @@ export default function Edit(props) {
                             value={listGap}
                             onChange={value => setAttributes({ listGap: value })}
                         />
+                        <NativeSelectControl
+                            label={__('Vertical Alignment', 'breakthrough-cpas')}
+                            value={iconVerticalAlign}
+                            onChange={value => setAttributes({ iconVerticalAlign: value })}
+                            options={[
+                                { label: __('Top', 'breakthrough-cpas'), value: 'top' },
+                                { label: __('Center', 'breakthrough-cpas'), value: 'center' },
+                                { label: __('Bottom', 'breakthrough-cpas'), value: 'bottom' }
+                            ]}
+                        />
                         {showTitle && (
                             <>
                                 <NativeSelectControl
@@ -346,7 +357,11 @@ export default function Edit(props) {
                 )}
             </InspectorControls>
             <div {...blockProps}>
-                <div className="btcpa-icon-block-wrapper">
+                <div
+                    className={classNames('btcpa-icon-block-wrapper', {
+                        [`icon-valign-${iconVerticalAlign}`]: iconVerticalAlign
+                    })}
+                >
                     <div
                         className={classNames('icon-container', colorProps.className, borderProps.className)}
                         style={{

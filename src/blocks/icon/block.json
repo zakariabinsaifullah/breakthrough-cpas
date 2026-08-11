@@ -120,6 +120,10 @@
         },
         "titleFontFamily": {
             "type": "string"
+        },
+        "iconVerticalAlign": {
+            "type": "string",
+            "default": "center"
         }
     },
     "textdomain": "breakthrough-cpas",

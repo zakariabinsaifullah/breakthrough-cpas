@@ -184,6 +184,30 @@ body.btcpa-panel-open {
     overflow: hidden;
 }
 
+/* ── Gravity Forms fields ───────────────────────────────────────────────────── */
+
+/* Field metrics come from Gravity Forms' own CSS API custom properties rather
+   than from per-element overrides. GF derives the height, radius, font size and
+   padding of every control from these, so input, select and textarea stay in
+   step — and the select keeps its native chevron, which GF sizes and positions
+   from these same variables. Scoped to --framework so the no-framework
+   subscription form in style.css is left alone; the doubled class is needed to
+   out-specify GF's own defaults, which are declared on `.gform-theme--framework`
+   in a stylesheet that loads after this one. */
+.gform_wrapper.gform-theme--framework {
+    --gf-ctrl-size: 52px;
+    --gf-ctrl-size-md: 52px;
+    --gf-ctrl-line-height: 52px;
+    --gf-ctrl-font-size: 16px;
+    --gf-ctrl-padding-x: 16px;
+    --gf-ctrl-radius: 10px;
+    --gf-ctrl-select-icon-size: 12px;
+
+    /* GF caps the radius on larger controls via `min()`, which would leave the
+       textarea at 8px against the 10px of every other field. */
+    --gf-ctrl-radius-max-lg: 10px;
+}
+
 .gform-theme--foundation .gform_fields {
     row-gap: 20px !important;
 }
@@ -193,10 +217,7 @@ body.btcpa-panel-open {
 .gform-body.gform_body select {
     width: 100%;
     border-color: #d8d8d8 !important;
-    border-radius: 10px;
-    min-height: 50px !important;
-    font-size: 16px;
-    background: #ffffff !important;
+    background-color: #ffffff !important;
     outline: none;
     box-shadow: none !important;
     transition:
@@ -205,8 +226,14 @@ body.btcpa-panel-open {
     box-sizing: border-box;
 }
 
-.gform-body.gform_body input[type='checkbox'] {
-    min-height: auto !important;
+/* A select ignores the control line-height GF gives inputs, so its text sits
+   high in the taller box — set it explicitly to centre the value. The chevron is
+   pinned by `right 10px center !important` in style.css; re-align it to the
+   field's own padding. Both need to out-specify that rule. */
+.gform-theme--framework .gform-body.gform_body select {
+    line-height: var(--gf-ctrl-line-height);
+    background-position: right var(--gf-ctrl-padding-x) center !important;
+    padding-right: calc(var(--gf-ctrl-padding-x) * 2 + var(--gf-ctrl-select-icon-size)) !important;
 }
 
 .gfield_label {

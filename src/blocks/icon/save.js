@@ -43,7 +43,8 @@ export default function save({ attributes, className }) {
         showTitle,
         heading,
         headingTag,
-        blockStyle
+        blockStyle,
+        iconVerticalAlign
     } = attributes;
 
     // Get block support props
@@ -90,7 +91,11 @@ export default function save({ attributes, className }) {
     if (customSvgCode) {
         return (
             <Tag {...blockProps} {...(href && { href, target: linkTarget, rel: linkRel })}>
-                <div className="btcpa-icon-block-wrapper">
+                <div
+                    className={classNames('btcpa-icon-block-wrapper', {
+                        [`icon-valign-${iconVerticalAlign}`]: iconVerticalAlign
+                    })}
+                >
                     <div className={iconClasses} style={iconStyle} dangerouslySetInnerHTML={{ __html: customSvgCode }} />
                     {showTitle && (
                         <div className="icon-content">
@@ -110,7 +115,11 @@ export default function save({ attributes, className }) {
 
     return (
         <Tag {...blockProps} {...(href && { href, target: linkTarget, rel: linkRel })}>
-            <div className="btcpa-icon-block-wrapper">
+            <div
+                className={classNames('btcpa-icon-block-wrapper', {
+                    [`icon-valign-${iconVerticalAlign}`]: iconVerticalAlign
+                })}
+            >
                 <div className={iconClasses} style={iconStyle}>
                     <Icon icon={selectedIcon.icon} size={iconSize} />
                 </div>
