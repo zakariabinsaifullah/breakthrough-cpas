@@ -22,7 +22,10 @@
       "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' exclude .commandcode from dist builds Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
       "Shell(awk:*)",
       "Shell(od:*)",
-      "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' fix mangled patterns in distignore EOF echo \"---committed---\" && git push origin main)"
+      "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' fix mangled patterns in distignore EOF echo \"---committed---\" && git push origin main)",
+      "Shell(ls ref/ 2>/dev/null; echo \"---\"; ls ref/assets/css 2>/dev/null; echo \"---\"; ls ref/inc 2>/dev/null)",
+      "Shell(php -l inc/block-styles.php)",
+      "Shell(git add -A && git commit -F - <<'EOF' style post excerpt more link as gradient button, tweak grid nav - Style the excerpt read-more link with the theme button gradient and arrow icon; flip gradient angle on hover - Remove the outline-link post-excerpt block style (default styling) - Mobile category tabs full-width, 50px nav margin Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)"
     ],
     "deny": [],
     "defaultMode": "default"

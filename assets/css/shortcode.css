@@ -21,7 +21,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin-bottom: 48px;
+    margin-bottom: 50px;
     justify-content: center;
 }
 
@@ -74,6 +74,16 @@
 @media (max-width: 560px) {
     .ipg-grid {
         grid-template-columns: 1fr;
+    }
+
+    .ipg-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ipg-nav .ipg-filter-btn {
+        width: 100%;
+        padding: 16px 24px;
     }
 }
 

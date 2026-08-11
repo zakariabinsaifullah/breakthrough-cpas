@@ -14,16 +14,36 @@
     font-size: var(--wp--preset--font-size--btcpa-heading-three);
 }
 
-.is-style-outline-link .wp-block-post-excerpt__more-link {
-    border: 1px solid currentColor;
+.wp-block-post-excerpt__more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
     border-radius: 100px;
     padding: 10px 24px;
+    background: var(--wp--preset--gradient--btcpa-button-gradient);
     color: var(--wp--preset--color--btcpa-white);
 }
 
+/* Arrow icon matching the theme's arrow SVG (white stroke). */
+.wp-block-post-excerpt__more-link::after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11' fill='none'%3E%3Cpath d='M.75 5.417h9.333m-4.666 4.666 4.666-4.666L5.417.75' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.2s ease;
+}
+
+.wp-block-post-excerpt__more-link:hover::after {
+    transform: translateX(2px);
+}
+
 a.wp-block-post-excerpt__more-link:hover {
-    background: #fff !important;
-    color: #000;
+    background: linear-gradient(90deg, #ffa521 0%, #ff3d8a 64.97%);
+    color: var(--wp--preset--color--btcpa-white);
 }
 
 header.wp-block-kadence-rowlayout {

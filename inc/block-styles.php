@@ -13,14 +13,6 @@ if ( ! function_exists( 'btcpa_block_styles' ) ) :
 	 */
 	function btcpa_block_styles() {
 		register_block_style(
-			'core/post-excerpt',
-			array(
-				'name'  => 'outline-link',
-				'label' => __( 'Outline Link', 'breakthrough-cpas' ),
-			)
-		);
-
-		register_block_style(
 			'core/group',
 			array(
 				'name'  => 'wrap-mobile',
