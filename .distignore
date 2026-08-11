@@ -25,7 +25,7 @@ features-roadmap.txt
 .distignore
 .DS_Store
 *.log
-_.lock
+*.lock
 package.json
 package-lock.json
 composer.json
@@ -41,12 +41,12 @@ CHANGELOG.md
 phpunit.xml
 phpcs.xml
 .phpcs.xml
-_.config.js
-\_.config.json
+*.config.js
+*.config.json
 
-\*.md
+*.md
 
 # Build artifacts
 
-_.map
-_.LICENSE.txt
+*.map
+*.LICENSE.txt
