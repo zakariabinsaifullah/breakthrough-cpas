@@ -9,6 +9,7 @@ src
 /.wordpress-org
 /docs
 /.claude
+/.commandcode
 
 # Files
 DOCUMENTATION.md
@@ -22,7 +23,7 @@ features-roadmap.txt
 .babelrc
 .babelrc.json
 .distignore
-.DS*Store
+.DS_Store
 *.log
 _.lock
 package.json

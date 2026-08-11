@@ -16,7 +16,10 @@
       "Shell(node --check assets/js/shortcode.js)",
       "Shell(git check-ignore ref/ 2>/dev/null; echo \"---\"; git diff .commandcode/settings.json | head -25)",
       "Shell(git check-ignore -v ref/ 2>&1; echo \"---\"; git status --porcelain | wc -l)",
-      "Shell(git status --porcelain --ignored 2>/dev/null | grep ref/ | head -3; echo \"---\"; ls -la ../.gitignore 2>/dev/null; cat ../.gitignore 2>/dev/null | grep -i ref; echo \"---done\")"
+      "Shell(git status --porcelain --ignored 2>/dev/null | grep ref/ | head -3; echo \"---\"; ls -la ../.gitignore 2>/dev/null; cat ../.gitignore 2>/dev/null | grep -i ref; echo \"---done\")",
+      "Shell(git commit -F - <<'EOF' posts grid redesign, remote tabs, admin shortcode page, icon size - Rework posts grid cards: meta row (category, date + read time), read more button, gradient border hover, 24px grid gaps, orange accents - Add btcpa_posts_tabs remote shortcode and JS CustomEvent filtering - Redesign the Breakthrough CPAs admin shortcode reference page - Add ID column to categories screen, form settings copy fallback - Icon block default size 36px, kadence global hover gradient border - Form panel header gradient, gradient submit button Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(ls -la .distignore 2>/dev/null; echo \"---\"; cat .distignore 2>/dev/null; echo \"---ref---\"; cat ref/.distignore 2>/dev/null | head -30)",
+      "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' exclude .commandcode from dist builds Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)"
     ],
     "deny": [],
     "defaultMode": "default"
