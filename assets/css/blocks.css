@@ -119,26 +119,11 @@ header.wp-block-kadence-rowlayout::before {
 }
 
 .kb-table-container {
-    border: 1px solid #d8d8d8;
     border-radius: 20px;
-    overflow: hidden;
-}
-
-.kb-table th {
-    background: #12244C !important;
 }
 
 .kb-table p {
     margin: 0 !important;
-}
-
-.kb-table th p {
-    color: #fff !important;
-}
-
-.btcpa-special-table tbody tr:last-child td:last-child {
-    background: #77a2ff;
-    color: #fff !important;
 }
 
 /*
@@ -165,10 +150,7 @@ header.wp-block-kadence-rowlayout::before {
  * Excludes the Link and Alternative variations, which define their own borders.
  */
 .wp-block-button:not(.is-style-link):not(.is-style-alternative) .wp-block-button__link {
-    background-image: linear-gradient(
-            var(--wp--preset--color--btcpa-white),
-            var(--wp--preset--color--btcpa-white)
-        ),
+    background-image: linear-gradient(var(--wp--preset--color--btcpa-white), var(--wp--preset--color--btcpa-white)),
         var(--wp--preset--gradient--btcpa-gradient-two);
     background-origin: padding-box, border-box;
     background-clip: padding-box, border-box;
@@ -177,10 +159,7 @@ header.wp-block-kadence-rowlayout::before {
 }
 
 .wp-block-button:not(.is-style-link):not(.is-style-alternative) .wp-block-button__link:hover {
-    background-image: linear-gradient(
-            var(--wp--preset--color--btcpa-white),
-            var(--wp--preset--color--btcpa-white)
-        ),
+    background-image: linear-gradient(var(--wp--preset--color--btcpa-white), var(--wp--preset--color--btcpa-white)),
         linear-gradient(270deg, #2ee6ef 8%, #3d7bff 56%, #ff3d8a 100%);
 }
 
@@ -216,9 +195,13 @@ header.wp-block-kadence-rowlayout::before {
     padding: 2px;
     border-radius: inherit;
     background: var(--wp--preset--gradient--btcpa-gradient-two);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     mask-composite: exclude;
     transition: background 0.2s ease;
 }
@@ -235,4 +218,44 @@ header.wp-block-kadence-rowlayout::before {
 .wp-block-button.is-style-link .wp-block-button__link {
     background-color: transparent;
     background-image: none;
+}
+
+/* Kadence Table */
+.kb-table-container {
+    border: none !important;
+}
+
+.kb-table-row th:first-child {
+    background: #ebefff !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.kb-table-row th:nth-child(2) {
+    background: #3d7bff !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.kb-table-row th:last-child {
+    background: #ff3d8a !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.kb-table tr:first-child {
+    border-top: 0 !important;
+}
+
+.kb-table-row td:nth-child(2),
+.kb-table-row td:last-child {
+    border-left: 1px solid #dde2f0;
+}
+
+.two-columns .kb-table-row th:first-child {
+    background: #3d7bff !important;
+}
+
+@media (max-width: 600px) {
+    .kb-table {
+        table-layout: auto !important;
+        min-width: 600px !important;
+    }
 }
